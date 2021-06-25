@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "container:"
+      name = "Day_1">
+      <FileRef
+         location = "group:Day_1-Question_1.playground">
+      </FileRef>
+      <FileRef
+         location = "group:Day_1-Question_2.playground">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "Day_2">
+      <FileRef
+         location = "group:Day_2-Question_1.playground">
+      </FileRef>
+      <FileRef
+         location = "group:Day_2-Question_2.playground">
+      </FileRef>
+      <FileRef
+         location = "group:Day_2-Question_3.playground">
+      </FileRef>
+      <FileRef
+         location = "group:Day_2-Question_4.playground">
+      </FileRef>
+      <FileRef
+         location = "group:Day_2-Question_5.playground">
+      </FileRef>
+   </Group>
+</Workspace>
