@@ -32,3 +32,51 @@ extension Int {
 }
 
 7.isPrime() // true
+
+/**
+ Day-3 Question-2
+ MARK:- İki parametreli ve FARKLI tipli bir generic örneği yapınız... (T, U)
+ */
+
+/**
+ Day-3 Project Euler Question-7
+ MARK:- What is the 10 001st prime number?
+ */
+func findNthPrimeNumber(number: UInt32) -> Int {
+    // Note that prime numbers always conform (6n - 1) and (6n + 1) rule
+    var count = 2 // 2 and 3
+    var n = 1
+    var lowerNumber: Int
+    var upperNumber: Int
+
+    if number == 0 {
+        return 0
+    } else if number == 1 {
+        return 2
+    } else if number == 2 {
+        return 3
+    }
+
+    while true {
+        lowerNumber = (6 * n) - 1
+        upperNumber = (6 * n) + 1
+
+        if lowerNumber.isPrime() {
+            count += 1
+            if count == number {
+                return lowerNumber
+            }
+        }
+
+        if upperNumber.isPrime() {
+            count += 1
+            if count == number {
+                return upperNumber
+            }
+        }
+
+        n += 1
+    }
+}
+
+findNthPrimeNumber(number: 10_001) // 104743
