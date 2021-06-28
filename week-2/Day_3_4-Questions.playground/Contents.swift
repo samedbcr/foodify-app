@@ -39,6 +39,24 @@ extension Int {
  */
 
 /**
+ Day-3 Project Euler Question-6
+ MARK:- Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+ */
+
+func solveQuestionSix(number n: Int) -> Int {
+    // Sum of the squares formula: n(n + 1)(2n + 1) / 6
+    let sumOfTheSquares = n * (n + 1) * (2 * n + 1) / 6
+    // Square of the sum formula: (n(n + 1) / 2) ^ 2
+    let squaresOfTheSum = (n * (n + 1) / 2) * (n * (n + 1) / 2)
+    
+    let result = squaresOfTheSum - sumOfTheSquares
+    
+    return result
+}
+
+solveQuestionSix(number: 100) // 25164150
+
+/**
  Day-3 Project Euler Question-7
  MARK:- What is the 10 001st prime number?
  */
