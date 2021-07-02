@@ -38,6 +38,12 @@ extension Int {
  MARK:- İki parametreli ve FARKLI tipli bir generic örneği yapınız... (T, U)
  */
 
+func genericDoubleParams<T, U>(firstParam: T, secondParam: U) {
+    print("FirstParam: \(firstParam), SecondParam: \(secondParam)")
+}
+
+genericDoubleParams(firstParam: 22, secondParam: "Samed")
+
 /**
  Day-3 Project Euler Question-6
  MARK:- Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
