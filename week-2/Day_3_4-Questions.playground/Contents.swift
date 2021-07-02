@@ -54,9 +54,9 @@ func solveQuestionSix(number n: Int) -> Int {
     let sumOfTheSquares = n * (n + 1) * (2 * n + 1) / 6
     // Square of the sum formula: (n(n + 1) / 2) ^ 2
     let squaresOfTheSum = (n * (n + 1) / 2) * (n * (n + 1) / 2)
-    
+
     let result = squaresOfTheSum - sumOfTheSquares
-    
+
     return result
 }
 
@@ -104,3 +104,18 @@ func findNthPrimeNumber(number: UInt32) -> Int {
 }
 
 findNthPrimeNumber(number: 10_001) // 104743
+
+/**
+ Day-3 Question-3
+ MARK: If let - guard let kullanım tercihini neye göre belirlersiniz?
+ */
+
+/**
+ guard let, if let'ten farkli olarak, fail durumunda icinde bulunulan scope'dan cikmamizi (return) saglar.
+ Yani if let happy-path durumlarini saglamakta ve if'in icinde bulunan scopeda geçerlidir.
+ Aksi durumlari else scope'unda handle etmek gereklidir.
+ guard let ise fail durumunda icinde bulundugumuz scope'dan cikmamizi, success durumunda ise unwrap edilmis
+ hallerini ayni scope'da kullanmamiza saglar.
+ Yani sadece optional unwrapping yapmamiz gereken durumlarda if let kullanilmasi,
+ condition'lari kontrol edip sonra devam etmemiz gereken durumlarda guard let kullanilmasi onerilir.
+ */
