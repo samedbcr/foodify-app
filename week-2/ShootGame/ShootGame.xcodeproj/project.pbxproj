@@ -91,9 +91,9 @@
 		26FF8860268B6B2400B3C41D = {
 			isa = PBXGroup;
 			children = (
-				26861C57268FBC3F007E5138 /* README.md */,
 				26FF886B268B6B2400B3C41D /* ShootGame */,
 				26FF886A268B6B2400B3C41D /* Products */,
+				26861C57268FBC3F007E5138 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
