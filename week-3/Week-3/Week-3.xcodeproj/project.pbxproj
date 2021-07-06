@@ -15,6 +15,7 @@
 		2650BFCE269457D700F09CCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2650BFCC269457D700F09CCD /* LaunchScreen.storyboard */; };
 		26E6479A2694598400CEEF4D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E647992694598400CEEF4D /* User.swift */; };
 		26E647A326947EC000CEEF4D /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E647A226947EC000CEEF4D /* EmptyStateView.swift */; };
+		26E647AA2694F98200CEEF4D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 26E647A92694F98200CEEF4D /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2650BFCF269457D700F09CCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26E647992694598400CEEF4D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		26E647A226947EC000CEEF4D /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		26E647A92694F98200CEEF4D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 		2650BFB5269457D400F09CCD = {
 			isa = PBXGroup;
 			children = (
+				26E647A92694F98200CEEF4D /* .gitignore */,
 				2650BFC0269457D400F09CCD /* Week-3 */,
 				2650BFBF269457D400F09CCD /* Products */,
 			);
@@ -154,6 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26E647AA2694F98200CEEF4D /* .gitignore in Resources */,
 				2650BFCE269457D700F09CCD /* LaunchScreen.storyboard in Resources */,
 				2650BFCB269457D700F09CCD /* Assets.xcassets in Resources */,
 				2650BFC9269457D400F09CCD /* Main.storyboard in Resources */,
