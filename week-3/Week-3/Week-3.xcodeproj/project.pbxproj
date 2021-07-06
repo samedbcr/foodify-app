@@ -46,9 +46,9 @@
 		2650BFB5269457D400F09CCD = {
 			isa = PBXGroup;
 			children = (
-				26E647A92694F98200CEEF4D /* .gitignore */,
 				2650BFC0269457D400F09CCD /* Week-3 */,
 				2650BFBF269457D400F09CCD /* Products */,
+				26E647A92694F98200CEEF4D /* .gitignore */,
 			);
 			sourceTree = "<group>";
 		};

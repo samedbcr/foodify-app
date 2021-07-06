@@ -34,14 +34,9 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if filteredUsers.count == 0 {
             // Hande no data situations (empty state)
-
-            let emptyStateView = EmptyStateView(message: "Cannot found any user!", image: "not_found")
-            tableView.backgroundView = emptyStateView
-            tableView.separatorStyle = .none
-
+            tableView.showEmptyState()
         } else {
-            tableView.backgroundView = nil
-            tableView.separatorStyle = .singleLine
+            tableView.restoreFromEmptyState()
         }
 
         return filteredUsers.count
@@ -76,3 +71,15 @@ extension ViewController: UISearchBarDelegate {
     }
 }
 
+extension UITableView {
+    func showEmptyState() {
+        let emptyStateView = EmptyStateView(message: "Cannot found any user!", image: "not_found")
+        self.backgroundView = emptyStateView
+        self.separatorStyle = .none
+    }
+
+    func restoreFromEmptyState() {
+        self.backgroundView = nil
+        self.separatorStyle = .singleLine
+    }
+}
