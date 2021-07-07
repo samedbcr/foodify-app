@@ -32,7 +32,7 @@ class EmptyStateView: UIView {
     }
 
     func configureImageView() {
-        guard let image = UIImage(named: "not_found") else { return }
+        guard let image = UIImage(named: image) else { return }
         imageView.image = image
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit

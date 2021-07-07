@@ -14,6 +14,10 @@
 		2650BFCB269457D700F09CCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2650BFCA269457D700F09CCD /* Assets.xcassets */; };
 		2650BFCE269457D700F09CCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2650BFCC269457D700F09CCD /* LaunchScreen.storyboard */; };
 		26CC7A442695B2AF005F214E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC7A432695B2AF005F214E /* SearchViewController.swift */; };
+		26CC7A482695CFB6005F214E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC7A472695CFB6005F214E /* PageViewController.swift */; };
+		26CC7A4C2695DF8D005F214E /* FirstPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC7A4B2695DF8D005F214E /* FirstPageVC.swift */; };
+		26CC7A4F2695E0C7005F214E /* SecondPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC7A4E2695E0C7005F214E /* SecondPageVC.swift */; };
+		26CC7A542695E103005F214E /* ThirdPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC7A532695E103005F214E /* ThirdPageVC.swift */; };
 		26E6479A2694598400CEEF4D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E647992694598400CEEF4D /* User.swift */; };
 		26E647A326947EC000CEEF4D /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E647A226947EC000CEEF4D /* EmptyStateView.swift */; };
 		26E647AA2694F98200CEEF4D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 26E647A92694F98200CEEF4D /* .gitignore */; };
@@ -29,6 +33,10 @@
 		2650BFCD269457D700F09CCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2650BFCF269457D700F09CCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26CC7A432695B2AF005F214E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		26CC7A472695CFB6005F214E /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		26CC7A4B2695DF8D005F214E /* FirstPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageVC.swift; sourceTree = "<group>"; };
+		26CC7A4E2695E0C7005F214E /* SecondPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageVC.swift; sourceTree = "<group>"; };
+		26CC7A532695E103005F214E /* ThirdPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPageVC.swift; sourceTree = "<group>"; };
 		26E647992694598400CEEF4D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		26E647A226947EC000CEEF4D /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		26E647A92694F98200CEEF4D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -65,6 +73,7 @@
 		2650BFC0269457D400F09CCD /* Week-3 */ = {
 			isa = PBXGroup;
 			children = (
+				26CC7A462695CF6D005F214E /* PageViewController */,
 				26E6479D26947E6B00CEEF4D /* Component */,
 				26E647982694597C00CEEF4D /* Model */,
 				2650BFD6269457E200F09CCD /* Controller */,
@@ -85,6 +94,17 @@
 				26CC7A432695B2AF005F214E /* SearchViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		26CC7A462695CF6D005F214E /* PageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				26CC7A472695CFB6005F214E /* PageViewController.swift */,
+				26CC7A4B2695DF8D005F214E /* FirstPageVC.swift */,
+				26CC7A4E2695E0C7005F214E /* SecondPageVC.swift */,
+				26CC7A532695E103005F214E /* ThirdPageVC.swift */,
+			);
+			path = PageViewController;
 			sourceTree = "<group>";
 		};
 		26E647982694597C00CEEF4D /* Model */ = {
@@ -175,8 +195,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				26CC7A442695B2AF005F214E /* SearchViewController.swift in Sources */,
+				26CC7A482695CFB6005F214E /* PageViewController.swift in Sources */,
+				26CC7A4C2695DF8D005F214E /* FirstPageVC.swift in Sources */,
+				26CC7A542695E103005F214E /* ThirdPageVC.swift in Sources */,
 				26E6479A2694598400CEEF4D /* User.swift in Sources */,
 				2650BFC6269457D400F09CCD /* ViewController.swift in Sources */,
+				26CC7A4F2695E0C7005F214E /* SecondPageVC.swift in Sources */,
 				26E647A326947EC000CEEF4D /* EmptyStateView.swift in Sources */,
 				2650BFC2269457D400F09CCD /* AppDelegate.swift in Sources */,
 				2650BFC4269457D400F09CCD /* SceneDelegate.swift in Sources */,
