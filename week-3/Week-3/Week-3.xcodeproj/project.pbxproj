@@ -19,6 +19,10 @@
 		26CC7A4F2695E0C7005F214E /* SecondPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC7A4E2695E0C7005F214E /* SecondPageVC.swift */; };
 		26CC7A542695E103005F214E /* ThirdPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC7A532695E103005F214E /* ThirdPageVC.swift */; };
 		26CC7A5926979F92005F214E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC7A5826979F92005F214E /* MapViewController.swift */; };
+		26CC7A5F2698DB0D005F214E /* Week-3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26CC7A5D2698DB0D005F214E /* Week-3.xcdatamodeld */; };
+		26CC7A642698DE5D005F214E /* CookCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC7A632698DE5D005F214E /* CookCreateViewController.swift */; };
+		26CC7A682698E6F1005F214E /* CookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC7A672698E6F1005F214E /* CookListViewController.swift */; };
+		26CC7A712698F0CC005F214E /* CookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC7A702698F0CC005F214E /* CookModel.swift */; };
 		26E6479A2694598400CEEF4D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E647992694598400CEEF4D /* User.swift */; };
 		26E647A326947EC000CEEF4D /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E647A226947EC000CEEF4D /* EmptyStateView.swift */; };
 		26E647AA2694F98200CEEF4D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 26E647A92694F98200CEEF4D /* .gitignore */; };
@@ -39,6 +43,11 @@
 		26CC7A4E2695E0C7005F214E /* SecondPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageVC.swift; sourceTree = "<group>"; };
 		26CC7A532695E103005F214E /* ThirdPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPageVC.swift; sourceTree = "<group>"; };
 		26CC7A5826979F92005F214E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		26CC7A5B26986AFA005F214E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		26CC7A5E2698DB0D005F214E /* Week-3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Week-3.xcdatamodel"; sourceTree = "<group>"; };
+		26CC7A632698DE5D005F214E /* CookCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookCreateViewController.swift; sourceTree = "<group>"; };
+		26CC7A672698E6F1005F214E /* CookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookListViewController.swift; sourceTree = "<group>"; };
+		26CC7A702698F0CC005F214E /* CookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookModel.swift; sourceTree = "<group>"; };
 		26E647992694598400CEEF4D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		26E647A226947EC000CEEF4D /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		26E647A92694F98200CEEF4D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -61,6 +70,7 @@
 				2650BFC0269457D400F09CCD /* Week-3 */,
 				2650BFBF269457D400F09CCD /* Products */,
 				26E647A92694F98200CEEF4D /* .gitignore */,
+				26CC7A5B26986AFA005F214E /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +85,7 @@
 		2650BFC0269457D400F09CCD /* Week-3 */ = {
 			isa = PBXGroup;
 			children = (
+				26CC7A622698DE4D005F214E /* CoreData */,
 				26CC7A5626963DD3005F214E /* MapView */,
 				26CC7A462695CF6D005F214E /* PageViewController */,
 				26E6479D26947E6B00CEEF4D /* Component */,
@@ -86,6 +97,7 @@
 				2650BFCA269457D700F09CCD /* Assets.xcassets */,
 				2650BFCC269457D700F09CCD /* LaunchScreen.storyboard */,
 				2650BFCF269457D700F09CCD /* Info.plist */,
+				26CC7A5D2698DB0D005F214E /* Week-3.xcdatamodeld */,
 			);
 			path = "Week-3";
 			sourceTree = "<group>";
@@ -116,6 +128,16 @@
 				26CC7A5826979F92005F214E /* MapViewController.swift */,
 			);
 			path = MapView;
+			sourceTree = "<group>";
+		};
+		26CC7A622698DE4D005F214E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				26CC7A632698DE5D005F214E /* CookCreateViewController.swift */,
+				26CC7A672698E6F1005F214E /* CookListViewController.swift */,
+				26CC7A702698F0CC005F214E /* CookModel.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		26E647982694597C00CEEF4D /* Model */ = {
@@ -205,9 +227,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26CC7A712698F0CC005F214E /* CookModel.swift in Sources */,
+				26CC7A642698DE5D005F214E /* CookCreateViewController.swift in Sources */,
 				26CC7A5926979F92005F214E /* MapViewController.swift in Sources */,
+				26CC7A682698E6F1005F214E /* CookListViewController.swift in Sources */,
 				26CC7A442695B2AF005F214E /* SearchViewController.swift in Sources */,
 				26CC7A482695CFB6005F214E /* PageViewController.swift in Sources */,
+				26CC7A5F2698DB0D005F214E /* Week-3.xcdatamodeld in Sources */,
 				26CC7A4C2695DF8D005F214E /* FirstPageVC.swift in Sources */,
 				26CC7A542695E103005F214E /* ThirdPageVC.swift in Sources */,
 				26E6479A2694598400CEEF4D /* User.swift in Sources */,
@@ -417,6 +443,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		26CC7A5D2698DB0D005F214E /* Week-3.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				26CC7A5E2698DB0D005F214E /* Week-3.xcdatamodel */,
+			);
+			currentVersion = 26CC7A5E2698DB0D005F214E /* Week-3.xcdatamodel */;
+			path = "Week-3.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2650BFB6269457D400F09CCD /* Project object */;
 }

@@ -64,5 +64,7 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>I need your location</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>I need your photo</string>
 </dict>
 </plist>
