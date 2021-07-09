@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ccB-c7-EHS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1mP-KF-D54">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -149,6 +149,54 @@
             </objects>
             <point key="canvasLocation" x="2484" y="58"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="sXg-Dn-stk">
+            <objects>
+                <viewController id="1mP-KF-D54" customClass="MapViewController" customModule="Week_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MQz-gb-vYc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9we-YG-yjk">
+                                <rect key="frame" x="0.0" y="44" width="414" height="776.5"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adres" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHr-y6-xpa">
+                                <rect key="frame" x="20" y="830.5" width="374" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iuW-QC-nOB">
+                                <rect key="frame" x="191" y="396.5" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="QnL-a1-sLk"/>
+                                    <constraint firstAttribute="height" constant="32" id="jQG-3w-TXO"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="y1b-SD-PyD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dHr-y6-xpa" firstAttribute="top" secondItem="9we-YG-yjk" secondAttribute="bottom" constant="10" id="6TA-Wj-v09"/>
+                            <constraint firstItem="9we-YG-yjk" firstAttribute="leading" secondItem="y1b-SD-PyD" secondAttribute="leading" id="N4r-8N-mv8"/>
+                            <constraint firstItem="y1b-SD-PyD" firstAttribute="trailing" secondItem="dHr-y6-xpa" secondAttribute="trailing" constant="20" id="Wp5-nq-Hhp"/>
+                            <constraint firstItem="9we-YG-yjk" firstAttribute="trailing" secondItem="y1b-SD-PyD" secondAttribute="trailing" id="Xyf-5V-287"/>
+                            <constraint firstItem="iuW-QC-nOB" firstAttribute="centerX" secondItem="MQz-gb-vYc" secondAttribute="centerX" id="bw2-pk-XzO"/>
+                            <constraint firstItem="dHr-y6-xpa" firstAttribute="leading" secondItem="y1b-SD-PyD" secondAttribute="leading" constant="20" id="erM-ri-zX4"/>
+                            <constraint firstItem="9we-YG-yjk" firstAttribute="top" secondItem="y1b-SD-PyD" secondAttribute="top" id="fuE-Gq-p8j"/>
+                            <constraint firstItem="y1b-SD-PyD" firstAttribute="bottom" secondItem="dHr-y6-xpa" secondAttribute="bottom" constant="10" id="oxW-yK-rxU"/>
+                            <constraint firstItem="iuW-QC-nOB" firstAttribute="centerY" secondItem="MQz-gb-vYc" secondAttribute="centerY" constant="-35" id="vFv-Rx-VXd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="dHr-y6-xpa" id="Mti-E2-Ccb"/>
+                        <outlet property="mapView" destination="9we-YG-yjk" id="QpN-Z0-usu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eni-RC-wA6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3337.68115942029" y="57.589285714285708"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="n5Z-jq-yMR">
             <objects>
@@ -169,6 +217,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="mappin" catalog="system" width="105" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
