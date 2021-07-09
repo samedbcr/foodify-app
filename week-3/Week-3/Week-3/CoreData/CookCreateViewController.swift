@@ -14,7 +14,7 @@ class CookCreateViewController: UIViewController, UIImagePickerControllerDelegat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         cookImage.isUserInteractionEnabled = true
         let cookImageTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(pickPhoto))
         cookImage.addGestureRecognizer(cookImageTapRecognizer)
@@ -26,8 +26,8 @@ class CookCreateViewController: UIViewController, UIImagePickerControllerDelegat
         picker.sourceType = .photoLibrary
         present(picker, animated: true, completion: nil)
     }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         cookImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         self.dismiss(animated: true, completion: nil)
     }
@@ -39,13 +39,14 @@ class CookCreateViewController: UIViewController, UIImagePickerControllerDelegat
         newCook.setValue(cookImageTextField.text, forKey: "name")
         let imageData = cookImage.image?.jpegData(compressionQuality: 0.5)
         newCook.setValue(imageData, forKey: "image")
-        
+        newCook.setValue(UUID(), forKey: "id")
+
         do {
             try context.save()
         } catch {
             print("Kaydedilemedi...")
         }
-        
+
         self.navigationController?.popViewController(animated: true)
     }
 }

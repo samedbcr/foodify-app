@@ -13,6 +13,7 @@
 		2650BFC9269457D400F09CCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2650BFC7269457D400F09CCD /* Main.storyboard */; };
 		2650BFCB269457D700F09CCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2650BFCA269457D700F09CCD /* Assets.xcassets */; };
 		2650BFCE269457D700F09CCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2650BFCC269457D700F09CCD /* LaunchScreen.storyboard */; };
+		26CB844826990D4E007E1021 /* CookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CB844726990D4E007E1021 /* CookTableViewCell.swift */; };
 		26CC7A442695B2AF005F214E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC7A432695B2AF005F214E /* SearchViewController.swift */; };
 		26CC7A482695CFB6005F214E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC7A472695CFB6005F214E /* PageViewController.swift */; };
 		26CC7A4C2695DF8D005F214E /* FirstPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC7A4B2695DF8D005F214E /* FirstPageVC.swift */; };
@@ -37,6 +38,7 @@
 		2650BFCA269457D700F09CCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2650BFCD269457D700F09CCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2650BFCF269457D700F09CCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26CB844726990D4E007E1021 /* CookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookTableViewCell.swift; sourceTree = "<group>"; };
 		26CC7A432695B2AF005F214E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		26CC7A472695CFB6005F214E /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		26CC7A4B2695DF8D005F214E /* FirstPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageVC.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				26CC7A632698DE5D005F214E /* CookCreateViewController.swift */,
 				26CC7A672698E6F1005F214E /* CookListViewController.swift */,
 				26CC7A702698F0CC005F214E /* CookModel.swift */,
+				26CB844726990D4E007E1021 /* CookTableViewCell.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26CC7A712698F0CC005F214E /* CookModel.swift in Sources */,
+				26CB844826990D4E007E1021 /* CookTableViewCell.swift in Sources */,
 				26CC7A642698DE5D005F214E /* CookCreateViewController.swift in Sources */,
 				26CC7A5926979F92005F214E /* MapViewController.swift in Sources */,
 				26CC7A682698E6F1005F214E /* CookListViewController.swift in Sources */,
