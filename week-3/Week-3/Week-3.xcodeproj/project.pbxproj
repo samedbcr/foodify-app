@@ -13,6 +13,9 @@
 		2650BFC9269457D400F09CCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2650BFC7269457D400F09CCD /* Main.storyboard */; };
 		2650BFCB269457D700F09CCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2650BFCA269457D700F09CCD /* Assets.xcassets */; };
 		2650BFCE269457D700F09CCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2650BFCC269457D700F09CCD /* LaunchScreen.storyboard */; };
+		26A3F53226A0B85100428E34 /* NotificationSenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3F53126A0B85100428E34 /* NotificationSenderVC.swift */; };
+		26A3F53626A0B86F00428E34 /* NotificationListenerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3F53526A0B86F00428E34 /* NotificationListenerVC.swift */; };
+		26A3F53A26A0B88F00428E34 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A3F53926A0B88F00428E34 /* NotificationExtension.swift */; };
 		26CB844826990D4E007E1021 /* CookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CB844726990D4E007E1021 /* CookTableViewCell.swift */; };
 		26CC7A442695B2AF005F214E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC7A432695B2AF005F214E /* SearchViewController.swift */; };
 		26CC7A482695CFB6005F214E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC7A472695CFB6005F214E /* PageViewController.swift */; };
@@ -38,6 +41,9 @@
 		2650BFCA269457D700F09CCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2650BFCD269457D700F09CCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2650BFCF269457D700F09CCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A3F53126A0B85100428E34 /* NotificationSenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSenderVC.swift; sourceTree = "<group>"; };
+		26A3F53526A0B86F00428E34 /* NotificationListenerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListenerVC.swift; sourceTree = "<group>"; };
+		26A3F53926A0B88F00428E34 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		26CB844726990D4E007E1021 /* CookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookTableViewCell.swift; sourceTree = "<group>"; };
 		26CC7A432695B2AF005F214E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		26CC7A472695CFB6005F214E /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +72,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2628C784269E2BE3008974D3 /* NotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				26A3F53126A0B85100428E34 /* NotificationSenderVC.swift */,
+				26A3F53526A0B86F00428E34 /* NotificationListenerVC.swift */,
+				26A3F53926A0B88F00428E34 /* NotificationExtension.swift */,
+			);
+			path = NotificationCenter;
+			sourceTree = "<group>";
+		};
 		2650BFB5269457D400F09CCD = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +103,7 @@
 		2650BFC0269457D400F09CCD /* Week-3 */ = {
 			isa = PBXGroup;
 			children = (
+				2628C784269E2BE3008974D3 /* NotificationCenter */,
 				26CC7A622698DE4D005F214E /* CoreData */,
 				26CC7A5626963DD3005F214E /* MapView */,
 				26CC7A462695CF6D005F214E /* PageViewController */,
@@ -233,6 +250,7 @@
 				26CC7A712698F0CC005F214E /* CookModel.swift in Sources */,
 				26CB844826990D4E007E1021 /* CookTableViewCell.swift in Sources */,
 				26CC7A642698DE5D005F214E /* CookCreateViewController.swift in Sources */,
+				26A3F53626A0B86F00428E34 /* NotificationListenerVC.swift in Sources */,
 				26CC7A5926979F92005F214E /* MapViewController.swift in Sources */,
 				26CC7A682698E6F1005F214E /* CookListViewController.swift in Sources */,
 				26CC7A442695B2AF005F214E /* SearchViewController.swift in Sources */,
@@ -240,9 +258,11 @@
 				26CC7A5F2698DB0D005F214E /* Week-3.xcdatamodeld in Sources */,
 				26CC7A4C2695DF8D005F214E /* FirstPageVC.swift in Sources */,
 				26CC7A542695E103005F214E /* ThirdPageVC.swift in Sources */,
+				26A3F53A26A0B88F00428E34 /* NotificationExtension.swift in Sources */,
 				26E6479A2694598400CEEF4D /* User.swift in Sources */,
 				2650BFC6269457D400F09CCD /* ViewController.swift in Sources */,
 				26CC7A4F2695E0C7005F214E /* SecondPageVC.swift in Sources */,
+				26A3F53226A0B85100428E34 /* NotificationSenderVC.swift in Sources */,
 				26E647A326947EC000CEEF4D /* EmptyStateView.swift in Sources */,
 				2650BFC2269457D400F09CCD /* AppDelegate.swift in Sources */,
 				2650BFC4269457D400F09CCD /* SceneDelegate.swift in Sources */,
