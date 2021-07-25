@@ -25,6 +25,7 @@
 		26AE0DF226AD9DF300AC2D09 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AE0DF126AD9DF300AC2D09 /* PersistenceManager.swift */; };
 		26AE0DF526AE160E00AC2D09 /* MovieFavoriteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AE0DF426AE160E00AC2D09 /* MovieFavoriteDelegate.swift */; };
 		26AE0DF826AE177100AC2D09 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AE0DF726AE177100AC2D09 /* EmptyStateView.swift */; };
+		26AE0DFB26AE1E7100AC2D09 /* UIViewController+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AE0DFA26AE1E7100AC2D09 /* UIViewController+Extenstion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		26AE0DF126AD9DF300AC2D09 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		26AE0DF426AE160E00AC2D09 /* MovieFavoriteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFavoriteDelegate.swift; sourceTree = "<group>"; };
 		26AE0DF726AE177100AC2D09 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		26AE0DFA26AE1E7100AC2D09 /* UIViewController+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extenstion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				26AE0DED26AC205400AC2D09 /* UIImageView+Extension.swift */,
+				26AE0DFA26AE1E7100AC2D09 /* UIViewController+Extenstion.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				26AE0DDD26A8B4DC00AC2D09 /* MovieListResponse.swift in Sources */,
 				26AE0DD326A612E100AC2D09 /* NetworkManager.swift in Sources */,
 				26AE0D9C26A374EE00AC2D09 /* SceneDelegate.swift in Sources */,
+				26AE0DFB26AE1E7100AC2D09 /* UIViewController+Extenstion.swift in Sources */,
 				26AE0DC726A46FBD00AC2D09 /* MovieCell.swift in Sources */,
 				26AE0DA426A374EE00AC2D09 /* MovieListingApp.xcdatamodeld in Sources */,
 			);

@@ -24,16 +24,23 @@ final class MovieListViewController: UIViewController {
         configure()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
+    private func configure() {
+        view.backgroundColor = .black
+        navigationItem.setRightBarButton(barButton, animated: true)
         navigationController?.navigationBar.barTintColor = .black
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemGray4]
         navigationController?.navigationBar.barStyle = .black
+        
+        configureCollectionView()
+        configureSearchController()
+        getMovieList(at: page)
     }
 
     private func getMovieList(at page: Int) {
+        presentLoadingView()
         NetworkManager.shared.getMovieList(at: page) { [weak self] result in
             guard let self = self else { return }
-
+            self.dismissLoadingView()
             switch result {
             case .success(let movies):
                 if movies.count < 20 { self.hasMorData = false }
@@ -55,14 +62,6 @@ final class MovieListViewController: UIViewController {
             }
             return movie
         }
-    }
-
-    private func configure() {
-        view.backgroundColor = .black
-        navigationItem.setRightBarButton(barButton, animated: true)
-        configureCollectionView()
-        configureSearchController()
-        getMovieList(at: page)
     }
 
     private func configureBarButton() {
