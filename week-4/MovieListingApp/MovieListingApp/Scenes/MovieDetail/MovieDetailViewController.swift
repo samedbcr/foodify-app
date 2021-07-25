@@ -148,7 +148,7 @@ class MovieDetailViewController: UIViewController {
             stackView.topAnchor.constraint(equalTo: movieOverviewLabel.bottomAnchor, constant: 8),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -32)
         ])
     }
 
