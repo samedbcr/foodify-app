@@ -19,9 +19,43 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = ViewController()
+        configure()
+        window?.rootViewController = createTabBar()
         window?.makeKeyAndVisible()
-        
+
+    }
+
+    private func configure() {
+        // TabBar
+        UITabBar.appearance().tintColor = .systemRed
+        UITabBar.appearance().barStyle = .black
+        // NavigationBar
+        UINavigationBar.appearance().barStyle = .black
+        UINavigationBar.appearance().barTintColor = .black
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+    }
+
+    private func createHomeNC() -> UIViewController {
+        let homeVC = HomeViewController()
+        homeVC.title = "Video Games"
+        homeVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house.fill"), tag: 0)
+
+        return UINavigationController(rootViewController: homeVC)
+    }
+
+    private func createFavoritesNC() -> UIViewController {
+        let favoritesVC = FavoritesViewController()
+        favoritesVC.title = "Favorites"
+        favoritesVC.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "heart.fill"), tag: 1)
+
+        return UINavigationController(rootViewController: favoritesVC)
+    }
+
+    private func createTabBar() -> UITabBarController {
+        let tabBar = UITabBarController()
+        tabBar.setViewControllers([createHomeNC(), createFavoritesNC()], animated: true)
+
+        return tabBar
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
