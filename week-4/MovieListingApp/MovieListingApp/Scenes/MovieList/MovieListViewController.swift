@@ -179,13 +179,4 @@ extension MovieListViewController: MovieFavoriteDelegate {
     }
 }
 
-extension UICollectionView {
-    func showEmptyState() {
-        let emptyStateView = EmptyStateView(message: "Cannot found any movie!", image: "no_data")
-        self.backgroundView = emptyStateView
-    }
 
-    func restoreFromEmptyState() {
-        self.backgroundView = nil
-    }
-}

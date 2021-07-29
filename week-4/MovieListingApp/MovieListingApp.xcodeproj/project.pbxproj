@@ -26,6 +26,7 @@
 		26AE0DF526AE160E00AC2D09 /* MovieFavoriteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AE0DF426AE160E00AC2D09 /* MovieFavoriteDelegate.swift */; };
 		26AE0DF826AE177100AC2D09 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AE0DF726AE177100AC2D09 /* EmptyStateView.swift */; };
 		26AE0DFB26AE1E7100AC2D09 /* UIViewController+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AE0DFA26AE1E7100AC2D09 /* UIViewController+Extenstion.swift */; };
+		26FA9C1426B1E27500AC8A20 /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FA9C1326B1E27500AC8A20 /* UICollectionView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		26AE0DF426AE160E00AC2D09 /* MovieFavoriteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFavoriteDelegate.swift; sourceTree = "<group>"; };
 		26AE0DF726AE177100AC2D09 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		26AE0DFA26AE1E7100AC2D09 /* UIViewController+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extenstion.swift"; sourceTree = "<group>"; };
+		26FA9C1326B1E27500AC8A20 /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,8 +126,8 @@
 		26AE0DB626A375B300AC2D09 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				26AE0DE726AB5BFC00AC2D09 /* MovieDetail */,
 				26AE0DB726A375BF00AC2D09 /* MovieList */,
+				26AE0DE726AB5BFC00AC2D09 /* MovieDetail */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -198,6 +200,7 @@
 			children = (
 				26AE0DED26AC205400AC2D09 /* UIImageView+Extension.swift */,
 				26AE0DFA26AE1E7100AC2D09 /* UIViewController+Extenstion.swift */,
+				26FA9C1326B1E27500AC8A20 /* UICollectionView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				26AE0D9C26A374EE00AC2D09 /* SceneDelegate.swift in Sources */,
 				26AE0DFB26AE1E7100AC2D09 /* UIViewController+Extenstion.swift in Sources */,
 				26AE0DC726A46FBD00AC2D09 /* MovieCell.swift in Sources */,
+				26FA9C1426B1E27500AC8A20 /* UICollectionView+Ext.swift in Sources */,
 				26AE0DA426A374EE00AC2D09 /* MovieListingApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
