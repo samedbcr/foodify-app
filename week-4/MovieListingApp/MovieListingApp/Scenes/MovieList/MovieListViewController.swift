@@ -31,6 +31,7 @@ final class MovieListViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemGray4]
         navigationController?.navigationBar.barStyle = .black
         
+        configureBarButton()
         configureCollectionView()
         configureSearchController()
         getMovieList(at: page)
