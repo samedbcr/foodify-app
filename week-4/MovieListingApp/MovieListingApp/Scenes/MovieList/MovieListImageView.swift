@@ -69,6 +69,7 @@ final class MovieListImageView: UIImageView {
         favoriteButton.translatesAutoresizingMaskIntoConstraints = false
         favoriteButton.contentVerticalAlignment = .fill
         favoriteButton.contentHorizontalAlignment = .fill
+        favoriteButton.tintColor = .systemRed
 
         NSLayoutConstraint.activate([
             favoriteButton.topAnchor.constraint(equalTo: topAnchor, constant: 6),
