@@ -45,7 +45,7 @@ class CustomTabBarVC: UITabBarController {
         middleButtonView.button.addTarget(self, action: #selector(middleButtonAction(sender:)), for: .touchUpInside)
 
         NSLayoutConstraint.activate([
-            middleButtonView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: -24),
+            middleButtonView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: -20),
             middleButtonView.centerXAnchor.constraint(equalTo: tabBar.centerXAnchor),
             middleButtonView.widthAnchor.constraint(equalToConstant: 64),
             middleButtonView.heightAnchor.constraint(equalToConstant: 64),

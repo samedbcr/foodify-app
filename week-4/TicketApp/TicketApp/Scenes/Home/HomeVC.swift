@@ -16,7 +16,8 @@ final class HomeVC: UIViewController {
     private let toTextField = CustomTextField(placeholder: "To", rightIcon: UIImage(systemName: "map"))
     private let whenTextField = CustomTextField(placeholder: "When", rightIcon: UIImage(systemName: "calendar"))
     private let searchButton = CustomButton(backgroundColor: .brown, title: "Search")
-    
+    private let stackView = UIStackView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGradient()
@@ -46,10 +47,12 @@ final class HomeVC: UIViewController {
     private func configure() {
         configureImageView()
         configureTitleLabel()
-        configureFromTextField()
-        configureToTextField()
-        configureWhenTextField()
         configureSearchButton()
+        configureStackView()
+//        configureFromTextField()
+//        configureToTextField()
+//        configureWhenTextField()
+//        configureSearchButton()
     }
 
     private func configureImageView() {
@@ -82,47 +85,62 @@ final class HomeVC: UIViewController {
         ])
     }
 
+    private func configureStackView() {
+        view.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.alignment = .fill
+        stackView.spacing = 12
+
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75),
+        ])
+
+
+        configureFromTextField()
+        configureToTextField()
+        configureWhenTextField()
+
+    }
+
     private func configureFromTextField() {
         view.addSubview(fromTextField)
 
         NSLayoutConstraint.activate([
-            fromTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
-            fromTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            fromTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75),
             fromTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
+
+        stackView.addArrangedSubview(fromTextField)
     }
 
     private func configureToTextField() {
-        view.addSubview(toTextField)
-
+//
         NSLayoutConstraint.activate([
-            toTextField.topAnchor.constraint(equalTo: fromTextField.bottomAnchor, constant: 16),
-            toTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            toTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75),
             toTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
+        stackView.addArrangedSubview(toTextField)
     }
-    
-    private func configureWhenTextField() {
-        view.addSubview(whenTextField)
 
+    private func configureWhenTextField() {
+//
         NSLayoutConstraint.activate([
-            whenTextField.topAnchor.constraint(equalTo: toTextField.bottomAnchor, constant: 16),
-            whenTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            whenTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75),
             whenTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
+
+        stackView.addArrangedSubview(whenTextField)
     }
-    
+
     private func configureSearchButton() {
         view.addSubview(searchButton)
 
         NSLayoutConstraint.activate([
-            searchButton.topAnchor.constraint(equalTo: whenTextField.bottomAnchor, constant: 16),
             searchButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             searchButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75),
-            searchButton.heightAnchor.constraint(equalToConstant: 50)
+            searchButton.heightAnchor.constraint(equalToConstant: 50),
+            searchButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -32)
         ])
     }
 }
