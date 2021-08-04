@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		265C82B026B99DE00091E2ED /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 265C82AF26B99DE00091E2ED /* Colors.xcassets */; };
+		265C82B326BB160A0091E2ED /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C82B226BB160A0091E2ED /* ShadowView.swift */; };
 		2660510326B2EB2400E8FB04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2660510226B2EB2400E8FB04 /* AppDelegate.swift */; };
 		2660510526B2EB2400E8FB04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2660510426B2EB2400E8FB04 /* SceneDelegate.swift */; };
 		2660510726B2EB2400E8FB04 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2660510626B2EB2400E8FB04 /* HomeVC.swift */; };
@@ -14,7 +16,7 @@
 		2660510F26B2EB2500E8FB04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2660510E26B2EB2500E8FB04 /* Assets.xcassets */; };
 		2660511226B2EB2500E8FB04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2660511026B2EB2500E8FB04 /* LaunchScreen.storyboard */; };
 		2660512326B3EB5E00E8FB04 /* CustomTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2660512226B3EB5E00E8FB04 /* CustomTabBarVC.swift */; };
-		2660512626B3EB7F00E8FB04 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2660512526B3EB7F00E8FB04 /* SecondVC.swift */; };
+		2660512626B3EB7F00E8FB04 /* TicketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2660512526B3EB7F00E8FB04 /* TicketVC.swift */; };
 		2660512926B4083C00E8FB04 /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2660512826B4083C00E8FB04 /* ThirdVC.swift */; };
 		2660512C26B4320A00E8FB04 /* TabBarMiddleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2660512B26B4320A00E8FB04 /* TabBarMiddleButton.swift */; };
 		2660513626B4427000E8FB04 /* TabBarMiddleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2660513526B4427000E8FB04 /* TabBarMiddleButtonView.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		265C82AF26B99DE00091E2ED /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		265C82B226BB160A0091E2ED /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		266050FF26B2EB2400E8FB04 /* TicketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2660510226B2EB2400E8FB04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2660510426B2EB2400E8FB04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +41,7 @@
 		2660511126B2EB2500E8FB04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2660511326B2EB2500E8FB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2660512226B3EB5E00E8FB04 /* CustomTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarVC.swift; sourceTree = "<group>"; };
-		2660512526B3EB7F00E8FB04 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
+		2660512526B3EB7F00E8FB04 /* TicketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketVC.swift; sourceTree = "<group>"; };
 		2660512826B4083C00E8FB04 /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
 		2660512B26B4320A00E8FB04 /* TabBarMiddleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMiddleButton.swift; sourceTree = "<group>"; };
 		2660513526B4427000E8FB04 /* TabBarMiddleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMiddleButtonView.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 			children = (
 				2660513A26B474E600E8FB04 /* Font */,
 				2660510E26B2EB2500E8FB04 /* Assets.xcassets */,
+				265C82AF26B99DE00091E2ED /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -122,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				2660513226B4407000E8FB04 /* Home */,
-				2660512526B3EB7F00E8FB04 /* SecondVC.swift */,
+				2660512526B3EB7F00E8FB04 /* TicketVC.swift */,
 				2660512826B4083C00E8FB04 /* ThirdVC.swift */,
 			);
 			path = Scenes;
@@ -171,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				2660515F26B4783700E8FB04 /* Constants.swift */,
+				265C82B226BB160A0091E2ED /* ShadowView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -238,6 +244,7 @@
 				2660510F26B2EB2500E8FB04 /* Assets.xcassets in Resources */,
 				2660515326B4777A00E8FB04 /* Poppins-Regular.ttf in Resources */,
 				2660515426B4777A00E8FB04 /* Poppins-Medium.ttf in Resources */,
+				265C82B026B99DE00091E2ED /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +264,8 @@
 				2660516026B4783700E8FB04 /* Constants.swift in Sources */,
 				2660510526B2EB2400E8FB04 /* SceneDelegate.swift in Sources */,
 				2660516726B49ACE00E8FB04 /* CustomButton.swift in Sources */,
-				2660512626B3EB7F00E8FB04 /* SecondVC.swift in Sources */,
+				2660512626B3EB7F00E8FB04 /* TicketVC.swift in Sources */,
+				265C82B326BB160A0091E2ED /* ShadowView.swift in Sources */,
 				2660510D26B2EB2400E8FB04 /* TicketApp.xcdatamodeld in Sources */,
 				2660513626B4427000E8FB04 /* TabBarMiddleButtonView.swift in Sources */,
 			);

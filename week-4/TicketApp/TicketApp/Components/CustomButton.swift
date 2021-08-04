@@ -10,9 +10,8 @@ import UIKit
 class CustomButton: UIButton {
     private let gradientLayer = CAGradientLayer()
 
-    init(backgroundColor: UIColor, title: String) {
+    init(title: String) {
         super.init(frame: .zero)
-//        self.backgroundColor = backgroundColor
         self.setTitle(title, for: .normal)
         configure()
     }
@@ -20,7 +19,7 @@ class CustomButton: UIButton {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         gradientLayer.frame = bounds
@@ -36,8 +35,8 @@ class CustomButton: UIButton {
     }
 
     func setupGradient() {
-        let firstColor = UIColor(red: 1.00, green: 0.72, blue: 0.13, alpha: 1.00)
-        let secondColor = UIColor(red: 0.95, green: 0.54, blue: 0.00, alpha: 1.00)
+        let firstColor = UIColor.primaryLight
+        let secondColor = UIColor.primaryDark
         gradientLayer.frame = self.bounds
         gradientLayer.colors = [firstColor.cgColor, secondColor.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)

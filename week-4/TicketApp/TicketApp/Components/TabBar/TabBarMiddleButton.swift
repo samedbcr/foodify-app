@@ -42,8 +42,8 @@ class TabBarMiddleButton: UIButton {
     }
 
     private func setupGradient() {
-        let firstColor = UIColor(red: 1.00, green: 0.72, blue: 0.13, alpha: 1.00)
-        let secondColor = UIColor(red: 0.95, green: 0.54, blue: 0.00, alpha: 1.00)
+        let firstColor = UIColor.primaryLight
+        let secondColor = UIColor.primaryDark
         gradientLayer.frame = self.bounds
         gradientLayer.colors = [firstColor.cgColor, secondColor.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)

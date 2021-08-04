@@ -15,7 +15,7 @@ final class HomeVC: UIViewController {
     private let fromTextField = CustomTextField(placeholder: "From", rightIcon: UIImage(systemName: "mappin"))
     private let toTextField = CustomTextField(placeholder: "To", rightIcon: UIImage(systemName: "map"))
     private let whenTextField = CustomTextField(placeholder: "When", rightIcon: UIImage(systemName: "calendar"))
-    private let searchButton = CustomButton(backgroundColor: .brown, title: "Search")
+    private let searchButton = CustomButton(title: "Search")
     private let stackView = UIStackView()
 
     override func viewDidLoad() {
@@ -49,10 +49,6 @@ final class HomeVC: UIViewController {
         configureTitleLabel()
         configureSearchButton()
         configureStackView()
-//        configureFromTextField()
-//        configureToTextField()
-//        configureWhenTextField()
-//        configureSearchButton()
     }
 
     private func configureImageView() {
@@ -99,11 +95,9 @@ final class HomeVC: UIViewController {
             stackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75),
         ])
 
-
         configureFromTextField()
         configureToTextField()
         configureWhenTextField()
-
     }
 
     private func configureFromTextField() {
@@ -117,7 +111,6 @@ final class HomeVC: UIViewController {
     }
 
     private func configureToTextField() {
-//
         NSLayoutConstraint.activate([
             toTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
@@ -125,7 +118,6 @@ final class HomeVC: UIViewController {
     }
 
     private func configureWhenTextField() {
-//
         NSLayoutConstraint.activate([
             whenTextField.heightAnchor.constraint(equalToConstant: 50)
         ])

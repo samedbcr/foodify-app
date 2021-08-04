@@ -23,11 +23,11 @@ class CustomTabBarVC: UITabBarController {
         tabBar.backgroundColor = .white
         tabBar.isTranslucent = false
 
-        let homeVC = HomeVC()
+        let homeVC = TicketVC()
         let homeVCTabBar = UITabBarItem(title: "", image: UIImage(named: "home"), tag: 0)
         homeVC.tabBarItem = homeVCTabBar
 
-        let vc2 = SecondVC()
+        let vc2 = HomeVC()
         vc2.title = ""
 
         let vc3 = ThirdVC()
