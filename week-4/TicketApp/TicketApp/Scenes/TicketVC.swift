@@ -14,7 +14,7 @@ class TicketVC: UIViewController {
     private let dateView = ShadowView()
     private let dateStackView = UIStackView()
     private let propsStackView = UIStackView()
-    private var dateViewTopConstraint: NSLayoutConstraint?
+    private let horizontalScrollView = UIScrollView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +48,7 @@ class TicketVC: UIViewController {
         configureDateView()
         configureDateStackView()
         configurePropsStackView()
+        configureSeatsCard()
     }
 
     private func configureDirectionSectionStackView() {
@@ -141,7 +142,7 @@ class TicketVC: UIViewController {
         dateStackView.spacing = 8
 
         dateStackView.backgroundColor = .white
-        dateStackView.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        dateStackView.layoutMargins = UIEdgeInsets(top: 18, left: 18, bottom: 18, right: 18)
         dateStackView.isLayoutMarginsRelativeArrangement = true
         dateStackView.layer.cornerRadius = 10
         dateStackView.layer.masksToBounds = true
@@ -182,12 +183,12 @@ class TicketVC: UIViewController {
         propsStackView.addArrangedSubview(createPropsSubStackView(first: createItemStackView(titleText: "Duration", valueText: "2h 10m", alignment: .leading), second: createItemStackView(titleText: "Changes", valueText: "None", alignment: .trailing)))
 
         NSLayoutConstraint.activate([
-            propsStackView.topAnchor.constraint(equalTo: dateView.bottomAnchor, constant: 24),
+            propsStackView.topAnchor.constraint(equalTo: dateView.bottomAnchor, constant: 30),
             propsStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.80),
             propsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
     }
-    
+
     private func createPropsSubStackView(first: UIStackView, second: UIStackView) -> UIStackView {
         let propsSubStackView = UIStackView()
         propsStackView.addSubview(propsSubStackView)
@@ -197,10 +198,10 @@ class TicketVC: UIViewController {
         propsSubStackView.alignment = .top
         propsSubStackView.distribution = .equalCentering
         propsSubStackView.spacing = 8
-        
+
         propsSubStackView.addArrangedSubview(first)
         propsSubStackView.addArrangedSubview(second)
-        
+
         NSLayoutConstraint.activate([
             propsSubStackView.widthAnchor.constraint(equalTo: propsStackView.widthAnchor)
         ])
@@ -230,6 +231,82 @@ class TicketVC: UIViewController {
         itemStackView.addArrangedSubview(valueLabel)
 
         return itemStackView
+    }
+
+    private func configureSeatsCard() {
+        let seatCardView = ShadowView()
+        view.addSubview(seatCardView)
+        seatCardView.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            seatCardView.topAnchor.constraint(equalTo: propsStackView.bottomAnchor, constant: 20),
+            seatCardView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+        ])
+
+        let seatStackView = UIStackView()
+        seatStackView.translatesAutoresizingMaskIntoConstraints = false
+        seatCardView.addSubview(seatStackView)
+        seatStackView.axis = .vertical
+        seatStackView.alignment = .leading
+        seatStackView.distribution = .fill
+        seatStackView.spacing = 6
+
+        seatStackView.backgroundColor = .white
+        seatStackView.layoutMargins = UIEdgeInsets(top: 18, left: 18, bottom: 18, right: 18)
+        seatStackView.isLayoutMarginsRelativeArrangement = true
+        seatStackView.layer.cornerRadius = 10
+
+        let countLabel = UILabel()
+        countLabel.text = "11"
+        countLabel.font = UIFont(name: Fonts.poppinsBold, size: 20)
+        countLabel.textColor = .black
+
+
+        let availableLabel = UILabel()
+        availableLabel.text = "Seats available"
+        availableLabel.font = UIFont(name: Fonts.poppinsMedium, size: 15)
+
+        availableLabel.textColor = .systemGray
+
+        NSLayoutConstraint.activate([
+            seatStackView.topAnchor.constraint(equalTo: seatCardView.topAnchor),
+            seatStackView.leadingAnchor.constraint(equalTo: seatCardView.leadingAnchor),
+            seatStackView.trailingAnchor.constraint(equalTo: seatCardView.trailingAnchor),
+            seatStackView.bottomAnchor.constraint(equalTo: seatCardView.bottomAnchor),
+        ])
+
+        seatStackView.addArrangedSubview(createClassTypeTextView(on: seatCardView))
+        seatStackView.addArrangedSubview(countLabel)
+        seatStackView.addArrangedSubview(availableLabel)
+
+
+    }
+
+    private func createClassTypeTextView(on cardView: UIView) -> UIView {
+        let container = ShadowView()
+        cardView.addSubview(container)
+        container.translatesAutoresizingMaskIntoConstraints = false
+        container.backgroundColor = .primaryDark
+        container.layer.cornerRadius = 10
+
+
+        let classTypeLabel = UILabel()
+        container.addSubview(classTypeLabel)
+        classTypeLabel.translatesAutoresizingMaskIntoConstraints = false
+        classTypeLabel.text = "Second Class"
+        classTypeLabel.textColor = .white
+        
+        self.view.layoutIfNeeded()
+
+        NSLayoutConstraint.activate([
+//            container.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: -20),
+            classTypeLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 6),
+            classTypeLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 10),
+            classTypeLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -10),
+            classTypeLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -6),
+        ])
+
+        return container
     }
 
 
