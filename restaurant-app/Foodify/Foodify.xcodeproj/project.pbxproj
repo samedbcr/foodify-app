@@ -27,6 +27,8 @@
 		26AF321126C1BF8D00EDA357 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26AF320D26C1BF8D00EDA357 /* Poppins-Medium.ttf */; };
 		26AF321626C1C0B900EDA357 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26AF321526C1C0B900EDA357 /* Colors.xcassets */; };
 		26AF321C26C1C21A00EDA357 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF321B26C1C21A00EDA357 /* UIColor+Extension.swift */; };
+		26AF322526C1D36800EDA357 /* RatingStarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF322426C1D36800EDA357 /* RatingStarsView.swift */; };
+		26AF322A26C1D37900EDA357 /* RatingStarsViewUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF322926C1D37900EDA357 /* RatingStarsViewUIModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		26AF320D26C1BF8D00EDA357 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		26AF321526C1C0B900EDA357 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		26AF321B26C1C21A00EDA357 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		26AF322426C1D36800EDA357 /* RatingStarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStarsView.swift; sourceTree = "<group>"; };
+		26AF322926C1D37900EDA357 /* RatingStarsViewUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStarsViewUIModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,7 @@
 		26AF31DC26C197B600EDA357 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				26AF322326C1D32900EDA357 /* RatingStarsView */,
 				26AF31F226C1B7C800EDA357 /* CategoryCardView */,
 				26AF31E726C1993800EDA357 /* LabelWithImageView */,
 			);
@@ -249,6 +254,15 @@
 				26AF321B26C1C21A00EDA357 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		26AF322326C1D32900EDA357 /* RatingStarsView */ = {
+			isa = PBXGroup;
+			children = (
+				26AF322426C1D36800EDA357 /* RatingStarsView.swift */,
+				26AF322926C1D37900EDA357 /* RatingStarsViewUIModel.swift */,
+			);
+			path = RatingStarsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,7 +409,9 @@
 				2657E42626C0727D00C147CA /* ViewController.swift in Sources */,
 				2657E42226C0727D00C147CA /* AppDelegate.swift in Sources */,
 				26AF31EE26C1996600EDA357 /* LabelWithImageUIModel.swift in Sources */,
+				26AF322A26C1D37900EDA357 /* RatingStarsViewUIModel.swift in Sources */,
 				2657E42426C0727D00C147CA /* SceneDelegate.swift in Sources */,
+				26AF322526C1D36800EDA357 /* RatingStarsView.swift in Sources */,
 				26AF320626C1BED600EDA357 /* Constants.swift in Sources */,
 				26AF321C26C1C21A00EDA357 /* UIColor+Extension.swift in Sources */,
 			);

@@ -10,7 +10,7 @@ import FoodifyAPI
 
 class ViewController: UIViewController {
 
-    private let testView = CategoryCardView()
+    private let testView = RatingStarsView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         view.addSubview(testView)
         testView.translatesAutoresizingMaskIntoConstraints = false
         
-        let model = CategoryCardViewUIModel(labelWithImageViewModel: LabelWithImageUIModel(imageURL: "strawberry", labelText: "Dessert", isBoldText: true, isDarkText: true), isSelected: false)
+        let model = RatingStarsViewUIModel(count: 4)
         testView.setup(with: model)
         
         NSLayoutConstraint.activate([
