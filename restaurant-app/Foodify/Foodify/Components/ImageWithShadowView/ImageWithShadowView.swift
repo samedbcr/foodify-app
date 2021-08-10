@@ -20,12 +20,12 @@ final class ImageWithShadowView: UIView {
     }
 
     private func configure() {
+        translatesAutoresizingMaskIntoConstraints = false
         configureShadow()
         configureImageView()
     }
 
     private func configureShadow() {
-        backgroundColor = .clear
         layer.shadowColor = UIColor.appDarkGray.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 3)
         layer.shadowOpacity = 0.6
@@ -36,11 +36,11 @@ final class ImageWithShadowView: UIView {
     private func configureImageView() {
         addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalTo: widthAnchor),
-            imageView.heightAnchor.constraint(equalTo: widthAnchor),
+            imageView.heightAnchor.constraint(equalTo: heightAnchor),
         ])
     }
 

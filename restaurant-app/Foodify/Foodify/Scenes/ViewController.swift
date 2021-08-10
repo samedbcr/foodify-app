@@ -10,7 +10,7 @@ import FoodifyAPI
 
 class ViewController: UIViewController {
 
-    private let testView = ImageWithShadowView()
+    private let testView = PropertyView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +22,18 @@ class ViewController: UIViewController {
     private func configure() {
         view.addSubview(testView)
         testView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let model = ImageWithShadowViewUIModel(url: "chicken_meat_plate")
+
+        let model = PropertyViewUIModel(
+            title: "Protein",
+            labelWithImageViewModel: LabelWithImageUIModel(imageURL: "strawberry",
+                                                           labelText: "500g",
+                                                           isBoldText: false,
+                                                           isDarkText: false))
         testView.setup(with: model)
-        
+
         NSLayoutConstraint.activate([
             testView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
             testView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            testView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
         ])
     }
 

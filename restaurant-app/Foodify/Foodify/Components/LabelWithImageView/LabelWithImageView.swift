@@ -36,7 +36,7 @@ final class LabelWithImageView: UIView {
         stackView.axis = .horizontal
         stackView.distribution = .fill
         stackView.alignment = .center
-        stackView.spacing = 12
+        stackView.spacing = 10
 
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: topAnchor),
@@ -68,18 +68,18 @@ final class LabelWithImageView: UIView {
     }
 
     private func configureLabel() {
-        label.font = UIFont(name: Fonts.poppinsSemiBold, size: 14)
+        label.font = UIFont(name: Fonts.poppinsSemiBold, size: 13)
         label.textColor = .appDark
         stackView.addArrangedSubview(label)
     }
 
     func setup(with model: LabelWithImageUIModel) {
         if model.isBoldText == false {
-            label.font = UIFont(name: Fonts.poppinsMedium, size: 14)
+            label.font = UIFont(name: Fonts.poppinsMedium, size: 13)
         }
 
         if model.isDarkText == false {
-            label.textColor = .appLightGray
+            label.textColor = .appDarkGray
             imageViewContainer.backgroundColor = .appLightGray
         }
 
