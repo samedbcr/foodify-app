@@ -10,7 +10,7 @@ import FoodifyAPI
 
 class ViewController: UIViewController {
 
-    private let testView = PropertyView()
+    private let testView = SmallIconButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +23,7 @@ class ViewController: UIViewController {
         view.addSubview(testView)
         testView.translatesAutoresizingMaskIntoConstraints = false
 
-        let model = PropertyViewUIModel(
-            title: "Protein",
-            labelWithImageViewModel: LabelWithImageUIModel(imageURL: "strawberry",
-                                                           labelText: "500g",
-                                                           isBoldText: false,
-                                                           isDarkText: false))
+        let model = SmallIconButtonUIModel(icon: "minus", backgroundColor: "primary", iconColor: "appLightGray", radius: 6)
         testView.setup(with: model)
 
         NSLayoutConstraint.activate([

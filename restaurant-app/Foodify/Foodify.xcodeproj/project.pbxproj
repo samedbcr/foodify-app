@@ -35,6 +35,8 @@
 		26AF324626C29D9F00EDA357 /* VerticalInfoCardViewUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF324526C29D9F00EDA357 /* VerticalInfoCardViewUIModel.swift */; };
 		26AF324C26C2CC6E00EDA357 /* PropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF324B26C2CC6E00EDA357 /* PropertyView.swift */; };
 		26AF325126C2CC8A00EDA357 /* PropertyViewUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF325026C2CC8A00EDA357 /* PropertyViewUIModel.swift */; };
+		26AF325726C3001D00EDA357 /* SmallIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF325626C3001D00EDA357 /* SmallIconButton.swift */; };
+		26AF325C26C3003000EDA357 /* SmallIconButtonUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF325B26C3003000EDA357 /* SmallIconButtonUIModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		26AF324526C29D9F00EDA357 /* VerticalInfoCardViewUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalInfoCardViewUIModel.swift; sourceTree = "<group>"; };
 		26AF324B26C2CC6E00EDA357 /* PropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyView.swift; sourceTree = "<group>"; };
 		26AF325026C2CC8A00EDA357 /* PropertyViewUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyViewUIModel.swift; sourceTree = "<group>"; };
+		26AF325626C3001D00EDA357 /* SmallIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallIconButton.swift; sourceTree = "<group>"; };
+		26AF325B26C3003000EDA357 /* SmallIconButtonUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallIconButtonUIModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +184,7 @@
 		26AF31DC26C197B600EDA357 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				26AF325526C3000E00EDA357 /* SmallIconButtonView */,
 				26AF324A26C2CC2900EDA357 /* PropertyView */,
 				26AF323C26C29CCA00EDA357 /* VerticalInfoCardView */,
 				26AF322E26C2880A00EDA357 /* ImageWithShadowView */,
@@ -305,6 +310,15 @@
 				26AF325026C2CC8A00EDA357 /* PropertyViewUIModel.swift */,
 			);
 			path = PropertyView;
+			sourceTree = "<group>";
+		};
+		26AF325526C3000E00EDA357 /* SmallIconButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				26AF325626C3001D00EDA357 /* SmallIconButton.swift */,
+				26AF325B26C3003000EDA357 /* SmallIconButtonUIModel.swift */,
+			);
+			path = SmallIconButtonView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,8 +461,10 @@
 				2657E42C26C0727D00C147CA /* Foodify.xcdatamodeld in Sources */,
 				26AF31F426C1B7D800EDA357 /* CategoryCardView.swift in Sources */,
 				26AF324626C29D9F00EDA357 /* VerticalInfoCardViewUIModel.swift in Sources */,
+				26AF325726C3001D00EDA357 /* SmallIconButton.swift in Sources */,
 				26AF325126C2CC8A00EDA357 /* PropertyViewUIModel.swift in Sources */,
 				26AF323826C2885700EDA357 /* ImageWithShadowViewUIModel.swift in Sources */,
+				26AF325C26C3003000EDA357 /* SmallIconButtonUIModel.swift in Sources */,
 				26AF323E26C29D8200EDA357 /* VerticalInfoCardView.swift in Sources */,
 				26AF31E926C1995A00EDA357 /* LabelWithImageView.swift in Sources */,
 				26AF31F926C1B7F000EDA357 /* CategoryCardViewUIModel.swift in Sources */,
