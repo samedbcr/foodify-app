@@ -39,6 +39,7 @@
 		26AF325C26C3003000EDA357 /* SmallIconButtonUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF325B26C3003000EDA357 /* SmallIconButtonUIModel.swift */; };
 		26AF326826C30C9B00EDA357 /* IncreaseDecreaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF326726C30C9B00EDA357 /* IncreaseDecreaseView.swift */; };
 		26AF327026C30CB500EDA357 /* IncreaseDecreaseViewUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF326F26C30CB500EDA357 /* IncreaseDecreaseViewUIModel.swift */; };
+		26AF327626C31BFC00EDA357 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF327526C31BFC00EDA357 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		26AF325B26C3003000EDA357 /* SmallIconButtonUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallIconButtonUIModel.swift; sourceTree = "<group>"; };
 		26AF326726C30C9B00EDA357 /* IncreaseDecreaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseDecreaseView.swift; sourceTree = "<group>"; };
 		26AF326F26C30CB500EDA357 /* IncreaseDecreaseViewUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseDecreaseViewUIModel.swift; sourceTree = "<group>"; };
+		26AF327526C31BFC00EDA357 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 		26AF31DC26C197B600EDA357 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				26AF327426C31BE100EDA357 /* CustomButton */,
 				26AF326626C30C8E00EDA357 /* IncreaseDecreaseView */,
 				26AF325526C3000E00EDA357 /* SmallIconButtonView */,
 				26AF324A26C2CC2900EDA357 /* PropertyView */,
@@ -333,6 +336,14 @@
 				26AF326F26C30CB500EDA357 /* IncreaseDecreaseViewUIModel.swift */,
 			);
 			path = IncreaseDecreaseView;
+			sourceTree = "<group>";
+		};
+		26AF327426C31BE100EDA357 /* CustomButton */ = {
+			isa = PBXGroup;
+			children = (
+				26AF327526C31BFC00EDA357 /* CustomButton.swift */,
+			);
+			path = CustomButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -489,6 +500,7 @@
 				26AF323026C2883900EDA357 /* ImageWithShadowView.swift in Sources */,
 				2657E42426C0727D00C147CA /* SceneDelegate.swift in Sources */,
 				26AF322526C1D36800EDA357 /* RatingStarsView.swift in Sources */,
+				26AF327626C31BFC00EDA357 /* CustomButton.swift in Sources */,
 				26AF324C26C2CC6E00EDA357 /* PropertyView.swift in Sources */,
 				26AF326826C30C9B00EDA357 /* IncreaseDecreaseView.swift in Sources */,
 				26AF320626C1BED600EDA357 /* Constants.swift in Sources */,
