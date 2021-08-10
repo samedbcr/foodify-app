@@ -8,11 +8,11 @@
 import UIKit
 
 final class VerticalInfoCardView: UIView {
-    private let stackView = UIStackView()
     private let imageWithShadowView = ImageWithShadowView()
     private let titleLabel = UILabel()
     private let ratingStarsView = RatingStarsView()
     private let extraText = UILabel()
+    private var imageViewTopConstraint: NSLayoutConstraint!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,45 +24,66 @@ final class VerticalInfoCardView: UIView {
     }
 
     private func configure() {
-        backgroundColor = .systemGray4
-        configureStackView()
+        backgroundColor = .appMediumGray
+        layer.cornerRadius = 42
         configureImageWithShadowView()
         configureTitleLabel()
         configureRatingStarsView()
+        configureExtraTextLabel()
     }
 
-    private func configureStackView() {
-        addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.distribution = .equalCentering
-        stackView.alignment = .leading
-
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
-        ])
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        imageViewTopConstraint.constant = -imageWithShadowView.frame.height / 2
     }
 
     private func configureImageWithShadowView() {
-        stackView.addArrangedSubview(imageWithShadowView)
-        
-        //TODO
+        addSubview(imageWithShadowView)
+
+        imageViewTopConstraint = imageWithShadowView.topAnchor.constraint(equalTo: topAnchor, constant: -(imageWithShadowView.frame.height / 2))
         NSLayoutConstraint.activate([
-            imageWithShadowView.topAnchor.constraint(equalTo: topAnchor, constant: -imageWithShadowView.frame.size.height)
+            imageViewTopConstraint,
+            imageWithShadowView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            imageWithShadowView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            imageWithShadowView.heightAnchor.constraint(equalTo: widthAnchor)
         ])
     }
 
     private func configureTitleLabel() {
+        addSubview(titleLabel)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = UIFont(name: Fonts.poppinsSemiBold, size: 13)
         titleLabel.textColor = .primary
-        stackView.addArrangedSubview(titleLabel)
+
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: imageWithShadowView.bottomAnchor, constant: 8),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+        ])
     }
 
     private func configureRatingStarsView() {
-        stackView.addArrangedSubview(ratingStarsView)
+        addSubview(ratingStarsView)
+
+        NSLayoutConstraint.activate([
+            ratingStarsView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
+            ratingStarsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            ratingStarsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+        ])
+    }
+
+    private func configureExtraTextLabel() {
+        addSubview(extraText)
+        extraText.translatesAutoresizingMaskIntoConstraints = false
+        extraText.font = UIFont(name: Fonts.poppinsBold, size: 15)
+        extraText.textColor = .primary
+        extraText.textAlignment = .right
+
+        NSLayoutConstraint.activate([
+            extraText.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
+            extraText.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            extraText.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+        ])
     }
 
     func setup(with model: VerticalInfoCardViewUIModel) {

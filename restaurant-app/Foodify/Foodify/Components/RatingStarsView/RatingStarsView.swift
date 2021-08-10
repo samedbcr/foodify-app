@@ -20,6 +20,7 @@ final class RatingStarsView: UIView {
     }
 
     private func configure() {
+        translatesAutoresizingMaskIntoConstraints = false
         configureStackView()
     }
 
@@ -55,7 +56,7 @@ final class RatingStarsView: UIView {
         let emptyStarCount = 5 - count
 
         for _ in 0..<count {
-            stackView.addArrangedSubview(generateStarImageView(with: .appYellow))
+            stackView.addArrangedSubview(generateStarImageView(with: .orange))
         }
 
         for _ in 0..<emptyStarCount {
