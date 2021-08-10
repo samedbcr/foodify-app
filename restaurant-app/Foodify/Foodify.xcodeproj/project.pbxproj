@@ -29,6 +29,8 @@
 		26AF321C26C1C21A00EDA357 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF321B26C1C21A00EDA357 /* UIColor+Extension.swift */; };
 		26AF322526C1D36800EDA357 /* RatingStarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF322426C1D36800EDA357 /* RatingStarsView.swift */; };
 		26AF322A26C1D37900EDA357 /* RatingStarsViewUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF322926C1D37900EDA357 /* RatingStarsViewUIModel.swift */; };
+		26AF323026C2883900EDA357 /* ImageWithShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF322F26C2883900EDA357 /* ImageWithShadowView.swift */; };
+		26AF323826C2885700EDA357 /* ImageWithShadowViewUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF323726C2885700EDA357 /* ImageWithShadowViewUIModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		26AF321B26C1C21A00EDA357 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		26AF322426C1D36800EDA357 /* RatingStarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStarsView.swift; sourceTree = "<group>"; };
 		26AF322926C1D37900EDA357 /* RatingStarsViewUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStarsViewUIModel.swift; sourceTree = "<group>"; };
+		26AF322F26C2883900EDA357 /* ImageWithShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWithShadowView.swift; sourceTree = "<group>"; };
+		26AF323726C2885700EDA357 /* ImageWithShadowViewUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWithShadowViewUIModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,7 @@
 		26AF31DC26C197B600EDA357 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				26AF322E26C2880A00EDA357 /* ImageWithShadowView */,
 				26AF322326C1D32900EDA357 /* RatingStarsView */,
 				26AF31F226C1B7C800EDA357 /* CategoryCardView */,
 				26AF31E726C1993800EDA357 /* LabelWithImageView */,
@@ -263,6 +268,15 @@
 				26AF322926C1D37900EDA357 /* RatingStarsViewUIModel.swift */,
 			);
 			path = RatingStarsView;
+			sourceTree = "<group>";
+		};
+		26AF322E26C2880A00EDA357 /* ImageWithShadowView */ = {
+			isa = PBXGroup;
+			children = (
+				26AF322F26C2883900EDA357 /* ImageWithShadowView.swift */,
+				26AF323726C2885700EDA357 /* ImageWithShadowViewUIModel.swift */,
+			);
+			path = ImageWithShadowView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,12 +418,14 @@
 			files = (
 				2657E42C26C0727D00C147CA /* Foodify.xcdatamodeld in Sources */,
 				26AF31F426C1B7D800EDA357 /* CategoryCardView.swift in Sources */,
+				26AF323826C2885700EDA357 /* ImageWithShadowViewUIModel.swift in Sources */,
 				26AF31E926C1995A00EDA357 /* LabelWithImageView.swift in Sources */,
 				26AF31F926C1B7F000EDA357 /* CategoryCardViewUIModel.swift in Sources */,
 				2657E42626C0727D00C147CA /* ViewController.swift in Sources */,
 				2657E42226C0727D00C147CA /* AppDelegate.swift in Sources */,
 				26AF31EE26C1996600EDA357 /* LabelWithImageUIModel.swift in Sources */,
 				26AF322A26C1D37900EDA357 /* RatingStarsViewUIModel.swift in Sources */,
+				26AF323026C2883900EDA357 /* ImageWithShadowView.swift in Sources */,
 				2657E42426C0727D00C147CA /* SceneDelegate.swift in Sources */,
 				26AF322526C1D36800EDA357 /* RatingStarsView.swift in Sources */,
 				26AF320626C1BED600EDA357 /* Constants.swift in Sources */,
