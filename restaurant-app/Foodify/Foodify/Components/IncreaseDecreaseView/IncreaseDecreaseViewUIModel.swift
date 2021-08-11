@@ -8,7 +8,7 @@
 import Foundation
 
 struct IncreaseDecreaseViewUIModel {
-    let increaseButton: SmallIconButtonUIModel
     let decreaseButton: SmallIconButtonUIModel
     let text: String
+    let increaseButton: SmallIconButtonUIModel
 }

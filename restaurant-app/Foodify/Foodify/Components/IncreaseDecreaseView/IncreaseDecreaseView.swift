@@ -42,9 +42,9 @@ final class IncreaseDecreaseView: UIView {
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
-        stackView.addArrangedSubview(increaseButton)
-        stackView.addArrangedSubview(textLabel)
         stackView.addArrangedSubview(decreaseButton)
+        stackView.addArrangedSubview(textLabel)
+        stackView.addArrangedSubview(increaseButton)
     }
     
     private func configureTextLabel() {
