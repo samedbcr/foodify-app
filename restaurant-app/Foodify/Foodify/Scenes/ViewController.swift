@@ -11,6 +11,7 @@ import FoodifyAPI
 class ViewController: UIViewController {
 
     private let testView = CustomTextField()
+    private let testButton = CustomButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,24 @@ class ViewController: UIViewController {
             testView.widthAnchor.constraint(equalToConstant: view.frame.size.width - 64),
 //            testView.heightAnchor.constraint(equalToConstant: view.frame.size.width / 3),
         ])
+        
+        configureTestButton()
+    }
+
+    private func configureTestButton() {
+        view.addSubview(testButton)
+        testButton.setTitle("Test it ", for: .normal)
+        testButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+
+        NSLayoutConstraint.activate([
+            testButton.topAnchor.constraint(equalTo: testView.bottomAnchor, constant: 40),
+            testButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            testButton.widthAnchor.constraint(equalToConstant: view.frame.size.width - 64),
+        ])
+    }
+    
+    @objc private func buttonTapped() {
+        self.presentCustomAlert(alertTitle: "Succeed!", message: "Your order is taken successfully. Enjoy with your meal. Don't forget to rate it after you taste it!", buttonTitle: "OK")
     }
 
 }
