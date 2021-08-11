@@ -42,6 +42,8 @@
 		26AF327626C31BFC00EDA357 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF327526C31BFC00EDA357 /* CustomButton.swift */; };
 		26AF327C26C3C5EE00EDA357 /* HorizontalInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF327B26C3C5EE00EDA357 /* HorizontalInfoCardView.swift */; };
 		26AF328126C3C60F00EDA357 /* HorizontalInfoCardViewUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF328026C3C60F00EDA357 /* HorizontalInfoCardViewUIModel.swift */; };
+		26AF328726C3FAFA00EDA357 /* BasicTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF328626C3FAFA00EDA357 /* BasicTableRowView.swift */; };
+		26AF328F26C3FB1400EDA357 /* BasicTableRowViewUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF328E26C3FB1400EDA357 /* BasicTableRowViewUIModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,8 @@
 		26AF327526C31BFC00EDA357 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		26AF327B26C3C5EE00EDA357 /* HorizontalInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalInfoCardView.swift; sourceTree = "<group>"; };
 		26AF328026C3C60F00EDA357 /* HorizontalInfoCardViewUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalInfoCardViewUIModel.swift; sourceTree = "<group>"; };
+		26AF328626C3FAFA00EDA357 /* BasicTableRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTableRowView.swift; sourceTree = "<group>"; };
+		26AF328E26C3FB1400EDA357 /* BasicTableRowViewUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTableRowViewUIModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +198,7 @@
 		26AF31DC26C197B600EDA357 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				26AF328526C3FACD00EDA357 /* BasicTableRowView */,
 				26AF327A26C3C5D700EDA357 /* HorizontalInfoCardView */,
 				26AF327426C31BE100EDA357 /* CustomButton */,
 				26AF326626C30C8E00EDA357 /* IncreaseDecreaseView */,
@@ -360,6 +365,15 @@
 			path = HorizontalInfoCardView;
 			sourceTree = "<group>";
 		};
+		26AF328526C3FACD00EDA357 /* BasicTableRowView */ = {
+			isa = PBXGroup;
+			children = (
+				26AF328626C3FAFA00EDA357 /* BasicTableRowView.swift */,
+				26AF328E26C3FB1400EDA357 /* BasicTableRowViewUIModel.swift */,
+			);
+			path = BasicTableRowView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -508,6 +522,8 @@
 				26AF323E26C29D8200EDA357 /* VerticalInfoCardView.swift in Sources */,
 				26AF31E926C1995A00EDA357 /* LabelWithImageView.swift in Sources */,
 				26AF31F926C1B7F000EDA357 /* CategoryCardViewUIModel.swift in Sources */,
+				26AF328726C3FAFA00EDA357 /* BasicTableRowView.swift in Sources */,
+				26AF328F26C3FB1400EDA357 /* BasicTableRowViewUIModel.swift in Sources */,
 				2657E42626C0727D00C147CA /* ViewController.swift in Sources */,
 				2657E42226C0727D00C147CA /* AppDelegate.swift in Sources */,
 				26AF31EE26C1996600EDA357 /* LabelWithImageUIModel.swift in Sources */,
