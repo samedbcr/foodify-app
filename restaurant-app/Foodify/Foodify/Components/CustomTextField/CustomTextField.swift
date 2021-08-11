@@ -40,7 +40,8 @@ final class CustomTextField: UITextField {
     }
 
     func setup(with model: CustomTextFieldUIModel) {
-        placeholder = model.placeholder
+        attributedPlaceholder = NSAttributedString(string: model.placeholder,
+                                                   attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
 
         if let icon = model.iconName {
             rightViewMode = .always
