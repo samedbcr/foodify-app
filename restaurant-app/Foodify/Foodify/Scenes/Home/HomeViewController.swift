@@ -8,6 +8,8 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    private let scrollView = UIScrollView()
+    private let contentView = UIView()
     private let entryLabel = UILabel()
     private let categoryLabel = UILabel()
     private var categoriesCollectionView: UICollectionView!
@@ -27,14 +29,40 @@ class HomeViewController: UIViewController {
 
     private func configure() {
         view.backgroundColor = .white
+        configureScrollView()
+        configureContentView()
         configureEntryLabel()
         configureCategoryLabel()
         configureCategoriesCollectionView()
         configureProductsCollectionView()
     }
 
+    private func configureScrollView() {
+        view.addSubview(scrollView)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+    }
+
+    private func configureContentView() {
+        scrollView.addSubview(contentView)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            contentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
+        ])
+    }
+
     private func configureEntryLabel() {
-        view.addSubview(entryLabel)
+        contentView.addSubview(entryLabel)
         entryLabel.translatesAutoresizingMaskIntoConstraints = false
         entryLabel.text = "Let's find your favorite food!"
         entryLabel.textColor = .appDark
@@ -42,14 +70,14 @@ class HomeViewController: UIViewController {
         entryLabel.numberOfLines = 0
 
         NSLayoutConstraint.activate([
-            entryLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
+            entryLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24),
             entryLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
             entryLabel.widthAnchor.constraint(equalToConstant: view.frame.width * 0.7)
         ])
     }
 
     private func configureCategoryLabel() {
-        view.addSubview(categoryLabel)
+        contentView.addSubview(categoryLabel)
         categoryLabel.translatesAutoresizingMaskIntoConstraints = false
         categoryLabel.text = "Categories"
         categoryLabel.textColor = .appDark
@@ -64,7 +92,7 @@ class HomeViewController: UIViewController {
 
     private func configureCategoriesCollectionView() {
         categoriesCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UIHelper.createCategoriesFlowLayout())
-        view.addSubview(categoriesCollectionView)
+        contentView.addSubview(categoriesCollectionView)
         categoriesCollectionView.translatesAutoresizingMaskIntoConstraints = false
         categoriesCollectionView.showsHorizontalScrollIndicator = false
         categoriesCollectionView.backgroundColor = .white
@@ -83,7 +111,7 @@ class HomeViewController: UIViewController {
 
     private func configureProductsCollectionView() {
         productsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UIHelper.createTwoColumnsFlowLayout(in: view))
-        view.addSubview(productsCollectionView)
+        contentView.addSubview(productsCollectionView)
         productsCollectionView.translatesAutoresizingMaskIntoConstraints = false
         productsCollectionView.showsVerticalScrollIndicator = false
         productsCollectionView.backgroundColor = .white
@@ -95,7 +123,7 @@ class HomeViewController: UIViewController {
             productsCollectionView.topAnchor.constraint(equalTo: categoriesCollectionView.bottomAnchor, constant: 4),
             productsCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             productsCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            productsCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24)
+            productsCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24)
         ])
     }
 
@@ -145,6 +173,4 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         cell.setup(with: model)
         return cell
     }
-
-
 }
