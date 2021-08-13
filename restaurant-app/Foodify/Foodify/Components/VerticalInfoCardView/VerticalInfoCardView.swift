@@ -24,6 +24,7 @@ final class VerticalInfoCardView: UIView {
     }
 
     private func configure() {
+        translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .appMediumGray
         layer.cornerRadius = 42
         configureImageWithShadowView()
@@ -45,7 +46,7 @@ final class VerticalInfoCardView: UIView {
             imageViewTopConstraint,
             imageWithShadowView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             imageWithShadowView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            imageWithShadowView.heightAnchor.constraint(equalTo: widthAnchor)
+            imageWithShadowView.heightAnchor.constraint(equalTo: widthAnchor, constant: -40)
         ])
     }
 

@@ -53,6 +53,11 @@ final class RatingStarsView: UIView {
     }
 
     private func populateStarImageViews(count: Int) {
+        // Remove all arranged subviews from StackView
+        stackView.arrangedSubviews.forEach { view in
+            stackView.removeArrangedSubview(view)
+        }
+
         let emptyStarCount = 5 - count
 
         for _ in 0..<count {

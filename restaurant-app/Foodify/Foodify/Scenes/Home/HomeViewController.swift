@@ -11,6 +11,7 @@ class HomeViewController: UIViewController {
     private let entryLabel = UILabel()
     private let categoryLabel = UILabel()
     private var categoriesCollectionView: UICollectionView!
+    private var productsCollectionView: UICollectionView!
 
     var viewModel: HomeViewModelProtocol! {
         didSet {
@@ -29,6 +30,7 @@ class HomeViewController: UIViewController {
         configureEntryLabel()
         configureCategoryLabel()
         configureCategoriesCollectionView()
+        configureProductsCollectionView()
     }
 
     private func configureEntryLabel() {
@@ -79,6 +81,24 @@ class HomeViewController: UIViewController {
         ])
     }
 
+    private func configureProductsCollectionView() {
+        productsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UIHelper.createTwoColumnsFlowLayout(in: view))
+        view.addSubview(productsCollectionView)
+        productsCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        productsCollectionView.showsVerticalScrollIndicator = false
+        productsCollectionView.backgroundColor = .white
+        productsCollectionView.register(ProductCell.self, forCellWithReuseIdentifier: ProductCell.reuseId)
+        productsCollectionView.delegate = self
+        productsCollectionView.dataSource = self
+
+        NSLayoutConstraint.activate([
+            productsCollectionView.topAnchor.constraint(equalTo: categoriesCollectionView.bottomAnchor, constant: 4),
+            productsCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            productsCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            productsCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24)
+        ])
+    }
+
 }
 
 extension HomeViewController: HomeViewModelDelegate {
@@ -88,21 +108,40 @@ extension HomeViewController: HomeViewModelDelegate {
             categoriesCollectionView.reloadData()
         case .setLoading(let isLoading):
             print(isLoading)
+        case .reloadProductList:
+            productsCollectionView.reloadData()
         }
     }
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.categoriesCount
+        if collectionView == self.categoriesCollectionView {
+            return viewModel.categoriesCount
+        }
+        // Product Collection View
+        return viewModel.productsCount
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = categoriesCollectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.reuseId, for: indexPath) as! CategoryCell
-        let category = viewModel.categories[indexPath.row]
-        let model = CategoryCardViewUIModel(
-            labelWithImageViewModel: LabelWithImageUIModel(imageURL: category.imagePath, labelText: category.name, isBoldText: true, isDarkText: true),
-            isSelected: false)
+        if collectionView == self.categoriesCollectionView {
+            let cell = categoriesCollectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.reuseId, for: indexPath) as! CategoryCell
+            let category = viewModel.categories[indexPath.row]
+            let model = CategoryCardViewUIModel(
+                labelWithImageViewModel: LabelWithImageUIModel(imageURL: category.imagePath, labelText: category.name, isBoldText: true, isDarkText: true),
+                isSelected: false)
+            cell.setup(with: model)
+            return cell
+        }
+
+        // Product Collection View
+        let cell = productsCollectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.reuseId, for: indexPath) as! ProductCell
+        let product = viewModel.products[indexPath.row]
+        let model = VerticalInfoCardViewUIModel(
+            imageWithShadowViewModel: ImageWithShadowViewUIModel(url: product.imagePath),
+            title: product.name,
+            ratingStarsViewModel: RatingStarsViewUIModel(count: product.ratingCount),
+            extraText: "$\(Int(product.price))")
         cell.setup(with: model)
         return cell
     }

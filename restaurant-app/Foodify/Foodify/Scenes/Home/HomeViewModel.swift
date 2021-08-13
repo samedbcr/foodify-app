@@ -10,11 +10,15 @@ import FoodifyAPI
 
 final class HomeViewModel {
     weak var delegate: HomeViewModelDelegate?
-    private let categoryService: CategoryServiceProtocol
     var categories = [FoodifyAPI.Category]()
+    var products = [Product]()
 
-    init(categoryService: CategoryServiceProtocol) {
+    private let categoryService: CategoryServiceProtocol
+    private let productService: ProductServiceProtocol
+
+    init(categoryService: CategoryServiceProtocol, productService: ProductServiceProtocol) {
         self.categoryService = categoryService
+        self.productService = productService
     }
 
     private func notify(_ output: HomeViewModelOutput) {
@@ -28,6 +32,10 @@ extension HomeViewModel: HomeViewModelProtocol {
         categories.count
     }
 
+    var productsCount: Int {
+        products.count
+    }
+
     func load() {
         categoryService.fetchCategories { [weak self] result in
             guard let self = self else { return }
@@ -39,9 +47,24 @@ extension HomeViewModel: HomeViewModelProtocol {
                 print("error: \(error)")
             }
         }
+
+        productService.fetchProducts { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let products):
+                self.products = products
+                self.notify(.reloadProductList)
+            case .failure(let error):
+                print("error: \(error)")
+            }
+        }
     }
 
     func selectCategory(at index: Int) {
+        // TODO
+    }
+
+    func selectProduct(at index: Int) {
         // TODO
     }
 }

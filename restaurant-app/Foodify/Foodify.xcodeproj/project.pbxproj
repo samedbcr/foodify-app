@@ -53,6 +53,7 @@
 		26AF32BE26C5A84300EDA357 /* HomeContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF32BD26C5A84300EDA357 /* HomeContracts.swift */; };
 		26AF32C326C5C5E900EDA357 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF32C226C5C5E900EDA357 /* UIHelper.swift */; };
 		26AF32CA26C5C7B900EDA357 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF32C926C5C7B900EDA357 /* CategoryCell.swift */; };
+		26AF32D526C6967A00EDA357 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF32D426C6967A00EDA357 /* ProductCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		26AF32BD26C5A84300EDA357 /* HomeContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContracts.swift; sourceTree = "<group>"; };
 		26AF32C226C5C5E900EDA357 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		26AF32C926C5C7B900EDA357 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		26AF32D426C6967A00EDA357 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -428,17 +430,10 @@
 		26AF32C726C5C79D00EDA357 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				26AF32C826C5C7A000EDA357 /* CategoryCell */,
+				26AF32C926C5C7B900EDA357 /* CategoryCell.swift */,
+				26AF32D426C6967A00EDA357 /* ProductCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		26AF32C826C5C7A000EDA357 /* CategoryCell */ = {
-			isa = PBXGroup;
-			children = (
-				26AF32C926C5C7B900EDA357 /* CategoryCell.swift */,
-			);
-			path = CategoryCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -582,6 +577,7 @@
 				26AF32B926C5A3D800EDA357 /* HomeViewModel.swift in Sources */,
 				2657E42C26C0727D00C147CA /* Foodify.xcdatamodeld in Sources */,
 				26AF31F426C1B7D800EDA357 /* CategoryCardView.swift in Sources */,
+				26AF32D526C6967A00EDA357 /* ProductCell.swift in Sources */,
 				26AF32AB26C46B2C00EDA357 /* UIViewController+Ext.swift in Sources */,
 				26AF327C26C3C5EE00EDA357 /* HorizontalInfoCardView.swift in Sources */,
 				26AF324626C29D9F00EDA357 /* VerticalInfoCardViewUIModel.swift in Sources */,

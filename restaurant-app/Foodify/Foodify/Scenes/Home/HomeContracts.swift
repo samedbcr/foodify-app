@@ -11,14 +11,18 @@ import FoodifyAPI
 protocol HomeViewModelProtocol {
     var delegate: HomeViewModelDelegate? { get set }
     var categories: [FoodifyAPI.Category] { get }
+    var products: [Product] { get }
     var categoriesCount: Int { get }
+    var productsCount: Int { get }
     func load()
     func selectCategory(at index: Int)
+    func selectProduct(at index: Int)
 }
 
 enum HomeViewModelOutput {
     case setLoading(Bool)
     case reloadCategoryList
+    case reloadProductList
 }
 
 protocol HomeViewModelDelegate: AnyObject {

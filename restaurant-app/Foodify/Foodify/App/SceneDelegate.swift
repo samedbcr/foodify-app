@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         let viewController = HomeViewController()
-        let viewModel = HomeViewModel(categoryService: CategoryService())
+        let viewModel = HomeViewModel(categoryService: CategoryService(), productService: ProductService())
         viewController.viewModel = viewModel
 
         window = UIWindow(windowScene: windowScene)

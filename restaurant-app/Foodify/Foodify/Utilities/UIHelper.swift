@@ -19,5 +19,21 @@ struct UIHelper {
 
         return flowLayout
     }
+
+    static func createTwoColumnsFlowLayout(in view: UIView) -> UICollectionViewFlowLayout {
+        let width = view.frame.width
+        let padding: CGFloat = 20
+        let minimumItemSpacing: CGFloat = 20
+        let availableWidth = width - (padding * 2) - minimumItemSpacing
+        let itemSize = availableWidth / 2
+        let imageOverflowSize = (itemSize - 40) / 2
+
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.sectionInset = UIEdgeInsets(top: imageOverflowSize + 10, left: padding, bottom: padding, right: padding)
+        flowLayout.minimumLineSpacing = imageOverflowSize + 12
+        flowLayout.itemSize = CGSize(width: itemSize, height: itemSize) // 1:1 ratio
+
+        return flowLayout
+    }
 }
 
