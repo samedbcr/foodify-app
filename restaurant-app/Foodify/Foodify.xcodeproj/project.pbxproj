@@ -54,6 +54,9 @@
 		26AF32C326C5C5E900EDA357 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF32C226C5C5E900EDA357 /* UIHelper.swift */; };
 		26AF32CA26C5C7B900EDA357 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF32C926C5C7B900EDA357 /* CategoryCell.swift */; };
 		26AF32D526C6967A00EDA357 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF32D426C6967A00EDA357 /* ProductCell.swift */; };
+		26AF32DB26C71E3800EDA357 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF32DA26C71E3800EDA357 /* ProductDetailViewController.swift */; };
+		26AF32E326C71E4800EDA357 /* ProductDetailVievModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF32E226C71E4800EDA357 /* ProductDetailVievModel.swift */; };
+		26AF32E826C71E5200EDA357 /* ProductDetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF32E726C71E5200EDA357 /* ProductDetailContracts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +129,9 @@
 		26AF32C226C5C5E900EDA357 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		26AF32C926C5C7B900EDA357 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		26AF32D426C6967A00EDA357 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		26AF32DA26C71E3800EDA357 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		26AF32E226C71E4800EDA357 /* ProductDetailVievModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVievModel.swift; sourceTree = "<group>"; };
+		26AF32E726C71E5200EDA357 /* ProductDetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailContracts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +272,7 @@
 		26AF31E326C1980A00EDA357 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				26AF32D926C71E2200EDA357 /* ProductDetail */,
 				26AF32AF26C5A3B400EDA357 /* Home */,
 				2657E42526C0727D00C147CA /* ViewController.swift */,
 			);
@@ -436,6 +443,16 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		26AF32D926C71E2200EDA357 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				26AF32DA26C71E3800EDA357 /* ProductDetailViewController.swift */,
+				26AF32E226C71E4800EDA357 /* ProductDetailVievModel.swift */,
+				26AF32E726C71E5200EDA357 /* ProductDetailContracts.swift */,
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -585,6 +602,7 @@
 				26AF325126C2CC8A00EDA357 /* PropertyViewUIModel.swift in Sources */,
 				26AF323826C2885700EDA357 /* ImageWithShadowViewUIModel.swift in Sources */,
 				26AF325C26C3003000EDA357 /* SmallIconButtonUIModel.swift in Sources */,
+				26AF32E826C71E5200EDA357 /* ProductDetailContracts.swift in Sources */,
 				26AF323E26C29D8200EDA357 /* VerticalInfoCardView.swift in Sources */,
 				26AF31E926C1995A00EDA357 /* LabelWithImageView.swift in Sources */,
 				26AF32C326C5C5E900EDA357 /* UIHelper.swift in Sources */,
@@ -601,6 +619,7 @@
 				26AF322A26C1D37900EDA357 /* RatingStarsViewUIModel.swift in Sources */,
 				26AF329D26C3FF4B00EDA357 /* CustomTextFieldUIModel.swift in Sources */,
 				26AF323026C2883900EDA357 /* ImageWithShadowView.swift in Sources */,
+				26AF32E326C71E4800EDA357 /* ProductDetailVievModel.swift in Sources */,
 				2657E42426C0727D00C147CA /* SceneDelegate.swift in Sources */,
 				26AF322526C1D36800EDA357 /* RatingStarsView.swift in Sources */,
 				26AF327626C31BFC00EDA357 /* CustomButton.swift in Sources */,
@@ -608,6 +627,7 @@
 				26AF32B126C5A3CC00EDA357 /* HomeViewController.swift in Sources */,
 				26AF326826C30C9B00EDA357 /* IncreaseDecreaseView.swift in Sources */,
 				26AF320626C1BED600EDA357 /* Constants.swift in Sources */,
+				26AF32DB26C71E3800EDA357 /* ProductDetailViewController.swift in Sources */,
 				26AF327026C30CB500EDA357 /* IncreaseDecreaseViewUIModel.swift in Sources */,
 				26AF321C26C1C21A00EDA357 /* UIColor+Extension.swift in Sources */,
 			);
