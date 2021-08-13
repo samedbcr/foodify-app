@@ -51,6 +51,8 @@
 		26AF32B126C5A3CC00EDA357 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF32B026C5A3CC00EDA357 /* HomeViewController.swift */; };
 		26AF32B926C5A3D800EDA357 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF32B826C5A3D800EDA357 /* HomeViewModel.swift */; };
 		26AF32BE26C5A84300EDA357 /* HomeContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF32BD26C5A84300EDA357 /* HomeContracts.swift */; };
+		26AF32C326C5C5E900EDA357 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF32C226C5C5E900EDA357 /* UIHelper.swift */; };
+		26AF32CA26C5C7B900EDA357 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF32C926C5C7B900EDA357 /* CategoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +122,8 @@
 		26AF32B026C5A3CC00EDA357 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		26AF32B826C5A3D800EDA357 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		26AF32BD26C5A84300EDA357 /* HomeContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContracts.swift; sourceTree = "<group>"; };
+		26AF32C226C5C5E900EDA357 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		26AF32C926C5C7B900EDA357 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +216,7 @@
 		26AF31DC26C197B600EDA357 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				26AF32C726C5C79D00EDA357 /* Cells */,
 				26AF32A126C464AB00EDA357 /* CustomAlertVC */,
 				26AF329326C3FF2700EDA357 /* CustomTextField */,
 				26AF328526C3FACD00EDA357 /* BasicTableRowView */,
@@ -299,6 +304,7 @@
 			children = (
 				26AF321A26C1C20700EDA357 /* Extensions */,
 				26AF320526C1BED600EDA357 /* Constants.swift */,
+				26AF32C226C5C5E900EDA357 /* UIHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -417,6 +423,22 @@
 				26AF32BD26C5A84300EDA357 /* HomeContracts.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		26AF32C726C5C79D00EDA357 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				26AF32C826C5C7A000EDA357 /* CategoryCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		26AF32C826C5C7A000EDA357 /* CategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				26AF32C926C5C7B900EDA357 /* CategoryCell.swift */,
+			);
+			path = CategoryCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -569,6 +591,7 @@
 				26AF325C26C3003000EDA357 /* SmallIconButtonUIModel.swift in Sources */,
 				26AF323E26C29D8200EDA357 /* VerticalInfoCardView.swift in Sources */,
 				26AF31E926C1995A00EDA357 /* LabelWithImageView.swift in Sources */,
+				26AF32C326C5C5E900EDA357 /* UIHelper.swift in Sources */,
 				26AF31F926C1B7F000EDA357 /* CategoryCardViewUIModel.swift in Sources */,
 				26AF328726C3FAFA00EDA357 /* BasicTableRowView.swift in Sources */,
 				26AF328F26C3FB1400EDA357 /* BasicTableRowViewUIModel.swift in Sources */,
@@ -578,6 +601,7 @@
 				26AF31EE26C1996600EDA357 /* LabelWithImageUIModel.swift in Sources */,
 				26AF328126C3C60F00EDA357 /* HorizontalInfoCardViewUIModel.swift in Sources */,
 				26AF32A326C464BB00EDA357 /* CustomAlertVC.swift in Sources */,
+				26AF32CA26C5C7B900EDA357 /* CategoryCell.swift in Sources */,
 				26AF322A26C1D37900EDA357 /* RatingStarsViewUIModel.swift in Sources */,
 				26AF329D26C3FF4B00EDA357 /* CustomTextFieldUIModel.swift in Sources */,
 				26AF323026C2883900EDA357 /* ImageWithShadowView.swift in Sources */,

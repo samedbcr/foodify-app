@@ -20,6 +20,7 @@ class CategoryCardView: UIView {
     }
 
     private func configure() {
+        translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .appLightGray
         layer.cornerRadius = 24
         configureLabelWithImageView()

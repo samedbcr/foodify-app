@@ -79,7 +79,7 @@ final class LabelWithImageView: UIView {
         }
 
         if model.isDarkText == false {
-            label.textColor = .appDarkGray
+            label.textColor = .appMediumGray
             imageViewContainer.backgroundColor = .appLightGray
         }
 
