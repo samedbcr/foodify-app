@@ -25,7 +25,6 @@ final class ProductDetailViewModel {
 }
 
 extension ProductDetailViewModel: ProductDetailViewModelProtocol {
-
     func load() {
         service.fetchProduct(with: 5) { [weak self] result in
             guard let self = self else { return }
@@ -38,4 +37,18 @@ extension ProductDetailViewModel: ProductDetailViewModelProtocol {
             }
         }
     }
+
+    func generatePropertiesUIModel() -> PropertiesStackViewUIModel? {
+        var models = [PropertyViewUIModel]()
+
+        if let ingredients = product?.ingredients {
+            ingredients.forEach {
+                let propertyViewUIModel = PropertyViewUIModel(title: $0.name, labelWithImageViewModel: LabelWithImageUIModel(imageURL: $0.imagePath, labelText: "\($0.value)g", isBoldText: true, isDarkText: true))
+                models.append(propertyViewUIModel)
+            }
+        }
+
+        return PropertiesStackViewUIModel(properties: models)
+    }
+
 }

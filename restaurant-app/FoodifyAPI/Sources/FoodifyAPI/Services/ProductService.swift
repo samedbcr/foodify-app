@@ -16,8 +16,8 @@ public class ProductService: ProductServiceProtocol {
 
     static let mockIngredients: [Ingredient] = {
         let ingredient1 = Ingredient(name: "Protein", imagePath: "strawberry", value: 52)
-        let ingredient2 = Ingredient(name: "Fat", imagePath: "strawberry", value: 42)
-        let ingredient3 = Ingredient(name: "Carb", imagePath: "strawberry", value: 24)
+        let ingredient2 = Ingredient(name: "Fat", imagePath: "pizza", value: 42)
+        let ingredient3 = Ingredient(name: "Carb", imagePath: "hamburger", value: 24)
         let ingredients = [ingredient1, ingredient2, ingredient3]
         return ingredients
     }()

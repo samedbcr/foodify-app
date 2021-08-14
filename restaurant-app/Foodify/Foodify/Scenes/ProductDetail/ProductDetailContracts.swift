@@ -12,6 +12,7 @@ protocol ProductDetailViewModelProtocol {
     var delegate: ProductDetailViewModelDelegate? { get set }
     var product: Product? { get }
     func load()
+    func generatePropertiesUIModel() -> PropertiesStackViewUIModel?
 }
 
 enum ProductDetailViewModelOutput {

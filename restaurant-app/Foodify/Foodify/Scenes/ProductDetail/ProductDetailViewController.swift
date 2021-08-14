@@ -15,6 +15,11 @@ class ProductDetailViewController: UIViewController {
     private let titleLabel = UILabel()
     private let priceLabel = UILabel()
     private let propertiesStackView = PropertiesStackView()
+    private let descriptionsTitleLabel = UILabel()
+    private let descriptionLabel = UILabel()
+    private let footerStackView = UIStackView()
+    private let increaseDecreaseView = IncreaseDecreaseView()
+    private let addButton = CustomButton()
 
     var viewModel: ProductDetailViewModelProtocol! {
         didSet {
@@ -35,6 +40,9 @@ class ProductDetailViewController: UIViewController {
         configureTitleLabel()
         configurePriceLabel()
         configurePropertiesStackView()
+        configureDescriptionsTitleLabel()
+        configureDescriptionLabel()
+        configureFooterStackView()
     }
 
     private func configureImageViewContainer() {
@@ -123,7 +131,7 @@ class ProductDetailViewController: UIViewController {
     }
 
     private func configurePropertiesStackView() {
-        view.addSubview(propertiesStackView)
+        bottomContainerView.addSubview(propertiesStackView)
         let firstProperty = PropertyViewUIModel(title: "Carb", labelWithImageViewModel: LabelWithImageUIModel(imageURL: "strawberry", labelText: "180g", isBoldText: false, isDarkText: true))
         let secondProperty = PropertyViewUIModel(title: "Protein", labelWithImageViewModel: LabelWithImageUIModel(imageURL: "strawberry", labelText: "20g", isBoldText: false, isDarkText: true))
         let thirdProperty = PropertyViewUIModel(title: "Fat", labelWithImageViewModel: LabelWithImageUIModel(imageURL: "strawberry", labelText: "30g", isBoldText: false, isDarkText: true))
@@ -136,16 +144,92 @@ class ProductDetailViewController: UIViewController {
         ])
     }
 
+    private func configureDescriptionsTitleLabel() {
+        bottomContainerView.addSubview(descriptionsTitleLabel)
+        descriptionsTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        descriptionsTitleLabel.text = "Description".uppercased()
+        descriptionsTitleLabel.font = UIFont(name: Fonts.poppinsMedium, size: 16)
+        descriptionsTitleLabel.textColor = .appDarkGray
+
+        NSLayoutConstraint.activate([
+            descriptionsTitleLabel.topAnchor.constraint(equalTo: propertiesStackView.bottomAnchor, constant: 20),
+            descriptionsTitleLabel.leadingAnchor.constraint(equalTo: bottomContainerView.leadingAnchor, constant: 24),
+            descriptionsTitleLabel.trailingAnchor.constraint(equalTo: bottomContainerView.trailingAnchor, constant: -24),
+
+        ])
+    }
+
+    private func configureDescriptionLabel() {
+        bottomContainerView.addSubview(descriptionLabel)
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        descriptionLabel.text = "Hello world this is an amazin meat that made in Turkey. Please try it and don't forget to give a feedback about its taste and delivery quality!"
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.font = UIFont(name: Fonts.poppinsMedium, size: 15)
+        descriptionLabel.textColor = .systemGray
+
+        NSLayoutConstraint.activate([
+            descriptionLabel.topAnchor.constraint(equalTo: descriptionsTitleLabel.bottomAnchor, constant: 8),
+            descriptionLabel.leadingAnchor.constraint(equalTo: bottomContainerView.leadingAnchor, constant: 24),
+            descriptionLabel.trailingAnchor.constraint(equalTo: bottomContainerView.trailingAnchor, constant: -24),
+
+        ])
+    }
+
+    private func configureFooterStackView() {
+        view.addSubview(footerStackView)
+        footerStackView.translatesAutoresizingMaskIntoConstraints = false
+        footerStackView.axis = .horizontal
+        footerStackView.distribution = .fillEqually
+        footerStackView.alignment = .center
+        footerStackView.spacing = 32
+
+        increaseDecreaseView.setup(with: IncreaseDecreaseViewUIModel(
+            decreaseButton: SmallIconButtonUIModel(
+                icon: "minus",
+                backgroundColor: "appDarkGray",
+                iconColor: "appLightGray",
+                radius: 6),
+            text: "1",
+            increaseButton: SmallIconButtonUIModel(
+                icon: "plus",
+                backgroundColor: "primary",
+                iconColor: "appLightGray",
+                radius: 6)))
+
+        addButton.setTitle("Add to cart", for: .normal)
+        footerStackView.addArrangedSubview(increaseDecreaseView)
+        footerStackView.addArrangedSubview(addButton)
+
+        NSLayoutConstraint.activate([
+            footerStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            footerStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.68),
+            footerStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+    }
+
 }
 
 extension ProductDetailViewController: ProductDetailViewModelDelegate {
     func handleViewOutput(_ output: ProductDetailViewModelOutput) {
         switch output {
         case .reload:
-            break
-//            print(viewModel.product ?? "empty data")
+            if let product = viewModel.product {
+                imageWithShadowView.setup(with: ImageWithShadowViewUIModel(url: product.imagePath))
+                titleLabel.text = product.name
+                priceLabel.text = "$\(Int(product.price))"
+                descriptionLabel.text = product.description
+//                propertiesStackView.setup(with: PropertiesStackViewUIModel(properties: product.ingredients))
+            }
+
+            if let propertiesModel = viewModel.generatePropertiesUIModel() {
+                propertiesStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+                propertiesStackView.setup(with: propertiesModel)
+            }
         case .setLoading(let isLoading):
             print(isLoading)
         }
     }
+
+
 }
+

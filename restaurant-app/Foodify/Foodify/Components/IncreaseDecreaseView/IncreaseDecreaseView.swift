@@ -23,6 +23,7 @@ final class IncreaseDecreaseView: UIView {
     }
 
     private func configure() {
+        translatesAutoresizingMaskIntoConstraints = false
         configureStackView()
         configureTextLabel()
     }
