@@ -11,7 +11,7 @@ import FoodifyAPI
 protocol ProductDetailViewModelProtocol {
     var delegate: ProductDetailViewModelDelegate? { get set }
     var product: Product? { get }
-    func load()
+    func load(id: Int?)
     func generatePropertiesUIModel() -> PropertiesStackViewUIModel?
 }
 

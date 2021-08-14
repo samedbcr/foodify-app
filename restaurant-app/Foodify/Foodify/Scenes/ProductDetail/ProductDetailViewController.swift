@@ -8,6 +8,7 @@
 import UIKit
 
 class ProductDetailViewController: UIViewController {
+    var productId: Int?
     private let imageViewContainer = UIView()
     private let imageWithShadowView = ImageWithShadowView()
     private let bottomContainerView = UIView()
@@ -30,7 +31,8 @@ class ProductDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        viewModel.load()
+        // TODO: send productId
+        viewModel.load(id: 5)
     }
 
     private func configure() {

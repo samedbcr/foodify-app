@@ -25,8 +25,9 @@ final class ProductDetailViewModel {
 }
 
 extension ProductDetailViewModel: ProductDetailViewModelProtocol {
-    func load() {
-        service.fetchProduct(with: 5) { [weak self] result in
+    func load(id: Int?) {
+        guard let id = id else { return }
+        service.fetchProduct(with: id) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let product):
