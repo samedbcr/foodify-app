@@ -57,6 +57,9 @@
 		26AF32DB26C71E3800EDA357 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF32DA26C71E3800EDA357 /* ProductDetailViewController.swift */; };
 		26AF32E326C71E4800EDA357 /* ProductDetailVievModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF32E226C71E4800EDA357 /* ProductDetailVievModel.swift */; };
 		26AF32E826C71E5200EDA357 /* ProductDetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF32E726C71E5200EDA357 /* ProductDetailContracts.swift */; };
+		26AF32FF26C8253E00EDA357 /* PropertiesStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF32FE26C8253E00EDA357 /* PropertiesStackView.swift */; };
+		26AF330426C8255200EDA357 /* PropertiesStackViewUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF330326C8255200EDA357 /* PropertiesStackViewUIModel.swift */; };
+		26AF330926C833B800EDA357 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF330826C833B800EDA357 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +135,9 @@
 		26AF32DA26C71E3800EDA357 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		26AF32E226C71E4800EDA357 /* ProductDetailVievModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVievModel.swift; sourceTree = "<group>"; };
 		26AF32E726C71E5200EDA357 /* ProductDetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailContracts.swift; sourceTree = "<group>"; };
+		26AF32FE26C8253E00EDA357 /* PropertiesStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesStackView.swift; sourceTree = "<group>"; };
+		26AF330326C8255200EDA357 /* PropertiesStackViewUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesStackViewUIModel.swift; sourceTree = "<group>"; };
+		26AF330826C833B800EDA357 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +230,7 @@
 		26AF31DC26C197B600EDA357 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				26AF32F226C824D300EDA357 /* PropertyStackView */,
 				26AF32C726C5C79D00EDA357 /* Cells */,
 				26AF32A126C464AB00EDA357 /* CustomAlertVC */,
 				26AF329326C3FF2700EDA357 /* CustomTextField */,
@@ -323,6 +330,7 @@
 			children = (
 				26AF321B26C1C21A00EDA357 /* UIColor+Extension.swift */,
 				26AF32AA26C46B2C00EDA357 /* UIViewController+Ext.swift */,
+				26AF330826C833B800EDA357 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -451,6 +459,15 @@
 				26AF32E726C71E5200EDA357 /* ProductDetailContracts.swift */,
 			);
 			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		26AF32F226C824D300EDA357 /* PropertyStackView */ = {
+			isa = PBXGroup;
+			children = (
+				26AF32FE26C8253E00EDA357 /* PropertiesStackView.swift */,
+				26AF330326C8255200EDA357 /* PropertiesStackViewUIModel.swift */,
+			);
+			path = PropertyStackView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -598,7 +615,9 @@
 				26AF32AB26C46B2C00EDA357 /* UIViewController+Ext.swift in Sources */,
 				26AF327C26C3C5EE00EDA357 /* HorizontalInfoCardView.swift in Sources */,
 				26AF324626C29D9F00EDA357 /* VerticalInfoCardViewUIModel.swift in Sources */,
+				26AF330926C833B800EDA357 /* UIView+Extension.swift in Sources */,
 				26AF325726C3001D00EDA357 /* SmallIconButton.swift in Sources */,
+				26AF32FF26C8253E00EDA357 /* PropertiesStackView.swift in Sources */,
 				26AF325126C2CC8A00EDA357 /* PropertyViewUIModel.swift in Sources */,
 				26AF323826C2885700EDA357 /* ImageWithShadowViewUIModel.swift in Sources */,
 				26AF325C26C3003000EDA357 /* SmallIconButtonUIModel.swift in Sources */,
@@ -627,6 +646,7 @@
 				26AF32B126C5A3CC00EDA357 /* HomeViewController.swift in Sources */,
 				26AF326826C30C9B00EDA357 /* IncreaseDecreaseView.swift in Sources */,
 				26AF320626C1BED600EDA357 /* Constants.swift in Sources */,
+				26AF330426C8255200EDA357 /* PropertiesStackViewUIModel.swift in Sources */,
 				26AF32DB26C71E3800EDA357 /* ProductDetailViewController.swift in Sources */,
 				26AF327026C30CB500EDA357 /* IncreaseDecreaseViewUIModel.swift in Sources */,
 				26AF321C26C1C21A00EDA357 /* UIColor+Extension.swift in Sources */,

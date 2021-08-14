@@ -22,6 +22,7 @@ final class PropertyView: UIView {
     }
 
     private func configure() {
+        translatesAutoresizingMaskIntoConstraints = false
         configureStackView()
         configureTitleLabel()
         configureLabelWithImageView()

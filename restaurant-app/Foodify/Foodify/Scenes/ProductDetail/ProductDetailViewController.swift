@@ -14,6 +14,7 @@ class ProductDetailViewController: UIViewController {
     private let titleStackView = UIStackView()
     private let titleLabel = UILabel()
     private let priceLabel = UILabel()
+    private let propertiesStackView = PropertiesStackView()
 
     var viewModel: ProductDetailViewModelProtocol! {
         didSet {
@@ -33,6 +34,7 @@ class ProductDetailViewController: UIViewController {
         configureTitleStackView()
         configureTitleLabel()
         configurePriceLabel()
+        configurePropertiesStackView()
     }
 
     private func configureImageViewContainer() {
@@ -118,6 +120,20 @@ class ProductDetailViewController: UIViewController {
         priceLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
 
         titleStackView.addArrangedSubview(priceLabel)
+    }
+
+    private func configurePropertiesStackView() {
+        view.addSubview(propertiesStackView)
+        let firstProperty = PropertyViewUIModel(title: "Carb", labelWithImageViewModel: LabelWithImageUIModel(imageURL: "strawberry", labelText: "180g", isBoldText: false, isDarkText: true))
+        let secondProperty = PropertyViewUIModel(title: "Protein", labelWithImageViewModel: LabelWithImageUIModel(imageURL: "strawberry", labelText: "20g", isBoldText: false, isDarkText: true))
+        let thirdProperty = PropertyViewUIModel(title: "Fat", labelWithImageViewModel: LabelWithImageUIModel(imageURL: "strawberry", labelText: "30g", isBoldText: false, isDarkText: true))
+        propertiesStackView.setup(with: PropertiesStackViewUIModel(properties: [firstProperty, secondProperty, thirdProperty]))
+
+        NSLayoutConstraint.activate([
+            propertiesStackView.topAnchor.constraint(equalTo: titleStackView.bottomAnchor, constant: 20),
+            propertiesStackView.leadingAnchor.constraint(equalTo: bottomContainerView.leadingAnchor, constant: 24),
+            propertiesStackView.trailingAnchor.constraint(equalTo: bottomContainerView.trailingAnchor, constant: -24),
+        ])
     }
 
 }
