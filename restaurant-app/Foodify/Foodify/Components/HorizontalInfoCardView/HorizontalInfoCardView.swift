@@ -102,7 +102,10 @@ final class HorizontalInfoCardView: UIView {
         imageWithShadowView.setup(with: model.imageWithShadowViewModel)
         titleLabel.text = model.title
         descriptionLabel.text = model.description
-        increaseDecreaseView.setup(with: model.increaseDecreaseViewModel)
         extraText.text = model.extraText
+        
+        if let increaseDecreaseViewModel = model.increaseDecreaseViewModel {
+            increaseDecreaseView.setup(with: increaseDecreaseViewModel)
+        }
     }
 }

@@ -11,6 +11,6 @@ struct HorizontalInfoCardViewUIModel {
     let imageWithShadowViewModel: ImageWithShadowViewUIModel
     let title: String
     let description: String
-    let increaseDecreaseViewModel: IncreaseDecreaseViewUIModel
+    let increaseDecreaseViewModel: IncreaseDecreaseViewUIModel?
     let extraText: String
 }

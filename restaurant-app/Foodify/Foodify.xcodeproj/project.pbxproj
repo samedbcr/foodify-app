@@ -68,6 +68,9 @@
 		26AF333626CBC0CC00EDA357 /* CartContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF333526CBC0CC00EDA357 /* CartContracts.swift */; };
 		26AF333E26CBEDC300EDA357 /* HorizontalProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF333D26CBEDC300EDA357 /* HorizontalProductCell.swift */; };
 		26AF334326CBFA9900EDA357 /* ReceiptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF334226CBFA9900EDA357 /* ReceiptCell.swift */; };
+		26AF334D26CC5D6100EDA357 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF334C26CC5D6100EDA357 /* FavoritesViewController.swift */; };
+		26AF335526CC5D6C00EDA357 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF335426CC5D6C00EDA357 /* FavoritesViewModel.swift */; };
+		26AF335A26CC5D7600EDA357 /* FavoritesContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF335926CC5D7600EDA357 /* FavoritesContracts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +157,9 @@
 		26AF333526CBC0CC00EDA357 /* CartContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartContracts.swift; sourceTree = "<group>"; };
 		26AF333D26CBEDC300EDA357 /* HorizontalProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalProductCell.swift; sourceTree = "<group>"; };
 		26AF334226CBFA9900EDA357 /* ReceiptCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptCell.swift; sourceTree = "<group>"; };
+		26AF334C26CC5D6100EDA357 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		26AF335426CC5D6C00EDA357 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		26AF335926CC5D7600EDA357 /* FavoritesContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesContracts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +302,7 @@
 		26AF31E326C1980A00EDA357 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				26AF334A26CC5D4200EDA357 /* Favorites */,
 				26AF332626CBC09200EDA357 /* Cart */,
 				26AF32D926C71E2200EDA357 /* ProductDetail */,
 				26AF32AF26C5A3B400EDA357 /* Home */,
@@ -510,6 +517,16 @@
 			path = Cart;
 			sourceTree = "<group>";
 		};
+		26AF334A26CC5D4200EDA357 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				26AF334C26CC5D6100EDA357 /* FavoritesViewController.swift */,
+				26AF335426CC5D6C00EDA357 /* FavoritesViewModel.swift */,
+				26AF335926CC5D7600EDA357 /* FavoritesContracts.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -654,6 +671,7 @@
 				26AF331C26C87F3700EDA357 /* TabBarMiddleButton.swift in Sources */,
 				26AF32D526C6967A00EDA357 /* ProductCell.swift in Sources */,
 				26AF32AB26C46B2C00EDA357 /* UIViewController+Ext.swift in Sources */,
+				26AF335526CC5D6C00EDA357 /* FavoritesViewModel.swift in Sources */,
 				26AF327C26C3C5EE00EDA357 /* HorizontalInfoCardView.swift in Sources */,
 				26AF330F26C87F2100EDA357 /* CustomTabBarVC.swift in Sources */,
 				26AF324626C29D9F00EDA357 /* VerticalInfoCardViewUIModel.swift in Sources */,
@@ -673,6 +691,7 @@
 				26AF328F26C3FB1400EDA357 /* BasicTableRowViewUIModel.swift in Sources */,
 				26AF32BE26C5A84300EDA357 /* HomeContracts.swift in Sources */,
 				2657E42626C0727D00C147CA /* ViewController.swift in Sources */,
+				26AF334D26CC5D6100EDA357 /* FavoritesViewController.swift in Sources */,
 				2657E42226C0727D00C147CA /* AppDelegate.swift in Sources */,
 				26AF31EE26C1996600EDA357 /* LabelWithImageUIModel.swift in Sources */,
 				26AF331726C87F2C00EDA357 /* TabBarMiddleButtonView.swift in Sources */,
@@ -692,6 +711,7 @@
 				26AF32B126C5A3CC00EDA357 /* HomeViewController.swift in Sources */,
 				26AF326826C30C9B00EDA357 /* IncreaseDecreaseView.swift in Sources */,
 				26AF320626C1BED600EDA357 /* Constants.swift in Sources */,
+				26AF335A26CC5D7600EDA357 /* FavoritesContracts.swift in Sources */,
 				26AF330426C8255200EDA357 /* PropertiesStackViewUIModel.swift in Sources */,
 				26AF332926CBC0B000EDA357 /* CartViewController.swift in Sources */,
 				26AF333626CBC0CC00EDA357 /* CartContracts.swift in Sources */,

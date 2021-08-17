@@ -35,11 +35,13 @@ class CustomTabBarVC: UITabBarController {
         cartVC.viewModel = cartViewModel
         cartVC.title = ""
 
-        let vc3 = ViewController()
-        let vc3TabBar = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
-        vc3.tabBarItem = vc3TabBar
+        let favoritesVC = FavoritesViewController()
+        let favoritesViewModel = FavoritesViewModel(service: FavoriteService())
+        favoritesVC.viewModel = favoritesViewModel
+        let favoritesTabBar = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
+        favoritesVC.tabBarItem = favoritesTabBar
 
-        viewControllers = [homeVC, cartVC, vc3]
+        viewControllers = [homeVC, cartVC, favoritesVC]
 
         configureMiddleButton()
     }
