@@ -26,6 +26,7 @@ final class HorizontalInfoCardView: UIView {
     }
 
     private func configure() {
+        translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .appMediumGray
         layer.cornerRadius = 14
         configureHStackView()
@@ -66,7 +67,7 @@ final class HorizontalInfoCardView: UIView {
         vStackView.alignment = .leading
         vStackView.spacing = 6
         hStackView.addArrangedSubview(vStackView)
-        
+
         NSLayoutConstraint.activate([
             hStackView.bottomAnchor.constraint(equalTo: vStackView.bottomAnchor)
         ])

@@ -35,5 +35,31 @@ struct UIHelper {
 
         return flowLayout
     }
+
+    static func createSingleColumnsFlowLayout(in view: UIView) -> UICollectionViewFlowLayout {
+        let width = view.frame.width
+        let padding: CGFloat = 24
+        let itemSize = width - (padding * 2)
+
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.sectionInset = UIEdgeInsets(top: 10, left: padding, bottom: 30, right: padding)
+        flowLayout.minimumLineSpacing = 20
+        flowLayout.itemSize = CGSize(width: itemSize, height: itemSize * 0.36)
+
+        return flowLayout
+    }
+
+    static func createBasicTableViewFlowLayout(in view: UIView) -> UICollectionViewFlowLayout {
+        let width = view.frame.width
+        let padding: CGFloat = 24
+        let itemSize = width - (padding * 2)
+
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.sectionInset = UIEdgeInsets(top: 10, left: padding, bottom: 10, right: padding)
+        flowLayout.minimumLineSpacing = 6
+        flowLayout.itemSize = CGSize(width: itemSize, height: 20)
+
+        return flowLayout
+    }
 }
 

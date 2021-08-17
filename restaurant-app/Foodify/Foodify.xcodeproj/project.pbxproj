@@ -60,6 +60,14 @@
 		26AF32FF26C8253E00EDA357 /* PropertiesStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF32FE26C8253E00EDA357 /* PropertiesStackView.swift */; };
 		26AF330426C8255200EDA357 /* PropertiesStackViewUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF330326C8255200EDA357 /* PropertiesStackViewUIModel.swift */; };
 		26AF330926C833B800EDA357 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF330826C833B800EDA357 /* UIView+Extension.swift */; };
+		26AF330F26C87F2100EDA357 /* CustomTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF330E26C87F2000EDA357 /* CustomTabBarVC.swift */; };
+		26AF331726C87F2C00EDA357 /* TabBarMiddleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF331626C87F2C00EDA357 /* TabBarMiddleButtonView.swift */; };
+		26AF331C26C87F3700EDA357 /* TabBarMiddleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF331B26C87F3700EDA357 /* TabBarMiddleButton.swift */; };
+		26AF332926CBC0B000EDA357 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF332826CBC0AF00EDA357 /* CartViewController.swift */; };
+		26AF333126CBC0B700EDA357 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF333026CBC0B700EDA357 /* CartViewModel.swift */; };
+		26AF333626CBC0CC00EDA357 /* CartContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF333526CBC0CC00EDA357 /* CartContracts.swift */; };
+		26AF333E26CBEDC300EDA357 /* HorizontalProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF333D26CBEDC300EDA357 /* HorizontalProductCell.swift */; };
+		26AF334326CBFA9900EDA357 /* ReceiptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF334226CBFA9900EDA357 /* ReceiptCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +146,14 @@
 		26AF32FE26C8253E00EDA357 /* PropertiesStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesStackView.swift; sourceTree = "<group>"; };
 		26AF330326C8255200EDA357 /* PropertiesStackViewUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesStackViewUIModel.swift; sourceTree = "<group>"; };
 		26AF330826C833B800EDA357 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		26AF330E26C87F2000EDA357 /* CustomTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarVC.swift; sourceTree = "<group>"; };
+		26AF331626C87F2C00EDA357 /* TabBarMiddleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMiddleButtonView.swift; sourceTree = "<group>"; };
+		26AF331B26C87F3700EDA357 /* TabBarMiddleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMiddleButton.swift; sourceTree = "<group>"; };
+		26AF332826CBC0AF00EDA357 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		26AF333026CBC0B700EDA357 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		26AF333526CBC0CC00EDA357 /* CartContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartContracts.swift; sourceTree = "<group>"; };
+		26AF333D26CBEDC300EDA357 /* HorizontalProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalProductCell.swift; sourceTree = "<group>"; };
+		26AF334226CBFA9900EDA357 /* ReceiptCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,21 +246,22 @@
 		26AF31DC26C197B600EDA357 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				26AF32F226C824D300EDA357 /* PropertyStackView */,
+				26AF328526C3FACD00EDA357 /* BasicTableRowView */,
+				26AF31F226C1B7C800EDA357 /* CategoryCardView */,
 				26AF32C726C5C79D00EDA357 /* Cells */,
 				26AF32A126C464AB00EDA357 /* CustomAlertVC */,
-				26AF329326C3FF2700EDA357 /* CustomTextField */,
-				26AF328526C3FACD00EDA357 /* BasicTableRowView */,
-				26AF327A26C3C5D700EDA357 /* HorizontalInfoCardView */,
 				26AF327426C31BE100EDA357 /* CustomButton */,
-				26AF326626C30C8E00EDA357 /* IncreaseDecreaseView */,
-				26AF325526C3000E00EDA357 /* SmallIconButtonView */,
-				26AF324A26C2CC2900EDA357 /* PropertyView */,
-				26AF323C26C29CCA00EDA357 /* VerticalInfoCardView */,
+				26AF330D26C87F0E00EDA357 /* CustomTabBar */,
+				26AF329326C3FF2700EDA357 /* CustomTextField */,
+				26AF327A26C3C5D700EDA357 /* HorizontalInfoCardView */,
 				26AF322E26C2880A00EDA357 /* ImageWithShadowView */,
-				26AF322326C1D32900EDA357 /* RatingStarsView */,
-				26AF31F226C1B7C800EDA357 /* CategoryCardView */,
+				26AF326626C30C8E00EDA357 /* IncreaseDecreaseView */,
 				26AF31E726C1993800EDA357 /* LabelWithImageView */,
+				26AF32F226C824D300EDA357 /* PropertyStackView */,
+				26AF324A26C2CC2900EDA357 /* PropertyView */,
+				26AF322326C1D32900EDA357 /* RatingStarsView */,
+				26AF325526C3000E00EDA357 /* SmallIconButtonView */,
+				26AF323C26C29CCA00EDA357 /* VerticalInfoCardView */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -279,6 +296,7 @@
 		26AF31E326C1980A00EDA357 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				26AF332626CBC09200EDA357 /* Cart */,
 				26AF32D926C71E2200EDA357 /* ProductDetail */,
 				26AF32AF26C5A3B400EDA357 /* Home */,
 				2657E42526C0727D00C147CA /* ViewController.swift */,
@@ -447,6 +465,8 @@
 			children = (
 				26AF32C926C5C7B900EDA357 /* CategoryCell.swift */,
 				26AF32D426C6967A00EDA357 /* ProductCell.swift */,
+				26AF333D26CBEDC300EDA357 /* HorizontalProductCell.swift */,
+				26AF334226CBFA9900EDA357 /* ReceiptCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -468,6 +488,26 @@
 				26AF330326C8255200EDA357 /* PropertiesStackViewUIModel.swift */,
 			);
 			path = PropertyStackView;
+			sourceTree = "<group>";
+		};
+		26AF330D26C87F0E00EDA357 /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				26AF330E26C87F2000EDA357 /* CustomTabBarVC.swift */,
+				26AF331626C87F2C00EDA357 /* TabBarMiddleButtonView.swift */,
+				26AF331B26C87F3700EDA357 /* TabBarMiddleButton.swift */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		26AF332626CBC09200EDA357 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				26AF332826CBC0AF00EDA357 /* CartViewController.swift */,
+				26AF333026CBC0B700EDA357 /* CartViewModel.swift */,
+				26AF333526CBC0CC00EDA357 /* CartContracts.swift */,
+			);
+			path = Cart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -611,14 +651,17 @@
 				26AF32B926C5A3D800EDA357 /* HomeViewModel.swift in Sources */,
 				2657E42C26C0727D00C147CA /* Foodify.xcdatamodeld in Sources */,
 				26AF31F426C1B7D800EDA357 /* CategoryCardView.swift in Sources */,
+				26AF331C26C87F3700EDA357 /* TabBarMiddleButton.swift in Sources */,
 				26AF32D526C6967A00EDA357 /* ProductCell.swift in Sources */,
 				26AF32AB26C46B2C00EDA357 /* UIViewController+Ext.swift in Sources */,
 				26AF327C26C3C5EE00EDA357 /* HorizontalInfoCardView.swift in Sources */,
+				26AF330F26C87F2100EDA357 /* CustomTabBarVC.swift in Sources */,
 				26AF324626C29D9F00EDA357 /* VerticalInfoCardViewUIModel.swift in Sources */,
 				26AF330926C833B800EDA357 /* UIView+Extension.swift in Sources */,
 				26AF325726C3001D00EDA357 /* SmallIconButton.swift in Sources */,
 				26AF32FF26C8253E00EDA357 /* PropertiesStackView.swift in Sources */,
 				26AF325126C2CC8A00EDA357 /* PropertyViewUIModel.swift in Sources */,
+				26AF334326CBFA9900EDA357 /* ReceiptCell.swift in Sources */,
 				26AF323826C2885700EDA357 /* ImageWithShadowViewUIModel.swift in Sources */,
 				26AF325C26C3003000EDA357 /* SmallIconButtonUIModel.swift in Sources */,
 				26AF32E826C71E5200EDA357 /* ProductDetailContracts.swift in Sources */,
@@ -632,6 +675,7 @@
 				2657E42626C0727D00C147CA /* ViewController.swift in Sources */,
 				2657E42226C0727D00C147CA /* AppDelegate.swift in Sources */,
 				26AF31EE26C1996600EDA357 /* LabelWithImageUIModel.swift in Sources */,
+				26AF331726C87F2C00EDA357 /* TabBarMiddleButtonView.swift in Sources */,
 				26AF328126C3C60F00EDA357 /* HorizontalInfoCardViewUIModel.swift in Sources */,
 				26AF32A326C464BB00EDA357 /* CustomAlertVC.swift in Sources */,
 				26AF32CA26C5C7B900EDA357 /* CategoryCell.swift in Sources */,
@@ -640,6 +684,8 @@
 				26AF323026C2883900EDA357 /* ImageWithShadowView.swift in Sources */,
 				26AF32E326C71E4800EDA357 /* ProductDetailVievModel.swift in Sources */,
 				2657E42426C0727D00C147CA /* SceneDelegate.swift in Sources */,
+				26AF333126CBC0B700EDA357 /* CartViewModel.swift in Sources */,
+				26AF333E26CBEDC300EDA357 /* HorizontalProductCell.swift in Sources */,
 				26AF322526C1D36800EDA357 /* RatingStarsView.swift in Sources */,
 				26AF327626C31BFC00EDA357 /* CustomButton.swift in Sources */,
 				26AF324C26C2CC6E00EDA357 /* PropertyView.swift in Sources */,
@@ -647,6 +693,8 @@
 				26AF326826C30C9B00EDA357 /* IncreaseDecreaseView.swift in Sources */,
 				26AF320626C1BED600EDA357 /* Constants.swift in Sources */,
 				26AF330426C8255200EDA357 /* PropertiesStackViewUIModel.swift in Sources */,
+				26AF332926CBC0B000EDA357 /* CartViewController.swift in Sources */,
+				26AF333626CBC0CC00EDA357 /* CartContracts.swift in Sources */,
 				26AF32DB26C71E3800EDA357 /* ProductDetailViewController.swift in Sources */,
 				26AF327026C30CB500EDA357 /* IncreaseDecreaseViewUIModel.swift in Sources */,
 				26AF321C26C1C21A00EDA357 /* UIColor+Extension.swift in Sources */,

@@ -23,12 +23,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let viewModel = HomeViewModel(categoryService: CategoryService(), productService: ProductService())
 //        viewController.viewModel = viewModel
         
-        let viewController = ProductDetailViewController()
-        let viewModel = ProductDetailViewModel(service: ProductService())
-        viewController.viewModel = viewModel
+//        let viewController = ProductDetailViewController()
+//        let viewModel = ProductDetailViewModel(service: ProductService())
+//        viewController.viewModel = viewModel
 
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = viewController
+        window?.rootViewController = CustomTabBarVC()
         window?.makeKeyAndVisible()
     }
 

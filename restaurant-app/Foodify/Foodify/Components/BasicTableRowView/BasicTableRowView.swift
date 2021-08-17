@@ -22,6 +22,7 @@ final class BasicTableRowView: UIView {
     }
 
     private func configure() {
+        translatesAutoresizingMaskIntoConstraints = false
         configureStackView()
         configureLeadingLabel()
         configureTrailingLabel()
@@ -44,17 +45,21 @@ final class BasicTableRowView: UIView {
     }
 
     private func configureLeadingLabel() {
-        leadingLabel.font = UIFont(name: Fonts.poppinsMedium, size: 15)
+        leadingLabel.font = UIFont(name: Fonts.poppinsMedium, size: 14)
         leadingLabel.textColor = .appDarkGray
 
         hStackView.addArrangedSubview(leadingLabel)
     }
 
     private func configureTrailingLabel() {
-        trailiingLabel.font = UIFont(name: Fonts.poppinsSemiBold, size: 15)
+        trailiingLabel.font = UIFont(name: Fonts.poppinsSemiBold, size: 14)
         trailiingLabel.textColor = .primary
 
         hStackView.addArrangedSubview(trailiingLabel)
+    }
+    
+    func changeTrailingLabel(with value: String) {
+        trailiingLabel.text = value
     }
 
     func setup(with model: BasicTableRowViewUIModel) {
