@@ -7,8 +7,9 @@
 
 import UIKit
 
-class ProductDetailViewController: UIViewController {
+final class ProductDetailViewController: UIViewController {
     var productId: Int?
+    private let favoriteBarButton = UIBarButtonItem()
     private let imageViewContainer = UIView()
     private let imageWithShadowView = ImageWithShadowView()
     private let bottomContainerView = UIView()
@@ -31,11 +32,11 @@ class ProductDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        // TODO: send productId
-        viewModel.load(id: 5)
+        viewModel.load(id: productId)
     }
 
     private func configure() {
+        configureFavoriteBarButton()
         configureImageViewContainer()
         configureBottomContainerView()
         configureTitleStackView()
@@ -45,6 +46,16 @@ class ProductDetailViewController: UIViewController {
         configureDescriptionsTitleLabel()
         configureDescriptionLabel()
         configureFooterStackView()
+    }
+
+    private func configureFavoriteBarButton() {
+        let imageName = "heart.circle.fill"
+        favoriteBarButton.image = UIImage(systemName: imageName)
+        favoriteBarButton.tintColor = .systemRed
+        favoriteBarButton.style = .plain
+        favoriteBarButton.target = self
+//        favoriteBarButton.action = #selector(favoriteButtonClicked)
+        navigationItem.setRightBarButton(favoriteBarButton, animated: true)
     }
 
     private func configureImageViewContainer() {
@@ -91,7 +102,7 @@ class ProductDetailViewController: UIViewController {
             bottomContainerView.topAnchor.constraint(equalTo: imageViewContainer.bottomAnchor, constant: -30),
             bottomContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             bottomContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            bottomContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            bottomContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 30)
         ])
     }
 
@@ -203,7 +214,7 @@ class ProductDetailViewController: UIViewController {
         footerStackView.addArrangedSubview(addButton)
 
         NSLayoutConstraint.activate([
-            footerStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            footerStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
             footerStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.68),
             footerStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
