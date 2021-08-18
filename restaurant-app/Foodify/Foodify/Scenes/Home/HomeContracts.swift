@@ -27,4 +27,5 @@ enum HomeViewModelOutput {
 
 protocol HomeViewModelDelegate: AnyObject {
     func handleViewOutput(_ output: HomeViewModelOutput)
+    func navigate(to route: ProductDetailViewController)
 }

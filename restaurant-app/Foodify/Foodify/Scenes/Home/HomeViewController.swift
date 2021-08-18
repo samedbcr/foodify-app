@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     private let profileImgBarButton = UIBarButtonItem()
     private let scrollView = UIScrollView()
     private let contentView = UIView()
@@ -168,6 +168,10 @@ extension HomeViewController: HomeViewModelDelegate {
             productsCollectionView.reloadData()
         }
     }
+
+    func navigate(to route: ProductDetailViewController) {
+        navigationController?.pushViewController(route, animated: true)
+    }
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -200,5 +204,13 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             extraText: "$\(Int(product.price))")
         cell.setup(with: model)
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == categoriesCollectionView {
+            viewModel.selectCategory(at: indexPath.row)
+        } else {
+            viewModel.selectProduct(at: indexPath.row)
+        }
     }
 }

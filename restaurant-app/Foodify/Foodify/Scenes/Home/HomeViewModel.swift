@@ -27,7 +27,6 @@ final class HomeViewModel {
 }
 
 extension HomeViewModel: HomeViewModelProtocol {
-
     var categoriesCount: Int {
         categories.count
     }
@@ -61,10 +60,15 @@ extension HomeViewModel: HomeViewModelProtocol {
     }
 
     func selectCategory(at index: Int) {
-        // TODO
+        print(index)
     }
 
     func selectProduct(at index: Int) {
-        // TODO
+        
+            let viewController = ProductDetailViewController()
+            let viewModel = ProductDetailViewModel(service: ProductService())
+            viewController.viewModel = viewModel
+            viewController.productId = products[index].id
+            delegate?.navigate(to: viewController)
     }
 }
