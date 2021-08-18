@@ -19,15 +19,15 @@ class CustomTabBarVC: UITabBarController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tabBar.tintColor = .darkGray
-        tabBar.unselectedItemTintColor = .lightGray
+        tabBar.tintColor = .primary
+        tabBar.unselectedItemTintColor = .appLightGray
         tabBar.backgroundColor = .white
         tabBar.isTranslucent = false
 
         let homeVC = HomeViewController()
         let homeViewModel = HomeViewModel(categoryService: CategoryService(), productService: ProductService())
         homeVC.viewModel = homeViewModel
-        let homeVCTabBar = UITabBarItem(tabBarSystemItem: .search, tag: 0)
+        let homeVCTabBar = UITabBarItem(title: "", image: UIImage(named: "home"), tag: 0)
         homeVC.tabBarItem = homeVCTabBar
 
         let cartVC = CartViewController()
@@ -38,7 +38,7 @@ class CustomTabBarVC: UITabBarController {
         let favoritesVC = FavoritesViewController()
         let favoritesViewModel = FavoritesViewModel(service: FavoriteService())
         favoritesVC.viewModel = favoritesViewModel
-        let favoritesTabBar = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
+        let favoritesTabBar = UITabBarItem(title: "", image: UIImage(named: "favourite"), tag: 2)
         favoritesVC.tabBarItem = favoritesTabBar
 
         viewControllers = [homeVC, cartVC, favoritesVC]

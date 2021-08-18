@@ -30,10 +30,10 @@ class TabBarMiddleButton: UIButton {
         backgroundColor = .primary
         layer.cornerRadius = 32
         clipsToBounds = true
-//        contentVerticalAlignment = .fill
-//        contentHorizontalAlignment = .fill
-//        imageEdgeInsets = UIEdgeInsets(top: 17, left: 17, bottom: 17, right: 17)
-        let buttonImage = UIImage(systemName: "cart.fill")?.withRenderingMode(.alwaysTemplate)
+        contentVerticalAlignment = .fill
+        contentHorizontalAlignment = .fill
+        imageEdgeInsets = UIEdgeInsets(top: 21, left: 21, bottom: 21, right: 21)
+        let buttonImage = UIImage(named: "cart")?.withRenderingMode(.alwaysTemplate)
         setImage(buttonImage, for: .normal)
         tintColor = .white
         bringSubviewToFront(self.imageView!)
