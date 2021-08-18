@@ -36,10 +36,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private func configureNavigationBar() {
         UINavigationBar.appearance().titleTextAttributes =
             [NSAttributedString.Key.font: UIFont(name: Fonts.poppinsMedium, size: 16)!]
-//        UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().barTintColor = .white
         // Remove bottom line from navigation bar
-//        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-//        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
         
     }
 
