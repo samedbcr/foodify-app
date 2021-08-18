@@ -9,6 +9,7 @@ import UIKit
 
 final class ImageWithShadowView: UIView {
     private let imageView = UIImageView()
+    private let placeholderImage = UIImage(named: "foodify-logos_transparent")
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,7 +38,8 @@ final class ImageWithShadowView: UIView {
         addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        
+        imageView.image = placeholderImage
+
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalTo: widthAnchor),
             imageView.heightAnchor.constraint(equalTo: heightAnchor),
@@ -45,7 +47,7 @@ final class ImageWithShadowView: UIView {
     }
 
     func setup(with model: ImageWithShadowViewUIModel) {
-        imageView.image = UIImage(named: model.url)
+        imageView.loadImage(from: model.url, placeholderImage)
     }
 
 }

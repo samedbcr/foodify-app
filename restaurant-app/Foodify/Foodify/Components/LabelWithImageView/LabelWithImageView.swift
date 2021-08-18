@@ -85,13 +85,10 @@ final class LabelWithImageView: UIView {
             label.textColor = .appMediumGray
             imageViewContainer.backgroundColor = .appLightGray
         }
-
         label.text = model.labelText
         
         imageView.kf.indicatorType = .activity
         imageView.loadImage(from: model.imageURL, nil)
-        
-//        imageView.image = UIImage(named: model.imageURL)
     }
 
 }
