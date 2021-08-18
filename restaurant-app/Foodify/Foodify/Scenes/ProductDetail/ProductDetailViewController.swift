@@ -75,7 +75,6 @@ final class ProductDetailViewController: UIViewController {
 
     private func configureImageView() {
         imageViewContainer.addSubview(imageWithShadowView)
-        imageWithShadowView.setup(with: ImageWithShadowViewUIModel(url: "chicken_plate"))
         imageWithShadowView.backgroundColor = .clear
 
         NSLayoutConstraint.activate([
@@ -145,10 +144,10 @@ final class ProductDetailViewController: UIViewController {
 
     private func configurePropertiesStackView() {
         bottomContainerView.addSubview(propertiesStackView)
-        let firstProperty = PropertyViewUIModel(title: "Carb", labelWithImageViewModel: LabelWithImageUIModel(imageURL: "strawberry", labelText: "180g", isBoldText: false, isDarkText: true))
-        let secondProperty = PropertyViewUIModel(title: "Protein", labelWithImageViewModel: LabelWithImageUIModel(imageURL: "strawberry", labelText: "20g", isBoldText: false, isDarkText: true))
-        let thirdProperty = PropertyViewUIModel(title: "Fat", labelWithImageViewModel: LabelWithImageUIModel(imageURL: "strawberry", labelText: "30g", isBoldText: false, isDarkText: true))
-        propertiesStackView.setup(with: PropertiesStackViewUIModel(properties: [firstProperty, secondProperty, thirdProperty]))
+//        let firstProperty = PropertyViewUIModel(title: "Carb", labelWithImageViewModel: LabelWithImageUIModel(imageURL: "strawberry", labelText: "180g", isBoldText: false, isDarkText: true))
+//        let secondProperty = PropertyViewUIModel(title: "Protein", labelWithImageViewModel: LabelWithImageUIModel(imageURL: "strawberry", labelText: "20g", isBoldText: false, isDarkText: true))
+//        let thirdProperty = PropertyViewUIModel(title: "Fat", labelWithImageViewModel: LabelWithImageUIModel(imageURL: "strawberry", labelText: "30g", isBoldText: false, isDarkText: true))
+//        propertiesStackView.setup(with: PropertiesStackViewUIModel(properties: [firstProperty, secondProperty, thirdProperty]))
 
         NSLayoutConstraint.activate([
             propertiesStackView.topAnchor.constraint(equalTo: titleStackView.bottomAnchor, constant: 20),
@@ -231,7 +230,6 @@ extension ProductDetailViewController: ProductDetailViewModelDelegate {
                 titleLabel.text = product.name
                 priceLabel.text = "$\(Int(product.price))"
                 descriptionLabel.text = product.description
-//                propertiesStackView.setup(with: PropertiesStackViewUIModel(properties: product.ingredients))
             }
 
             if let propertiesModel = viewModel.generatePropertiesUIModel() {

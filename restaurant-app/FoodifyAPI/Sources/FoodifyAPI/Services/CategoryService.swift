@@ -13,7 +13,7 @@ public protocol CategoryServiceProtocol {
 }
 
 public class CategoryService: CategoryServiceProtocol {
-    let baseURL = "https://app-foodify.herokuapp.com/categories"
+    let baseURL = "https://app-foodify.herokuapp.com/categories/"
 
 //    let mockCategories: [Category] = [
 //        Category(imagePath: "strawberry", name: "Dessert"),
@@ -32,7 +32,8 @@ public class CategoryService: CategoryServiceProtocol {
 
         AF.request(url).responseData { response in
             switch response.result {
-            case .failure(let _):
+            case .failure(let error):
+                print(error)
                 completion(.failure(.invalidResponse))
                 return
             case .success(let data):

@@ -6,13 +6,15 @@
 //
 
 import Foundation
+import Alamofire
 
 public protocol ProductServiceProtocol {
-    func fetchProducts(completion: @escaping (Result<[Product], Error>) -> Void)
-    func fetchProduct(with id: Int, completion: @escaping (Result <Product, Error>) -> Void)
+    func fetchProducts(completion: @escaping (Result<[Product], ErrorMessage>) -> Void)
+    func fetchProduct(with id: Int, completion: @escaping (Result <Product, ErrorMessage>) -> Void)
 }
 
 public class ProductService: ProductServiceProtocol {
+    let baseURL = "https://app-foodify.herokuapp.com/products"
 
     static let mockIngredients: [Ingredient] = {
         let ingredient1 = Ingredient(name: "Protein", imagePath: "strawberry", value: 52)
@@ -37,13 +39,55 @@ public class ProductService: ProductServiceProtocol {
         ]
     }
 
-    public func fetchProducts(completion: @escaping (Result<[Product], Error>) -> Void) {
-        completion(.success(mockProducts))
+    public func fetchProducts(completion: @escaping (Result<[Product], ErrorMessage>) -> Void) {
+        guard let url = URL(string: baseURL) else {
+            completion(.failure(.invalidURL))
+            return
+        }
+
+        AF.request(url).responseData { response in
+            switch response.result {
+            case .failure(let error):
+                print(error)
+                completion(.failure(.invalidResponse))
+                return
+            case .success(let data):
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let products = try decoder.decode([Product].self, from: data)
+                    completion(.success(products))
+                } catch {
+                    completion(.failure(.invalidData))
+                }
+            }
+        }
     }
 
-    public func fetchProduct(with id: Int, completion: @escaping (Result <Product, Error>) -> Void) {
-        if let product = mockProducts.first(where: { $0.id == id }) {
-            completion(.success(product))
+    public func fetchProduct(with id: Int, completion: @escaping (Result <Product, ErrorMessage>) -> Void) {
+        let endPoint = "\(baseURL)/\(id)"
+
+        guard let url = URL(string: endPoint) else {
+            completion(.failure(.invalidURL))
+            return
+        }
+
+        AF.request(url).responseData { response in
+            switch response.result {
+            case .failure(let error):
+                print(error)
+                completion(.failure(.invalidResponse))
+                return
+            case .success(let data):
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let product = try decoder.decode(Product.self, from: data)
+                    completion(.success(product))
+                } catch {
+                    completion(.failure(.invalidData))
+                }
+            }
         }
     }
 }
