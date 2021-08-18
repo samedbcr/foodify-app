@@ -34,7 +34,6 @@ class HomeViewController: UIViewController {
         tabBarItem.title = ""
         configureProfileImgBarButton()
         configureLogo()
-//        setUpMenuButton()
         configureScrollView()
         configureContentView()
         configureEntryLabel()
@@ -46,7 +45,6 @@ class HomeViewController: UIViewController {
     func configureLogo() {
         let logoImage = UIImage(named: "foodify-logos_black")
         let logoImageView = UIImageView(image: logoImage)
-//        logoImageView.frame = CGRect(x: 0.0, y: 0.0, width: 80, height: 40)
         logoImageView.contentMode = .scaleAspectFill
         let imageItem = UIBarButtonItem(customView: logoImageView)
         logoImageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
