@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class LabelWithImageView: UIView {
     private let stackView = UIStackView()
     private let imageViewContainer = UIView()
     private let imageView = UIImageView()
     private let label = UILabel()
+    private let placeholderImage = UIImage(named: "strawberry")
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,6 +57,7 @@ final class LabelWithImageView: UIView {
     private func configureImageView() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
+        imageView.image = placeholderImage
         imageViewContainer.addSubview(imageView)
 
         NSLayoutConstraint.activate([
@@ -84,7 +87,11 @@ final class LabelWithImageView: UIView {
         }
 
         label.text = model.labelText
-        imageView.image = UIImage(named: model.imageURL)
+        
+        imageView.kf.indicatorType = .activity
+        imageView.loadImage(from: model.imageURL, nil)
+        
+//        imageView.image = UIImage(named: model.imageURL)
     }
 
 }
