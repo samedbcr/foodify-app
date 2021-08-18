@@ -24,24 +24,30 @@ class CustomTabBarVC: UITabBarController {
         tabBar.backgroundColor = .white
         tabBar.isTranslucent = false
 
+        // Home
         let homeVC = HomeViewController()
         let homeViewModel = HomeViewModel(categoryService: CategoryService(), productService: ProductService())
         homeVC.viewModel = homeViewModel
         let homeVCTabBar = UITabBarItem(title: "", image: UIImage(named: "home"), tag: 0)
         homeVC.tabBarItem = homeVCTabBar
+        let homeNavigationController = UINavigationController(rootViewController: homeVC)
 
+        // Cart
         let cartVC = CartViewController()
         let cartViewModel = CartViewModel(service: CartService())
         cartVC.viewModel = cartViewModel
         cartVC.title = ""
-
+        let cartNavigationController = UINavigationController(rootViewController: cartVC)
+        
+        // Favorites
         let favoritesVC = FavoritesViewController()
         let favoritesViewModel = FavoritesViewModel(service: FavoriteService())
         favoritesVC.viewModel = favoritesViewModel
         let favoritesTabBar = UITabBarItem(title: "", image: UIImage(named: "favourite"), tag: 2)
         favoritesVC.tabBarItem = favoritesTabBar
-
-        viewControllers = [homeVC, cartVC, favoritesVC]
+        let favoritesNavigationController = UINavigationController(rootViewController: favoritesVC)
+        
+        viewControllers = [homeNavigationController, cartNavigationController, favoritesNavigationController]
 
         configureMiddleButton()
     }
@@ -52,7 +58,7 @@ class CustomTabBarVC: UITabBarController {
         middleButtonView.button.addTarget(self, action: #selector(middleButtonAction(sender:)), for: .touchUpInside)
 
         NSLayoutConstraint.activate([
-            middleButtonView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: -20),
+            middleButtonView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: -18),
             middleButtonView.centerXAnchor.constraint(equalTo: tabBar.centerXAnchor),
             middleButtonView.widthAnchor.constraint(equalToConstant: 64),
             middleButtonView.heightAnchor.constraint(equalToConstant: 64),

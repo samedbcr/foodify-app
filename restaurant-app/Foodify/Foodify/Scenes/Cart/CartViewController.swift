@@ -8,6 +8,7 @@
 import UIKit
 
 class CartViewController: UIViewController {
+    let favoriteBarButton = UIBarButtonItem()
     private var productsCollectionView: UICollectionView!
     private var receiptCollectionView: UICollectionView!
     private let bottomContainerView = UIView()
@@ -29,12 +30,25 @@ class CartViewController: UIViewController {
 
     private func configure() {
         view.backgroundColor = .white
+        title = "Cart"
+        tabBarItem.title = ""
+        configureFavoriteBarButton()
         configureProductCollectionView()
         configureBottomContainerView()
         configureTitleLabel()
         configureCheckoutButton()
         configureTotalRowView()
         configureReceiptCollectionView()
+    }
+
+    private func configureFavoriteBarButton() {
+        let imageName = "trash"
+        favoriteBarButton.image = UIImage(systemName: imageName)
+        favoriteBarButton.tintColor = .primary
+        favoriteBarButton.style = .plain
+        favoriteBarButton.target = self
+//        favoriteBarButton.action = #selector(favoriteButtonClicked)
+        navigationItem.setRightBarButton(favoriteBarButton, animated: true)
     }
 
     private func configureProductCollectionView() {
@@ -48,10 +62,10 @@ class CartViewController: UIViewController {
         productsCollectionView.dataSource = self
 
         NSLayoutConstraint.activate([
-            productsCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            productsCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             productsCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             productsCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            productsCollectionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.60)
+            productsCollectionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.58)
         ])
     }
 

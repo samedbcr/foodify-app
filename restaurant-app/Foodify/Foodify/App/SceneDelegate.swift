@@ -22,14 +22,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let viewController = HomeViewController()
 //        let viewModel = HomeViewModel(categoryService: CategoryService(), productService: ProductService())
 //        viewController.viewModel = viewModel
-        
+
 //        let viewController = ProductDetailViewController()
 //        let viewModel = ProductDetailViewModel(service: ProductService())
 //        viewController.viewModel = viewModel
+        configureNavigationBar()
 
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = CustomTabBarVC()
         window?.makeKeyAndVisible()
+    }
+
+    private func configureNavigationBar() {
+        UINavigationBar.appearance().titleTextAttributes =
+            [NSAttributedString.Key.font: UIFont(name: Fonts.poppinsMedium, size: 16)!]
+//        UINavigationBar.appearance().barTintColor = .white
+        // Remove bottom line from navigation bar
+//        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+//        UINavigationBar.appearance().shadowImage = UIImage()
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

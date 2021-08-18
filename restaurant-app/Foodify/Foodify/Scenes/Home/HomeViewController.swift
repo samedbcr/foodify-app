@@ -8,6 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    private let profileImgBarButton = UIBarButtonItem()
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     private let entryLabel = UILabel()
@@ -29,12 +30,41 @@ class HomeViewController: UIViewController {
 
     private func configure() {
         view.backgroundColor = .white
+        title = "Home"
+        tabBarItem.title = ""
+        configureProfileImgBarButton()
+        configureLogo()
+//        setUpMenuButton()
         configureScrollView()
         configureContentView()
         configureEntryLabel()
         configureCategoryLabel()
         configureCategoriesCollectionView()
         configureProductsCollectionView()
+    }
+
+    func configureLogo() {
+        let logoImage = UIImage(named: "foodify-logos_black")
+        let logoImageView = UIImageView(image: logoImage)
+//        logoImageView.frame = CGRect(x: 0.0, y: 0.0, width: 80, height: 40)
+        logoImageView.contentMode = .scaleAspectFill
+        let imageItem = UIBarButtonItem(customView: logoImageView)
+        logoImageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        logoImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        navigationItem.leftBarButtonItem = imageItem
+    }
+
+    func configureProfileImgBarButton() {
+        let menuBtn = UIButton(type: .custom)
+        menuBtn.frame = CGRect(x: 0.0, y: 0.0, width: 30, height: 30)
+        menuBtn.setImage(UIImage(named: "profile_img"), for: .normal)
+
+        let menuBarItem = UIBarButtonItem(customView: menuBtn)
+        let currWidth = menuBarItem.customView?.widthAnchor.constraint(equalToConstant: 36)
+        currWidth?.isActive = true
+        let currHeight = menuBarItem.customView?.heightAnchor.constraint(equalToConstant: 36)
+        currHeight?.isActive = true
+        self.navigationItem.rightBarButtonItem = menuBarItem
     }
 
     private func configureScrollView() {
@@ -70,7 +100,7 @@ class HomeViewController: UIViewController {
         entryLabel.numberOfLines = 0
 
         NSLayoutConstraint.activate([
-            entryLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24),
+            entryLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
             entryLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
             entryLabel.widthAnchor.constraint(equalToConstant: view.frame.width * 0.7)
         ])
@@ -123,7 +153,7 @@ class HomeViewController: UIViewController {
             productsCollectionView.topAnchor.constraint(equalTo: categoriesCollectionView.bottomAnchor, constant: 4),
             productsCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             productsCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            productsCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24)
+            productsCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
 

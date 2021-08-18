@@ -24,6 +24,8 @@ final class FavoritesViewController: UIViewController {
 
     private func configure() {
         view.backgroundColor = .white
+        title = "Favorites"
+        tabBarItem.title = ""
         configureCollectionView()
     }
 
