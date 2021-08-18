@@ -70,6 +70,8 @@
 		26AF334D26CC5D6100EDA357 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF334C26CC5D6100EDA357 /* FavoritesViewController.swift */; };
 		26AF335526CC5D6C00EDA357 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF335426CC5D6C00EDA357 /* FavoritesViewModel.swift */; };
 		26AF335A26CC5D7600EDA357 /* FavoritesContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF335926CC5D7600EDA357 /* FavoritesContracts.swift */; };
+		26AF336326CD9BC200EDA357 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 26AF336226CD9BC200EDA357 /* Kingfisher */; };
+		26AF336826CD9D2A00EDA357 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF336726CD9D2A00EDA357 /* UIImageView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +160,7 @@
 		26AF334C26CC5D6100EDA357 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		26AF335426CC5D6C00EDA357 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		26AF335926CC5D7600EDA357 /* FavoritesContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesContracts.swift; sourceTree = "<group>"; };
+		26AF336726CD9D2A00EDA357 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26AF336326CD9BC200EDA357 /* Kingfisher in Frameworks */,
 				2657E48126C082B200C147CA /* FoodifyAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,6 +357,7 @@
 				26AF321B26C1C21A00EDA357 /* UIColor+Extension.swift */,
 				26AF32AA26C46B2C00EDA357 /* UIViewController+Ext.swift */,
 				26AF330826C833B800EDA357 /* UIView+Extension.swift */,
+				26AF336726CD9D2A00EDA357 /* UIImageView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -542,6 +547,7 @@
 			name = Foodify;
 			packageProductDependencies = (
 				2657E48026C082B200C147CA /* FoodifyAPI */,
+				26AF336226CD9BC200EDA357 /* Kingfisher */,
 			);
 			productName = Foodify;
 			productReference = 2657E41E26C0727D00C147CA /* Foodify.app */;
@@ -614,6 +620,9 @@
 				Base,
 			);
 			mainGroup = 2657E41526C0727D00C147CA;
+			packageReferences = (
+				26AF336126CD9BC200EDA357 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 2657E41F26C0727D00C147CA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -709,6 +718,7 @@
 				26AF320626C1BED600EDA357 /* Constants.swift in Sources */,
 				26AF335A26CC5D7600EDA357 /* FavoritesContracts.swift in Sources */,
 				26AF330426C8255200EDA357 /* PropertiesStackViewUIModel.swift in Sources */,
+				26AF336826CD9D2A00EDA357 /* UIImageView+Ext.swift in Sources */,
 				26AF332926CBC0B000EDA357 /* CartViewController.swift in Sources */,
 				26AF333626CBC0CC00EDA357 /* CartContracts.swift in Sources */,
 				26AF32DB26C71E3800EDA357 /* ProductDetailViewController.swift in Sources */,
@@ -1039,10 +1049,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		26AF336126CD9BC200EDA357 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		2657E48026C082B200C147CA /* FoodifyAPI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FoodifyAPI;
+		};
+		26AF336226CD9BC200EDA357 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26AF336126CD9BC200EDA357 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 

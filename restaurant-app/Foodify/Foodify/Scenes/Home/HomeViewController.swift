@@ -160,10 +160,10 @@ final class HomeViewController: UIViewController {
 extension HomeViewController: HomeViewModelDelegate {
     func handleViewOutput(_ output: HomeViewModelOutput) {
         switch output {
-        case .reloadCategoryList:
-            categoriesCollectionView.reloadData()
         case .setLoading(let isLoading):
             print(isLoading)
+        case .reloadCategoryList:
+            categoriesCollectionView.reloadData()
         case .reloadProductList:
             productsCollectionView.reloadData()
         }
