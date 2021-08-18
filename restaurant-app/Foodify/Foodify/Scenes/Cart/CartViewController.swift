@@ -151,6 +151,7 @@ extension CartViewController: CartViewModelDelegate {
         switch output {
         case .reload:
             productsCollectionView.reloadData()
+            receiptCollectionView.reloadData()
             totalRowView.changeTrailingLabel(with: "$\(viewModel.totalPrice)")
         case .setLoading(let isLoading):
             print(isLoading)

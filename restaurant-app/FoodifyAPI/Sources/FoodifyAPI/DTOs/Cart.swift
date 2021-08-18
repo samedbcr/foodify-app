@@ -19,7 +19,7 @@ public struct Cart: Decodable {
 //        "category_name": "Dessert"
 //    }
     public let id: Int
-    public let product_id: Int
+    public let productId: Int
     public let isDeleted: Bool
     public let count: Int
     public let productName: String
