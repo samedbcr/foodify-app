@@ -22,6 +22,7 @@ final class ProductDetailViewController: UIViewController {
     private let footerStackView = UIStackView()
     private let increaseDecreaseView = IncreaseDecreaseView()
     private let addButton = CustomButton()
+    private var isFavorited = false
 
     var viewModel: ProductDetailViewModelProtocol! {
         didSet {
@@ -49,12 +50,11 @@ final class ProductDetailViewController: UIViewController {
     }
 
     private func configureFavoriteBarButton() {
-        let imageName = "heart.circle.fill"
-        favoriteBarButton.image = UIImage(systemName: imageName)
+        favoriteBarButton.image = UIImage(systemName: favoriteIcon.notFavorited.rawValue)
         favoriteBarButton.tintColor = .systemRed
         favoriteBarButton.style = .plain
         favoriteBarButton.target = self
-//        favoriteBarButton.action = #selector(favoriteButtonClicked)
+        favoriteBarButton.action = #selector(favoriteButtonClicked)
         navigationItem.setRightBarButton(favoriteBarButton, animated: true)
     }
 
@@ -219,6 +219,22 @@ final class ProductDetailViewController: UIViewController {
         ])
     }
 
+    @objc private func favoriteButtonClicked() {
+        isFavorited.toggle()
+        changeFavoriteStatus(with: isFavorited)
+        viewModel.changeFavoriteStatus(id: productId)
+    }
+
+    private func changeFavoriteStatus(with value: Bool) {
+        isFavorited = value
+
+        if isFavorited {
+            favoriteBarButton.image = UIImage(systemName: favoriteIcon.favorited.rawValue)
+        } else {
+            favoriteBarButton.image = UIImage(systemName: favoriteIcon.notFavorited.rawValue)
+        }
+    }
+    
 }
 
 extension ProductDetailViewController: ProductDetailViewModelDelegate {
@@ -230,6 +246,7 @@ extension ProductDetailViewController: ProductDetailViewModelDelegate {
                 titleLabel.text = product.name
                 priceLabel.text = "$\(Int(product.price))"
                 descriptionLabel.text = product.description
+                changeFavoriteStatus(with: product.isFavorited)
             }
 
             if let propertiesModel = viewModel.generatePropertiesUIModel() {
@@ -242,5 +259,12 @@ extension ProductDetailViewController: ProductDetailViewModelDelegate {
     }
 
 
+}
+
+extension ProductDetailViewController {
+    enum favoriteIcon: String {
+        case favorited = "heart.circle.fill"
+        case notFavorited = "heart.circle"
+    }
 }
 

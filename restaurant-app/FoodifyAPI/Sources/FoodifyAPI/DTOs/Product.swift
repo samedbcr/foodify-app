@@ -42,6 +42,7 @@ public struct Product: Decodable {
     public let price: Double
     public let ratingCount: Int
     public let ingredients: [Ingredient]
+    public let isFavorited: Bool
 }
 
 public struct Ingredient: Decodable {

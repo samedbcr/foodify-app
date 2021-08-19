@@ -13,6 +13,7 @@ protocol ProductDetailViewModelProtocol {
     var product: Product? { get }
     func load(id: Int?)
     func generatePropertiesUIModel() -> PropertiesStackViewUIModel?
+    func changeFavoriteStatus(id: Int?)
 }
 
 enum ProductDetailViewModelOutput {

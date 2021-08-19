@@ -12,10 +12,12 @@ final class ProductDetailViewModel {
     weak var delegate: ProductDetailViewModelDelegate?
     var product: Product?
 
-    private let service: ProductServiceProtocol
+    private let productService: ProductServiceProtocol
+    private let favoriteService: FavoriteServiceProtocol
 
-    init(service: ProductServiceProtocol) {
-        self.service = service
+    init(productService: ProductServiceProtocol, favoriteService: FavoriteServiceProtocol) {
+        self.productService = productService
+        self.favoriteService = favoriteService
     }
 
     private func notify(_ output: ProductDetailViewModelOutput) {
@@ -27,7 +29,7 @@ final class ProductDetailViewModel {
 extension ProductDetailViewModel: ProductDetailViewModelProtocol {
     func load(id: Int?) {
         guard let id = id else { return }
-        service.fetchProduct(with: id) { [weak self] result in
+        productService.fetchProduct(with: id) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let product):
@@ -50,6 +52,19 @@ extension ProductDetailViewModel: ProductDetailViewModelProtocol {
         }
 
         return PropertiesStackViewUIModel(properties: models)
+    }
+
+    func changeFavoriteStatus(id: Int?) {
+        guard let id = id else { return }
+        favoriteService.changeFavoriteStatus(id) { result in
+//            guard let self = self else { return }
+            switch result {
+            case .success(let successResponse):
+                print(successResponse.message)
+            case .failure(let error):
+                print("error: \(error)")
+            }
+        }
     }
 
 }
