@@ -27,6 +27,8 @@ final class CustomTextField: UITextField {
     private func configure() {
         translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = 6
+        layer.borderWidth = 0.5
+        layer.borderColor = UIColor.appDarkGray.cgColor
         backgroundColor = .appMediumGray
         font = UIFont(name: Fonts.poppinsRegular, size: 14)
         textColor = .appDark

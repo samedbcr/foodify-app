@@ -106,6 +106,7 @@ class CartViewController: UIViewController {
     private func configureCheckoutButton() {
         bottomContainerView.addSubview(checkoutButton)
         checkoutButton.setTitle("Checkout", for: .normal)
+        checkoutButton.addTarget(self, action: #selector(checkoutButtonClick), for: .touchUpInside)
 
         NSLayoutConstraint.activate([
             checkoutButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.66),
@@ -142,6 +143,11 @@ class CartViewController: UIViewController {
             receiptCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             receiptCollectionView.bottomAnchor.constraint(equalTo: totalRowView.topAnchor, constant: -10)
         ])
+    }
+    
+    @objc private func checkoutButtonClick() {
+        print("clickk")
+        navigationController?.pushViewController(PaymentViewController(), animated: true)
     }
 
 }
