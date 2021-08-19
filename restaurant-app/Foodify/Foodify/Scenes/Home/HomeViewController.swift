@@ -155,6 +155,14 @@ final class HomeViewController: UIViewController {
             productsCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
+    
+    private func handleLoading(status: Bool) {
+        if status {
+            presentLoadingView()
+        } else {
+            dismissLoadingView()
+        }
+    }
 
 }
 
@@ -162,7 +170,7 @@ extension HomeViewController: HomeViewModelDelegate {
     func handleViewOutput(_ output: HomeViewModelOutput) {
         switch output {
         case .setLoading(let isLoading):
-            print(isLoading)
+            handleLoading(status: isLoading)
         case .reloadCategoryList:
             categoriesCollectionView.reloadData()
         case .reloadProductList:
