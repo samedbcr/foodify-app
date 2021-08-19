@@ -25,6 +25,7 @@ final class CustomButton: UIButton {
         titleLabel?.textColor = .appLightGray
         titleLabel?.font = UIFont(name: Fonts.poppinsSemiBold, size: 13)
         contentEdgeInsets = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
+        setTitleColor(.appDarkGray, for: .highlighted)
 
         NSLayoutConstraint.activate([
             heightAnchor.constraint(equalToConstant: 44)
