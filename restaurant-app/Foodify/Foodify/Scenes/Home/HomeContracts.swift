@@ -14,7 +14,8 @@ protocol HomeViewModelProtocol {
     var products: [Product] { get }
     var categoriesCount: Int { get }
     var productsCount: Int { get }
-    func load()
+    func loadCategories()
+    func loadProducts()
     func selectCategory(at index: Int)
     func selectProduct(at index: Int)
 }

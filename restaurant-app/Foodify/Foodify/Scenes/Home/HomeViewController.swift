@@ -25,7 +25,8 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        viewModel.load()
+        viewModel.loadCategories()
+        viewModel.loadProducts()
     }
 
     private func configure() {
@@ -209,6 +210,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == categoriesCollectionView {
             viewModel.selectCategory(at: indexPath.row)
+            let cell = collectionView.cellForItem(at: indexPath) as! CategoryCell
+            cell.changeCategorySelectedStatus()
         } else {
             viewModel.selectProduct(at: indexPath.row)
         }

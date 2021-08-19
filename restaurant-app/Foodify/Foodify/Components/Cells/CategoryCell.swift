@@ -37,4 +37,8 @@ class CategoryCell: UICollectionViewCell {
     func setup(with model: CategoryCardViewUIModel) {
         categoryCardView.setup(with: model)
     }
+
+    func changeCategorySelectedStatus() {
+        categoryCardView.toggleSelectedStatus()
+    }
 }

@@ -14,6 +14,7 @@ final class LabelWithImageView: UIView {
     private let imageView = UIImageView()
     private let label = UILabel()
     private let placeholderImage = UIImage(named: "strawberry")
+    private var isDarkText = true
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -86,9 +87,19 @@ final class LabelWithImageView: UIView {
             imageViewContainer.backgroundColor = .appLightGray
         }
         label.text = model.labelText
-        
+
         imageView.kf.indicatorType = .activity
         imageView.loadImage(from: model.imageURL, nil)
     }
 
+    func toggleIsDarkTextStatus() {
+        isDarkText.toggle()
+        if isDarkText {
+            label.textColor = .appDark
+            imageViewContainer.backgroundColor = .clear
+        } else {
+            label.textColor = .appMediumGray
+            imageViewContainer.backgroundColor = .appLightGray
+        }
+    }
 }

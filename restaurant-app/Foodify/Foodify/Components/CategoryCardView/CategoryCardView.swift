@@ -7,8 +7,9 @@
 
 import UIKit
 
-class CategoryCardView: UIView {
-    let labelWithImageView = LabelWithImageView()
+final class CategoryCardView: UIView {
+    private let labelWithImageView = LabelWithImageView()
+    private var isSelected = false
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,5 +44,16 @@ class CategoryCardView: UIView {
             backgroundColor = .primary
         }
         labelWithImageView.setup(with: model.labelWithImageViewModel)
+    }
+
+    func toggleSelectedStatus() {
+        isSelected.toggle()
+        labelWithImageView.toggleIsDarkTextStatus()
+        
+        if isSelected {
+            backgroundColor = .primary
+        } else {
+            backgroundColor = .appLightGray
+        }
     }
 }
