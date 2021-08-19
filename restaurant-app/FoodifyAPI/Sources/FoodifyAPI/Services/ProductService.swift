@@ -40,12 +40,17 @@ public class ProductService: ProductServiceProtocol {
     }
 
     public func fetchProducts(completion: @escaping (Result<[Product], ErrorMessage>) -> Void) {
+        let ids = [Int]()
+        let parameters = ["category_id": ids]
+        let encoder: ParameterEncoder = URLEncodedFormParameterEncoder(encoder: URLEncodedFormEncoder(arrayEncoding: .noBrackets))
         guard let url = URL(string: baseURL) else {
             completion(.failure(.invalidURL))
             return
         }
 
-        AF.request(url).responseData { response in
+        AF.request(url, parameters: parameters, encoder: encoder).responseData { response in
+            debugPrint(response)
+            debugPrint(response.result)
             switch response.result {
             case .failure(let error):
                 print(error)
