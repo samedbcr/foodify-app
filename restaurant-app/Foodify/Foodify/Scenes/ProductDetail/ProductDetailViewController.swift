@@ -44,7 +44,7 @@ final class ProductDetailViewController: UIViewController {
         configureTitleLabel()
         configurePriceLabel()
         configurePropertiesStackView()
-        configureDescriptionsTitleLabel()
+//        configureDescriptionsTitleLabel()
         configureDescriptionLabel()
         configureFooterStackView()
     }
@@ -150,26 +150,26 @@ final class ProductDetailViewController: UIViewController {
 //        propertiesStackView.setup(with: PropertiesStackViewUIModel(properties: [firstProperty, secondProperty, thirdProperty]))
 
         NSLayoutConstraint.activate([
-            propertiesStackView.topAnchor.constraint(equalTo: titleStackView.bottomAnchor, constant: 20),
+            propertiesStackView.topAnchor.constraint(equalTo: titleStackView.bottomAnchor, constant: 16),
             propertiesStackView.leadingAnchor.constraint(equalTo: bottomContainerView.leadingAnchor, constant: 24),
             propertiesStackView.trailingAnchor.constraint(equalTo: bottomContainerView.trailingAnchor, constant: -24),
         ])
     }
 
-    private func configureDescriptionsTitleLabel() {
-        bottomContainerView.addSubview(descriptionsTitleLabel)
-        descriptionsTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        descriptionsTitleLabel.text = "Description".uppercased()
-        descriptionsTitleLabel.font = UIFont(name: Fonts.poppinsMedium, size: 16)
-        descriptionsTitleLabel.textColor = .appDarkGray
-
-        NSLayoutConstraint.activate([
-            descriptionsTitleLabel.topAnchor.constraint(equalTo: propertiesStackView.bottomAnchor, constant: 20),
-            descriptionsTitleLabel.leadingAnchor.constraint(equalTo: bottomContainerView.leadingAnchor, constant: 24),
-            descriptionsTitleLabel.trailingAnchor.constraint(equalTo: bottomContainerView.trailingAnchor, constant: -24),
-
-        ])
-    }
+//    private func configureDescriptionsTitleLabel() {
+//        bottomContainerView.addSubview(descriptionsTitleLabel)
+//        descriptionsTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+//        descriptionsTitleLabel.text = "Description".uppercased()
+//        descriptionsTitleLabel.font = UIFont(name: Fonts.poppinsMedium, size: 16)
+//        descriptionsTitleLabel.textColor = .appDarkGray
+//
+//        NSLayoutConstraint.activate([
+//            descriptionsTitleLabel.topAnchor.constraint(equalTo: propertiesStackView.bottomAnchor, constant: 20),
+//            descriptionsTitleLabel.leadingAnchor.constraint(equalTo: bottomContainerView.leadingAnchor, constant: 24),
+//            descriptionsTitleLabel.trailingAnchor.constraint(equalTo: bottomContainerView.trailingAnchor, constant: -24),
+//
+//        ])
+//    }
 
     private func configureDescriptionLabel() {
         bottomContainerView.addSubview(descriptionLabel)
@@ -180,7 +180,7 @@ final class ProductDetailViewController: UIViewController {
         descriptionLabel.textColor = .systemGray
 
         NSLayoutConstraint.activate([
-            descriptionLabel.topAnchor.constraint(equalTo: descriptionsTitleLabel.bottomAnchor, constant: 8),
+            descriptionLabel.topAnchor.constraint(equalTo: propertiesStackView.bottomAnchor, constant: 16),
             descriptionLabel.leadingAnchor.constraint(equalTo: bottomContainerView.leadingAnchor, constant: 24),
             descriptionLabel.trailingAnchor.constraint(equalTo: bottomContainerView.trailingAnchor, constant: -24),
 
