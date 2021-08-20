@@ -44,5 +44,11 @@ extension FavoritesViewModel: FavoritesViewModelProtocol {
         }
     }
 
-
+    func selectProduct(at index: Int) {
+        let viewController = ProductDetailViewController()
+        let viewModel = ProductDetailViewModel(productService: ProductService(), favoriteService: FavoriteService(), cartService: CartService())
+        viewController.viewModel = viewModel
+        viewController.productId = products[index].id
+        delegate?.navigate(to: viewController)
+    }
 }

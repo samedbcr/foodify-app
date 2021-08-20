@@ -8,13 +8,14 @@
 import UIKit
 
 class CartViewController: UIViewController {
-    let favoriteBarButton = UIBarButtonItem()
+    private let trashBarButton = UIBarButtonItem()
     private var productsCollectionView: UICollectionView!
     private var receiptCollectionView: UICollectionView!
     private let bottomContainerView = UIView()
     private let receiptTitleLabel = UILabel()
     private let totalRowView = BasicTableRowView()
     private let checkoutButton = CustomButton()
+    private var bottomViewTopConstraint: NSLayoutConstraint!
 
     var viewModel: CartViewModelProtocol! {
         didSet {
@@ -47,12 +48,12 @@ class CartViewController: UIViewController {
 
     private func configureFavoriteBarButton() {
         let imageName = "trash"
-        favoriteBarButton.image = UIImage(systemName: imageName)
-        favoriteBarButton.tintColor = .primary
-        favoriteBarButton.style = .plain
-        favoriteBarButton.target = self
-//        favoriteBarButton.action = #selector(favoriteButtonClicked)
-        navigationItem.setRightBarButton(favoriteBarButton, animated: true)
+        trashBarButton.image = UIImage(systemName: imageName)
+        trashBarButton.tintColor = .primary
+        trashBarButton.style = .plain
+        trashBarButton.target = self
+        trashBarButton.action = #selector(trashButtonClick)
+        navigationItem.setRightBarButton(trashBarButton, animated: true)
     }
 
     private func configureProductCollectionView() {
@@ -85,8 +86,10 @@ class CartViewController: UIViewController {
         bottomContainerView.layer.shadowRadius = 8
         bottomContainerView.layer.masksToBounds = false
 
+        bottomViewTopConstraint = bottomContainerView.topAnchor.constraint(equalTo: productsCollectionView.bottomAnchor, constant: -30)
+
         NSLayoutConstraint.activate([
-            bottomContainerView.topAnchor.constraint(equalTo: productsCollectionView.bottomAnchor, constant: -30),
+            bottomViewTopConstraint,
             bottomContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             bottomContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             bottomContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -153,6 +156,15 @@ class CartViewController: UIViewController {
         navigationController?.pushViewController(PaymentViewController(), animated: true)
     }
 
+    @objc func trashButtonClick() {
+        let alert = UIAlertController(title: "Are you sure you want to empty the cart?", message: "If you click Yes, your products in cart will be deleted.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+            self.viewModel.deleteAll()
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+
 }
 
 extension CartViewController: CartViewModelDelegate {
@@ -166,11 +178,25 @@ extension CartViewController: CartViewModelDelegate {
             setLoading(status: isLoading)
         }
     }
+
+    func navigate(to route: ProductDetailViewController) {
+        navigationController?.pushViewController(route, animated: true)
+    }
 }
 
 extension CartViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.cartCount
+        if viewModel.cartCount == 0 {
+            if collectionView == productsCollectionView {
+                collectionView.showEmptyState(message: "There is not any product in the cart!", image: "plate")
+            } else {
+                collectionView.backgroundView = ReceiptEmptyView(message: "Your cart is empty")
+            }
+
+        } else {
+            collectionView.restoreFromEmptyState()
+        }
+        return viewModel.cartCount
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -199,4 +225,9 @@ extension CartViewController: UICollectionViewDataSource, UICollectionViewDelega
         cell.setup(with: model)
         return cell
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.selectProduct(at: indexPath.row)
+    }
+
 }

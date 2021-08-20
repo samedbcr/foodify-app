@@ -54,4 +54,28 @@ extension CartViewModel: CartViewModelProtocol {
             }
         }
     }
+
+    func deleteAll() {
+        notify(.setLoading(true))
+        service.deleteCart { [weak self] result in
+            guard let self = self else { return }
+            self.notify(.setLoading(false))
+
+            switch result {
+            case .success:
+                self.cart = []
+                self.notify(.reload)
+            case .failure(let error):
+                print("error \(error)")
+            }
+        }
+    }
+
+    func selectProduct(at index: Int) {
+        let viewController = ProductDetailViewController()
+        let viewModel = ProductDetailViewModel(productService: ProductService(), favoriteService: FavoriteService(), cartService: CartService())
+        viewController.viewModel = viewModel
+        viewController.productId = cart[index].productId
+        delegate?.navigate(to: viewController)
+    }
 }

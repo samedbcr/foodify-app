@@ -61,11 +61,20 @@ extension FavoritesViewController: FavoritesViewModelDelegate {
             setLoading(status: isLoading)
         }
     }
+
+    func navigate(to route: ProductDetailViewController) {
+        navigationController?.pushViewController(route, animated: true)
+    }
 }
 
 extension FavoritesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.productsCount
+        if viewModel.productsCount == 0 {
+            collectionView.showEmptyState(message: "There is not any favorited product.", image: "plate")
+        } else {
+            collectionView.restoreFromEmptyState()
+        }
+        return viewModel.productsCount
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -82,8 +91,9 @@ extension FavoritesViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.setup(with: model)
 
         return cell
-
     }
 
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.selectProduct(at: indexPath.row)
+    }
 }

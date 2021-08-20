@@ -180,6 +180,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             return viewModel.categoriesCount
         }
         // Product Collection View
+        if viewModel.productsCount == 0 {
+            productsCollectionView.showEmptyState(message: "There is not any product.", image: "plate")
+        } else {
+            productsCollectionView.restoreFromEmptyState()
+        }
         return viewModel.productsCount
     }
 

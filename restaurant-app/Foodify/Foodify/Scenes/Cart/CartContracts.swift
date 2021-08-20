@@ -14,6 +14,8 @@ protocol CartViewModelProtocol {
     var cartCount: Int { get }
     var totalPrice: Int { get }
     func load()
+    func deleteAll()
+    func selectProduct(at index: Int)
 }
 
 enum CartViewModelOutput {
@@ -23,4 +25,5 @@ enum CartViewModelOutput {
 
 protocol CartViewModelDelegate: AnyObject {
     func handleViewOutput(_ output: CartViewModelOutput)
+    func navigate(to route: ProductDetailViewController)
 }

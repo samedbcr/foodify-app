@@ -13,6 +13,7 @@ protocol FavoritesViewModelProtocol {
     var products: [Product] { get }
     var productsCount: Int { get }
     func load()
+    func selectProduct(at index: Int)
 }
 
 enum FavoritesViewModelOutput {
@@ -22,4 +23,5 @@ enum FavoritesViewModelOutput {
 
 protocol FavoritesViewModelDelegate: AnyObject {
     func handleOutput(_ output: FavoritesViewModelOutput)
+    func navigate(to route: ProductDetailViewController)
 }

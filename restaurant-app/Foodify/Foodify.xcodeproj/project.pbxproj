@@ -73,6 +73,9 @@
 		26AF336326CD9BC200EDA357 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 26AF336226CD9BC200EDA357 /* Kingfisher */; };
 		26AF336826CD9D2A00EDA357 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF336726CD9D2A00EDA357 /* UIImageView+Ext.swift */; };
 		26AF336E26CEAEC900EDA357 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF336D26CEAEC800EDA357 /* PaymentViewController.swift */; };
+		26AF338A26D0502200EDA357 /* MainEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF338926D0502200EDA357 /* MainEmptyStateView.swift */; };
+		26AF339226D0504F00EDA357 /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF339126D0504F00EDA357 /* UICollectionView+Ext.swift */; };
+		26AF339726D0595800EDA357 /* ReceiptEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF339626D0595800EDA357 /* ReceiptEmptyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +166,9 @@
 		26AF335926CC5D7600EDA357 /* FavoritesContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesContracts.swift; sourceTree = "<group>"; };
 		26AF336726CD9D2A00EDA357 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		26AF336D26CEAEC800EDA357 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		26AF338926D0502200EDA357 /* MainEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEmptyStateView.swift; sourceTree = "<group>"; };
+		26AF339126D0504F00EDA357 /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
+		26AF339626D0595800EDA357 /* ReceiptEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptEmptyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +269,7 @@
 				26AF327426C31BE100EDA357 /* CustomButton */,
 				26AF330D26C87F0E00EDA357 /* CustomTabBar */,
 				26AF329326C3FF2700EDA357 /* CustomTextField */,
+				26AF338826D0500200EDA357 /* EmptyStateView */,
 				26AF327A26C3C5D700EDA357 /* HorizontalInfoCardView */,
 				26AF322E26C2880A00EDA357 /* ImageWithShadowView */,
 				26AF326626C30C8E00EDA357 /* IncreaseDecreaseView */,
@@ -361,6 +368,7 @@
 				26AF32AA26C46B2C00EDA357 /* UIViewController+Ext.swift */,
 				26AF330826C833B800EDA357 /* UIView+Extension.swift */,
 				26AF336726CD9D2A00EDA357 /* UIImageView+Ext.swift */,
+				26AF339126D0504F00EDA357 /* UICollectionView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -540,6 +548,15 @@
 			path = Payment;
 			sourceTree = "<group>";
 		};
+		26AF338826D0500200EDA357 /* EmptyStateView */ = {
+			isa = PBXGroup;
+			children = (
+				26AF338926D0502200EDA357 /* MainEmptyStateView.swift */,
+				26AF339626D0595800EDA357 /* ReceiptEmptyView.swift */,
+			);
+			path = EmptyStateView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -682,6 +699,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26AF329526C3FF3500EDA357 /* CustomTextField.swift in Sources */,
+				26AF339726D0595800EDA357 /* ReceiptEmptyView.swift in Sources */,
 				26AF32B926C5A3D800EDA357 /* HomeViewModel.swift in Sources */,
 				2657E42C26C0727D00C147CA /* Foodify.xcdatamodeld in Sources */,
 				26AF31F426C1B7D800EDA357 /* CategoryCardView.swift in Sources */,
@@ -692,10 +710,12 @@
 				26AF327C26C3C5EE00EDA357 /* HorizontalInfoCardView.swift in Sources */,
 				26AF330F26C87F2100EDA357 /* CustomTabBarVC.swift in Sources */,
 				26AF324626C29D9F00EDA357 /* VerticalInfoCardViewUIModel.swift in Sources */,
+				26AF338A26D0502200EDA357 /* MainEmptyStateView.swift in Sources */,
 				26AF330926C833B800EDA357 /* UIView+Extension.swift in Sources */,
 				26AF325726C3001D00EDA357 /* SmallIconButton.swift in Sources */,
 				26AF32FF26C8253E00EDA357 /* PropertiesStackView.swift in Sources */,
 				26AF325126C2CC8A00EDA357 /* PropertyViewUIModel.swift in Sources */,
+				26AF339226D0504F00EDA357 /* UICollectionView+Ext.swift in Sources */,
 				26AF334326CBFA9900EDA357 /* ReceiptCell.swift in Sources */,
 				26AF323826C2885700EDA357 /* ImageWithShadowViewUIModel.swift in Sources */,
 				26AF336E26CEAEC900EDA357 /* PaymentViewController.swift in Sources */,
