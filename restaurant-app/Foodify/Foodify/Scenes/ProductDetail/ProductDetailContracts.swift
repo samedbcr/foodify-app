@@ -14,11 +14,13 @@ protocol ProductDetailViewModelProtocol {
     func load(id: Int?)
     func generatePropertiesUIModel() -> PropertiesStackViewUIModel?
     func changeFavoriteStatus(id: Int?)
+    func addToCart(productCount: Int)
 }
 
 enum ProductDetailViewModelOutput {
     case setLoading(Bool)
     case reload
+    case showAlert
 }
 
 protocol ProductDetailViewModelDelegate: AnyObject {

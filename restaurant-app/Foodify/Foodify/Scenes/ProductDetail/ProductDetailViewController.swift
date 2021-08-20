@@ -23,6 +23,7 @@ final class ProductDetailViewController: UIViewController {
     private let increaseDecreaseView = IncreaseDecreaseView()
     private let addButton = CustomButton()
     private var isFavorited = false
+    private var productOrderCount = 1
 
     var viewModel: ProductDetailViewModelProtocol! {
         didSet {
@@ -201,7 +202,7 @@ final class ProductDetailViewController: UIViewController {
                 backgroundColor: "appDarkGray",
                 iconColor: "appLightGray",
                 radius: 6),
-            text: "1",
+            count: productOrderCount,
             increaseButton: SmallIconButtonUIModel(
                 icon: "plus",
                 backgroundColor: "primary",
@@ -209,6 +210,7 @@ final class ProductDetailViewController: UIViewController {
                 radius: 6)))
 
         addButton.setTitle("Add to cart", for: .normal)
+        addButton.addTarget(self, action: #selector(addToCarButtontClick), for: .touchUpInside)
         footerStackView.addArrangedSubview(increaseDecreaseView)
         footerStackView.addArrangedSubview(addButton)
 
@@ -234,7 +236,11 @@ final class ProductDetailViewController: UIViewController {
             favoriteBarButton.image = UIImage(systemName: favoriteIcon.notFavorited.rawValue)
         }
     }
-    
+
+    @objc private func addToCarButtontClick() {
+        viewModel.addToCart(productCount: increaseDecreaseView.count)
+    }
+
 }
 
 extension ProductDetailViewController: ProductDetailViewModelDelegate {
@@ -255,10 +261,10 @@ extension ProductDetailViewController: ProductDetailViewModelDelegate {
             }
         case .setLoading(let isLoading):
             setLoading(status: isLoading)
+        case .showAlert:
+            presentCustomAlert(alertTitle: "Success!", message: "Your product has been added to the cart.", buttonTitle: "OK")
         }
     }
-
-
 }
 
 extension ProductDetailViewController {

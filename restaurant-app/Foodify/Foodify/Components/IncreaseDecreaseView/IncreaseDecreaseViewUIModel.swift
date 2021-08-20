@@ -9,6 +9,6 @@ import Foundation
 
 struct IncreaseDecreaseViewUIModel {
     let decreaseButton: SmallIconButtonUIModel
-    let text: String
+    let count: Int
     let increaseButton: SmallIconButtonUIModel
 }

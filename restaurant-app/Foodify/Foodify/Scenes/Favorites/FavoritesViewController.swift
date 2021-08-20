@@ -20,8 +20,9 @@ final class FavoritesViewController: UIViewController {
         super.viewDidLoad()
         configure()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         viewModel.load()
     }
 

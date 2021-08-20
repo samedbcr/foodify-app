@@ -25,6 +25,10 @@ class CartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         viewModel.load()
     }
 
@@ -144,9 +148,8 @@ class CartViewController: UIViewController {
             receiptCollectionView.bottomAnchor.constraint(equalTo: totalRowView.topAnchor, constant: -10)
         ])
     }
-    
+
     @objc private func checkoutButtonClick() {
-        print("clickk")
         navigationController?.pushViewController(PaymentViewController(), animated: true)
     }
 
@@ -182,7 +185,7 @@ extension CartViewController: UICollectionViewDataSource, UICollectionViewDelega
                 description: product.categoryName,
                 increaseDecreaseViewModel: IncreaseDecreaseViewUIModel(
                     decreaseButton: SmallIconButtonUIModel(icon: "minus", backgroundColor: "appDarkGray", iconColor: "appLightGray", radius: 12),
-                    text: product.count.description,
+                    count: product.count,
                     increaseButton: SmallIconButtonUIModel(icon: "plus", backgroundColor: "primary", iconColor: "appLightGray", radius: 12)),
                 extraText: "$\(Int(product.price))")
             cell.setup(with: model)
@@ -191,7 +194,8 @@ extension CartViewController: UICollectionViewDataSource, UICollectionViewDelega
 
         // Receipt Collection View
         let cell = receiptCollectionView.dequeueReusableCell(withReuseIdentifier: ReceiptCell.reuseId, for: indexPath) as! ReceiptCell
-        let model = BasicTableRowViewUIModel(leadingText: product.productName, trailingText: "$\(Int(product.price))", isBigText: false)
+        let priceWithProductCount = Int(product.price) * product.count
+        let model = BasicTableRowViewUIModel(leadingText: product.productName, trailingText: "$\(priceWithProductCount)", isBigText: false)
         cell.setup(with: model)
         return cell
     }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Product: Decodable {
+public struct Product: Codable {
 //    {
 //        "id": 2,
 //        "image_path": "https://foodify-app.s3.eu-west-3.amazonaws.com/cereal_and_malt.png",
@@ -45,7 +45,7 @@ public struct Product: Decodable {
     public let isFavorited: Bool
 }
 
-public struct Ingredient: Decodable {
+public struct Ingredient: Codable {
     public let name: String
     public let imagePath: String
     public let value: Double

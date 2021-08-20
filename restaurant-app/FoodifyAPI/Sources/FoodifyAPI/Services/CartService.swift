@@ -10,6 +10,7 @@ import Alamofire
 
 public protocol CartServiceProtocol {
     func fetchCart(completion: @escaping (Result<[Cart], ErrorMessage>) -> Void)
+    func addToCart(product: Product, productCount: Int, completion: @escaping (Result<SuccessResponse, ErrorMessage>) -> Void)
 }
 
 public class CartService: CartServiceProtocol {
@@ -49,5 +50,48 @@ public class CartService: CartServiceProtocol {
                 }
             }
         }
+    }
+
+    public func addToCart(product: Product, productCount: Int, completion: @escaping (Result<SuccessResponse, ErrorMessage>) -> Void) {
+        guard let url = URL(string: baseURL) else {
+            completion(.failure(.invalidURL))
+            return
+        }
+
+        let parameters = [
+            "id": product.id,
+            "count": productCount
+        ]
+
+        AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default).responseData { response in
+            switch response.result {
+            case .failure(let error):
+                print(error)
+                completion(.failure(.invalidResponse))
+                return
+            case .success(let data):
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let successResponse = try decoder.decode(SuccessResponse.self, from: data)
+                    completion(.success(successResponse))
+                } catch {
+                    completion(.failure(.invalidData))
+                }
+            }
+        }
+
+//        do {
+//            let encoder = JSONEncoder()
+//            encoder.keyEncodingStrategy = .convertToSnakeCase
+//            let data = try encoder.encode(product)
+//            data.append
+//            if let jsonString = String(data: data, encoding: .utf8) {
+//                print(jsonString)
+//            }
+//        } catch {
+//            completion(.failure(.invalidData))
+//        }
+
     }
 }

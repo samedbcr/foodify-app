@@ -29,7 +29,7 @@ extension CartViewModel: CartViewModelProtocol {
         var total = 0
 
         cart.forEach { item in
-            total += Int(item.price)
+            total += Int(item.price) * item.count
         }
 
         return total

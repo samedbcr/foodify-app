@@ -14,10 +14,12 @@ final class ProductDetailViewModel {
 
     private let productService: ProductServiceProtocol
     private let favoriteService: FavoriteServiceProtocol
+    private let cartService: CartServiceProtocol
 
-    init(productService: ProductServiceProtocol, favoriteService: FavoriteServiceProtocol) {
+    init(productService: ProductServiceProtocol, favoriteService: FavoriteServiceProtocol, cartService: CartServiceProtocol) {
         self.productService = productService
         self.favoriteService = favoriteService
+        self.cartService = cartService
     }
 
     private func notify(_ output: ProductDetailViewModelOutput) {
@@ -27,6 +29,7 @@ final class ProductDetailViewModel {
 }
 
 extension ProductDetailViewModel: ProductDetailViewModelProtocol {
+
     func load(id: Int?) {
         guard let id = id else { return }
         notify(.setLoading(true))
@@ -70,5 +73,21 @@ extension ProductDetailViewModel: ProductDetailViewModelProtocol {
             }
         }
     }
+
+    func addToCart(productCount: Int) {
+        guard let product = product else { return }
+        cartService.addToCart(product: product, productCount: productCount) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                self.notify(.showAlert)
+                print(response.message)
+            case .failure(let error):
+                print("error: \(error)")
+            }
+        }
+    }
+
+
 
 }

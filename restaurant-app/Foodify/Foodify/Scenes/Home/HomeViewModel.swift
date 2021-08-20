@@ -79,7 +79,7 @@ extension HomeViewModel: HomeViewModelProtocol {
 
     func selectProduct(at index: Int) {
         let viewController = ProductDetailViewController()
-        let viewModel = ProductDetailViewModel(productService: productService, favoriteService: FavoriteService())
+        let viewModel = ProductDetailViewModel(productService: productService, favoriteService: FavoriteService(), cartService: CartService())
         viewController.viewModel = viewModel
         viewController.productId = products[index].id
         delegate?.navigate(to: viewController)

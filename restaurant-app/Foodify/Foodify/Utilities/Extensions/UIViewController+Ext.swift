@@ -28,11 +28,10 @@ extension UIViewController {
             containerView.alpha = 0.50
         }
 
-        let activityIndicator = UIActivityIndicatorView(style: .large)
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
         activityIndicator.color = .systemGray3
         containerView.addSubview(activityIndicator)
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicator.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
 
         NSLayoutConstraint.activate([
             activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
