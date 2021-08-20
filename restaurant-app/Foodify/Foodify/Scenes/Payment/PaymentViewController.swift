@@ -19,6 +19,7 @@ final class PaymentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        createDismissKeyboardTapGesture()
     }
 
     private func configure() {
@@ -62,8 +63,9 @@ final class PaymentViewController: UIViewController {
 
     private func configureCardHolderTextField() {
         view.addSubview(cardHolderTextField)
-        let model = CustomTextFieldUIModel(placeholder: "Card Holder", iconName: "person.fill")
+        let model = CustomTextFieldUIModel(placeholder: "Card Holder", iconName: "person.fill", keyboardType: .default)
         cardHolderTextField.setup(with: model)
+        cardHolderTextField.delegate = self
 
         NSLayoutConstraint.activate([
             cardHolderTextField.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 30),
@@ -74,8 +76,9 @@ final class PaymentViewController: UIViewController {
 
     private func configureCardNumberTextField() {
         view.addSubview(cardNumberTextField)
-        let model = CustomTextFieldUIModel(placeholder: "Card Number", iconName: "creditcard.fill")
+        let model = CustomTextFieldUIModel(placeholder: "Card Number", iconName: "creditcard.fill", keyboardType: .numbersAndPunctuation)
         cardNumberTextField.setup(with: model)
+        cardNumberTextField.delegate = self
 
         NSLayoutConstraint.activate([
             cardNumberTextField.topAnchor.constraint(equalTo: cardHolderTextField.bottomAnchor, constant: 20),
@@ -100,20 +103,42 @@ final class PaymentViewController: UIViewController {
     }
 
     private func configureExpireDateTextField() {
-        let model = CustomTextFieldUIModel(placeholder: "Expire Date", iconName: "calendar")
+        let model = CustomTextFieldUIModel(placeholder: "Expire Date", iconName: "calendar", keyboardType: .numbersAndPunctuation)
         expireDateTextField.setup(with: model)
+        expireDateTextField.delegate = self
 
         stackView.addArrangedSubview(expireDateTextField)
     }
 
     private func configureCvvTextField() {
-        let model = CustomTextFieldUIModel(placeholder: "CVV", iconName: "lock.fill")
+        let model = CustomTextFieldUIModel(placeholder: "CVV", iconName: "lock.fill", keyboardType: .numberPad)
         cvvTextField.setup(with: model)
+        cvvTextField.delegate = self
 
         stackView.addArrangedSubview(cvvTextField)
     }
-    
+
     @objc private func checkoutButtonClick() {
-        presentCustomAlert(alertTitle: "Succeed! ✅", message: "Your order has been received successfully. Enjoy your meal!", buttonTitle: "OK")
+        setDummyLoading()
+    }
+
+    func createDismissKeyboardTapGesture() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+    }
+
+    private func setDummyLoading() {
+        setLoading(status: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.setLoading(status: false)
+            self.presentCustomAlert(alertTitle: "Succeed! ✅", message: "Your order has been received successfully. Enjoy your meal!", buttonTitle: "OK")
+        }
+    }
+}
+
+extension PaymentViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
 }

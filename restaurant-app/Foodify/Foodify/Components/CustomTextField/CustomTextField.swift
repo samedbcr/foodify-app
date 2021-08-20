@@ -33,6 +33,8 @@ final class CustomTextField: UITextField {
         font = UIFont(name: Fonts.poppinsRegular, size: 14)
         textColor = .appDark
         tintColor = .appDark
+        autocorrectionType = .no
+        returnKeyType = .done
         attributedPlaceholder = NSAttributedString(string: "",
                                                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.appDarkGray])
 
@@ -42,8 +44,7 @@ final class CustomTextField: UITextField {
     }
 
     func setup(with model: CustomTextFieldUIModel) {
-        attributedPlaceholder = NSAttributedString(string: model.placeholder,
-                                                   attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
+        keyboardType = model.keyboardType
 
         if let icon = model.iconName {
             rightViewMode = .always
@@ -51,7 +52,10 @@ final class CustomTextField: UITextField {
             let rightImageView = UIImageView(image: iconImage)
             rightImageView.tintColor = .appDarkGray
             rightView = rightImageView
+
         }
+        attributedPlaceholder = NSAttributedString(string: model.placeholder,
+                                                   attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
     }
 
     override func textRect(forBounds bounds: CGRect) -> CGRect {

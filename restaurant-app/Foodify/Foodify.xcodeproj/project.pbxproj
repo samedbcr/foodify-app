@@ -73,8 +73,6 @@
 		26AF336326CD9BC200EDA357 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 26AF336226CD9BC200EDA357 /* Kingfisher */; };
 		26AF336826CD9D2A00EDA357 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF336726CD9D2A00EDA357 /* UIImageView+Ext.swift */; };
 		26AF336E26CEAEC900EDA357 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF336D26CEAEC800EDA357 /* PaymentViewController.swift */; };
-		26AF337626CEAEDD00EDA357 /* PaymentContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF337526CEAEDD00EDA357 /* PaymentContracts.swift */; };
-		26AF337B26CEAF0500EDA357 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF337A26CEAF0500EDA357 /* PaymentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,8 +163,6 @@
 		26AF335926CC5D7600EDA357 /* FavoritesContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesContracts.swift; sourceTree = "<group>"; };
 		26AF336726CD9D2A00EDA357 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		26AF336D26CEAEC800EDA357 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
-		26AF337526CEAEDD00EDA357 /* PaymentContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentContracts.swift; sourceTree = "<group>"; };
-		26AF337A26CEAF0500EDA357 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -540,8 +536,6 @@
 			isa = PBXGroup;
 			children = (
 				26AF336D26CEAEC800EDA357 /* PaymentViewController.swift */,
-				26AF337A26CEAF0500EDA357 /* PaymentViewModel.swift */,
-				26AF337526CEAEDD00EDA357 /* PaymentContracts.swift */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -695,7 +689,6 @@
 				26AF32D526C6967A00EDA357 /* ProductCell.swift in Sources */,
 				26AF32AB26C46B2C00EDA357 /* UIViewController+Ext.swift in Sources */,
 				26AF335526CC5D6C00EDA357 /* FavoritesViewModel.swift in Sources */,
-				26AF337626CEAEDD00EDA357 /* PaymentContracts.swift in Sources */,
 				26AF327C26C3C5EE00EDA357 /* HorizontalInfoCardView.swift in Sources */,
 				26AF330F26C87F2100EDA357 /* CustomTabBarVC.swift in Sources */,
 				26AF324626C29D9F00EDA357 /* VerticalInfoCardViewUIModel.swift in Sources */,
@@ -715,7 +708,6 @@
 				26AF328726C3FAFA00EDA357 /* BasicTableRowView.swift in Sources */,
 				26AF328F26C3FB1400EDA357 /* BasicTableRowViewUIModel.swift in Sources */,
 				26AF32BE26C5A84300EDA357 /* HomeContracts.swift in Sources */,
-				26AF337B26CEAF0500EDA357 /* PaymentViewModel.swift in Sources */,
 				26AF334D26CC5D6100EDA357 /* FavoritesViewController.swift in Sources */,
 				2657E42226C0727D00C147CA /* AppDelegate.swift in Sources */,
 				26AF31EE26C1996600EDA357 /* LabelWithImageUIModel.swift in Sources */,
