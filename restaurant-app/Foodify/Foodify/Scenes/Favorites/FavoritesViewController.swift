@@ -57,7 +57,7 @@ extension FavoritesViewController: FavoritesViewModelDelegate {
         case.reload:
             collectionView.reloadData()
         case.setLoading(let isLoading):
-            print(isLoading)
+            setLoading(status: isLoading)
         }
     }
 }

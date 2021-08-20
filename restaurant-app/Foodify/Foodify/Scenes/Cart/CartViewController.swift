@@ -160,7 +160,7 @@ extension CartViewController: CartViewModelDelegate {
             receiptCollectionView.reloadData()
             totalRowView.changeTrailingLabel(with: "$\(viewModel.totalPrice)")
         case .setLoading(let isLoading):
-            print(isLoading)
+            setLoading(status: isLoading)
         }
     }
 }

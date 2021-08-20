@@ -29,8 +29,11 @@ extension FavoritesViewModel: FavoritesViewModelProtocol {
     }
 
     func load() {
+        notify(.setLoading(true))
         service.fetchFavorites { [weak self] result in
             guard let self = self else { return }
+            self.notify(.setLoading(false))
+
             switch result {
             case .success(let products):
                 self.products = products

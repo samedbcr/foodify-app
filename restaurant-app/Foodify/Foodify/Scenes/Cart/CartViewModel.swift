@@ -40,8 +40,11 @@ extension CartViewModel: CartViewModelProtocol {
     }
 
     func load() {
+        notify(.setLoading(true))
         service.fetchCart { [weak self] result in
             guard let self = self else { return }
+            self.notify(.setLoading(false))
+
             switch result {
             case .success(let cart):
                 self.cart = cart

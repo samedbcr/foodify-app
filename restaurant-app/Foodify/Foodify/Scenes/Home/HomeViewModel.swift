@@ -55,7 +55,6 @@ extension HomeViewModel: HomeViewModelProtocol {
         notify(.setLoading(true))
         productService.fetchProducts(with: selectedCaregoryIds) { [weak self] result in
             guard let self = self else { return }
-
             self.notify(.setLoading(false))
 
             switch result {

@@ -254,7 +254,7 @@ extension ProductDetailViewController: ProductDetailViewModelDelegate {
                 propertiesStackView.setup(with: propertiesModel)
             }
         case .setLoading(let isLoading):
-            print(isLoading)
+            setLoading(status: isLoading)
         }
     }
 
