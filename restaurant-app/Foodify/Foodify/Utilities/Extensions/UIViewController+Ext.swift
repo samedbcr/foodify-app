@@ -48,4 +48,8 @@ extension UIViewController {
             containerView = nil
         }
     }
+    
+    func setLoading(status: Bool) {
+        status ? presentLoadingView() : dismissLoadingView()
+    }
 }
