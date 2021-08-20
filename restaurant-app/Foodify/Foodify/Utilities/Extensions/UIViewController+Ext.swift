@@ -25,7 +25,7 @@ extension UIViewController {
         containerView.alpha = 0
 
         UIView.animate(withDuration: 0.25) {
-            containerView.alpha = 0.75
+            containerView.alpha = 0.50
         }
 
         let activityIndicator = UIActivityIndicatorView(style: .large)
