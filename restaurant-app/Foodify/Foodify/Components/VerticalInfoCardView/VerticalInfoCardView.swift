@@ -53,7 +53,7 @@ final class VerticalInfoCardView: UIView {
     private func configureTitleLabel() {
         addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.font = UIFont(name: Fonts.poppinsSemiBold, size: 13)
+        titleLabel.font = UIFont(name: Fonts.poppinsSemiBold, size: 14)
         titleLabel.textColor = .primary
 
         NSLayoutConstraint.activate([
