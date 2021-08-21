@@ -20,12 +20,10 @@ final class ProductDetailViewController: UIViewController {
     private let priceLabel = UILabel()
     private let propertiesStackView = PropertiesStackView()
     private let descriptionLabel = UILabel()
-    private let footerStackView = UIStackView()
     private let increaseDecreaseView = IncreaseDecreaseView()
     private let addButton = CustomButton()
     private let footerView = UIView()
     private var isFavorited = false
-    private var productOrderCount = 1
 
     var viewModel: ProductDetailViewModelProtocol! {
         didSet {
@@ -226,7 +224,7 @@ final class ProductDetailViewController: UIViewController {
                 backgroundColor: "appDarkGray",
                 iconColor: "appLightGray",
                 radius: 6),
-            count: productOrderCount,
+            count: 1,
             increaseButton: SmallIconButtonUIModel(
                 icon: "plus",
                 backgroundColor: "primary",

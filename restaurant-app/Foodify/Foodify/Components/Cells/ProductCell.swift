@@ -27,7 +27,7 @@ class ProductCell: UICollectionViewCell {
     private func configureVerticalInfoCardView() {
         contentView.addSubview(verticalInfoCardView)
         NSLayoutConstraint.activate([
-            verticalInfoCardView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            verticalInfoCardView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: (contentView.frame.size.width - 40) / 2),
             verticalInfoCardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             verticalInfoCardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             verticalInfoCardView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),

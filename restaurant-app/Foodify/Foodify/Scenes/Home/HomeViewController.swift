@@ -149,7 +149,7 @@ final class HomeViewController: UIViewController {
         productsCollectionView.dataSource = self
 
         NSLayoutConstraint.activate([
-            productsCollectionView.topAnchor.constraint(equalTo: categoriesCollectionView.bottomAnchor, constant: 4),
+            productsCollectionView.topAnchor.constraint(equalTo: categoriesCollectionView.bottomAnchor, constant: 8),
             productsCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             productsCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             productsCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)

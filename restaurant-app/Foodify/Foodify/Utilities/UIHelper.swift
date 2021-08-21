@@ -29,9 +29,9 @@ struct UIHelper {
         let imageOverflowSize = (itemSize - 40) / 2
 
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.sectionInset = UIEdgeInsets(top: imageOverflowSize + 10, left: padding, bottom: padding, right: padding)
-        flowLayout.minimumLineSpacing = imageOverflowSize + 12
-        flowLayout.itemSize = CGSize(width: itemSize, height: itemSize) // 1:1 ratio
+        flowLayout.sectionInset = UIEdgeInsets(top: padding / 2, left: padding, bottom: padding, right: padding)
+        flowLayout.minimumLineSpacing = padding
+        flowLayout.itemSize = CGSize(width: itemSize, height: (itemSize / 1.1) + imageOverflowSize)
 
         return flowLayout
     }
