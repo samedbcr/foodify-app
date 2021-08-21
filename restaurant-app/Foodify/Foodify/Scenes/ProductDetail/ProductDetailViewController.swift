@@ -112,7 +112,7 @@ final class ProductDetailViewController: UIViewController {
             imageWithShadowView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
             imageWithShadowView.leadingAnchor.constraint(equalTo: imageViewContainer.leadingAnchor, constant: 32),
             imageWithShadowView.trailingAnchor.constraint(equalTo: imageViewContainer.trailingAnchor, constant: -32),
-            imageWithShadowView.bottomAnchor.constraint(equalTo: imageViewContainer.bottomAnchor, constant: -32),
+            imageWithShadowView.bottomAnchor.constraint(equalTo: imageViewContainer.bottomAnchor, constant: -36),
         ])
     }
 
