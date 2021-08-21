@@ -57,7 +57,7 @@ final class VerticalInfoCardView: UIView {
         titleLabel.textColor = .primary
 
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: imageWithShadowView.bottomAnchor, constant: 8),
+            titleLabel.topAnchor.constraint(equalTo: imageWithShadowView.bottomAnchor, constant: 10),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
         ])
