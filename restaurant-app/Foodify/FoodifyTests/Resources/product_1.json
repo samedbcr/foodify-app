@@ -1,0 +1,27 @@
+{
+  "id": 1,
+  "image_path": "https://foodify-app.s3.eu-west-3.amazonaws.com/burrata_salad.png",
+  "name": "Burrata Salad",
+  "description": "This Burrata Salad Recipe is made with homemade croutons, homemade balsamic vinaigrette dressing, tomatoes and spring mix. The grain is made to germinate by soaking in water. Make it ahead to serve as the star of your next dinner party. This salad is made with fresh, low fat ingredients.",
+  "price": 24,
+  "rating_count": 4,
+  "ingredients": [
+    {
+      "name": "Carb",
+      "value": 120,
+      "image_path": "https://foodify-app.s3.eu-west-3.amazonaws.com/wheat.png"
+    },
+    {
+      "name": "Fat",
+      "value": 40,
+      "image_path": "https://foodify-app.s3.eu-west-3.amazonaws.com/meat_icon.png"
+    },
+    {
+      "name": "Protein",
+      "value": 55,
+      "image_path": "https://foodify-app.s3.eu-west-3.amazonaws.com/egg.png"
+    }
+  ],
+  "category_id": 3,
+  "is_favorited": false
+}

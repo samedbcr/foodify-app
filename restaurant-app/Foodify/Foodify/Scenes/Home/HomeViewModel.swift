@@ -12,7 +12,7 @@ final class HomeViewModel {
     weak var delegate: HomeViewModelDelegate?
     var categories = [FoodifyAPI.Category]()
     var products = [Product]()
-    var selectedCaregoryIds = [Int]()
+    var selectedCategoryIds = [Int]()
 
     private let categoryService: CategoryServiceProtocol
     private let productService: ProductServiceProtocol
@@ -53,7 +53,7 @@ extension HomeViewModel: HomeViewModelProtocol {
 
     func loadProducts() {
         notify(.setLoading(true))
-        productService.fetchProducts(with: selectedCaregoryIds) { [weak self] result in
+        productService.fetchProducts(with: selectedCategoryIds) { [weak self] result in
             guard let self = self else { return }
             self.notify(.setLoading(false))
 
@@ -69,10 +69,10 @@ extension HomeViewModel: HomeViewModelProtocol {
 
     func selectCategory(at index: Int) {
         let categoryId = categories[index].id
-        if let firstIndex = selectedCaregoryIds.firstIndex(of: categoryId) {
-            selectedCaregoryIds.remove(at: firstIndex)
+        if let firstIndex = selectedCategoryIds.firstIndex(of: categoryId) {
+            selectedCategoryIds.remove(at: firstIndex)
         } else {
-            selectedCaregoryIds.append(categoryId)
+            selectedCategoryIds.append(categoryId)
         }
         loadProducts()
     }

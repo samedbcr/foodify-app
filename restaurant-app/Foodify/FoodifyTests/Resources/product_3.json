@@ -1,0 +1,27 @@
+{
+  "id": 6,
+  "image_path": "https://foodify-app.s3.eu-west-3.amazonaws.com/cigars_and_veggies.png",
+  "name": "Cigars &amp; Veggies",
+  "description": "The recipe for these Asian vegetable cigars was accidental. I was saving the mixture from a failed attempt at making vegan and gluten-free dumplings. Make it ahead to serve as the star of your next dinner party. The recipe for these Asian vegetable cigars was accidental",
+  "price": 19,
+  "rating_count": 3,
+  "ingredients": [
+    {
+      "name": "Carb",
+      "value": 180,
+      "image_path": "https://foodify-app.s3.eu-west-3.amazonaws.com/wheat.png"
+    },
+    {
+      "name": "Fat",
+      "value": 80,
+      "image_path": "https://foodify-app.s3.eu-west-3.amazonaws.com/meat_icon.png"
+    },
+    {
+      "name": "Protein",
+      "value": 22,
+      "image_path": "https://foodify-app.s3.eu-west-3.amazonaws.com/egg.png"
+    }
+  ],
+  "category_id": 1,
+  "is_favorited": false
+}

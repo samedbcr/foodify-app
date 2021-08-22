@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Meat",
+    "image_path": "https://foodify-app.s3.eu-west-3.amazonaws.com/meat_icon_2.png"
+  },
+  {
+    "id": 3,
+    "name": "Salad",
+    "image_path": "https://foodify-app.s3.eu-west-3.amazonaws.com/salad_icon.png"
+  },
+  {
+    "id": 4,
+    "name": "Soup",
+    "image_path": "https://foodify-app.s3.eu-west-3.amazonaws.com/soup_icon.png"
+  },
+  {
+    "id": 5,
+    "name": "Dessert",
+    "image_path": "https://foodify-app.s3.eu-west-3.amazonaws.com/dessert_icon.png"
+  }
+]

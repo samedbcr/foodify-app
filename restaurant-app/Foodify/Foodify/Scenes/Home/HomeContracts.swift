@@ -20,7 +20,7 @@ protocol HomeViewModelProtocol {
     func selectProduct(at index: Int)
 }
 
-enum HomeViewModelOutput {
+enum HomeViewModelOutput: Equatable {
     case setLoading(Bool)
     case reloadCategoryList
     case reloadProductList
