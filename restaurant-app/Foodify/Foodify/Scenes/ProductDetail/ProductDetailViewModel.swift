@@ -53,7 +53,7 @@ extension ProductDetailViewModel: ProductDetailViewModelProtocol {
 
         if let ingredients = product?.ingredients {
             ingredients.forEach {
-                let propertyViewUIModel = PropertyViewUIModel(title: $0.name, labelWithImageViewModel: LabelWithImageUIModel(imageURL: $0.imagePath, labelText: "\($0.value)g", isBoldText: true, isDarkText: true))
+                let propertyViewUIModel = PropertyViewUIModel(title: $0.name, labelWithImageViewModel: LabelWithImageUIModel(imageURL: $0.imagePath, labelText: "\(Int($0.value))g", isBoldText: true, isDarkText: true))
                 models.append(propertyViewUIModel)
             }
         }
