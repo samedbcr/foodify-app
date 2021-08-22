@@ -175,7 +175,7 @@ final class ProductDetailViewController: UIViewController {
         bottomContainerView.addSubview(propertiesStackView)
 
         NSLayoutConstraint.activate([
-            propertiesStackView.topAnchor.constraint(equalTo: titleStackView.bottomAnchor, constant: 16),
+            propertiesStackView.topAnchor.constraint(equalTo: titleStackView.bottomAnchor, constant: 20),
             propertiesStackView.leadingAnchor.constraint(equalTo: bottomContainerView.leadingAnchor, constant: 24),
             propertiesStackView.trailingAnchor.constraint(equalTo: bottomContainerView.trailingAnchor, constant: -24),
         ])
@@ -189,10 +189,10 @@ final class ProductDetailViewController: UIViewController {
         descriptionLabel.textColor = .systemGray
 
         NSLayoutConstraint.activate([
-            descriptionLabel.topAnchor.constraint(equalTo: propertiesStackView.bottomAnchor, constant: 16),
+            descriptionLabel.topAnchor.constraint(equalTo: propertiesStackView.bottomAnchor, constant: 20),
             descriptionLabel.leadingAnchor.constraint(equalTo: bottomContainerView.leadingAnchor, constant: 24),
             descriptionLabel.trailingAnchor.constraint(equalTo: bottomContainerView.trailingAnchor, constant: -24),
-            descriptionLabel.bottomAnchor.constraint(equalTo: bottomContainerView.bottomAnchor, constant: -16)
+            descriptionLabel.bottomAnchor.constraint(equalTo: bottomContainerView.bottomAnchor, constant: -20)
         ])
     }
 
