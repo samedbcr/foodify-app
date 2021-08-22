@@ -76,8 +76,10 @@ extension ProductDetailViewModel: ProductDetailViewModelProtocol {
 
     func addToCart(productCount: Int) {
         guard let product = product else { return }
+        notify(.setLoading(true))
         cartService.addToCart(product: product, productCount: productCount) { [weak self] result in
             guard let self = self else { return }
+            self.notify(.setLoading(false))
             switch result {
             case .success(let response):
                 self.notify(.showAlert)

@@ -17,7 +17,7 @@ protocol ProductDetailViewModelProtocol {
     func addToCart(productCount: Int)
 }
 
-enum ProductDetailViewModelOutput {
+enum ProductDetailViewModelOutput: Equatable {
     case setLoading(Bool)
     case reload
     case showAlert

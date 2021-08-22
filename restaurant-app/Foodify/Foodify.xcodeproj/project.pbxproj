@@ -83,6 +83,10 @@
 		26AF338A26D0502200EDA357 /* MainEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF338926D0502200EDA357 /* MainEmptyStateView.swift */; };
 		26AF339226D0504F00EDA357 /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF339126D0504F00EDA357 /* UICollectionView+Ext.swift */; };
 		26AF339726D0595800EDA357 /* ReceiptEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AF339626D0595800EDA357 /* ReceiptEmptyView.swift */; };
+		26B7555926D2D03400AB0CBA /* ProductDetailSceneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B7555826D2D03400AB0CBA /* ProductDetailSceneTests.swift */; };
+		26B7555E26D2D0AF00AB0CBA /* MockCartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B7555D26D2D0AF00AB0CBA /* MockCartService.swift */; };
+		26B7556626D2D14C00AB0CBA /* cart.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B7556526D2D14C00AB0CBA /* cart.json */; };
+		26B7556B26D2D1EF00AB0CBA /* MockFavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B7556A26D2D1EF00AB0CBA /* MockFavoriteService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +187,10 @@
 		26AF338926D0502200EDA357 /* MainEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEmptyStateView.swift; sourceTree = "<group>"; };
 		26AF339126D0504F00EDA357 /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
 		26AF339626D0595800EDA357 /* ReceiptEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptEmptyView.swift; sourceTree = "<group>"; };
+		26B7555826D2D03400AB0CBA /* ProductDetailSceneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailSceneTests.swift; sourceTree = "<group>"; };
+		26B7555D26D2D0AF00AB0CBA /* MockCartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCartService.swift; sourceTree = "<group>"; };
+		26B7556526D2D14C00AB0CBA /* cart.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cart.json; sourceTree = "<group>"; };
+		26B7556A26D2D1EF00AB0CBA /* MockFavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoriteService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +263,7 @@
 				268811AA26D24FF600D19BD7 /* Resources */,
 				268811A626D24D1300D19BD7 /* Mocks */,
 				268811A026D24CE200D19BD7 /* HomeSceneTests.swift */,
+				26B7555826D2D03400AB0CBA /* ProductDetailSceneTests.swift */,
 				2657E43D26C0728000C147CA /* Info.plist */,
 			);
 			path = FoodifyTests;
@@ -281,6 +290,8 @@
 			children = (
 				268811BC26D255EA00D19BD7 /* MockCategoryService.swift */,
 				268811C126D2570600D19BD7 /* MockProductService.swift */,
+				26B7555D26D2D0AF00AB0CBA /* MockCartService.swift */,
+				26B7556A26D2D1EF00AB0CBA /* MockFavoriteService.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -292,6 +303,7 @@
 				268811C626D261CB00D19BD7 /* product_1.json */,
 				268811CB26D261E300D19BD7 /* product_2.json */,
 				268811D026D261EE00D19BD7 /* product_3.json */,
+				26B7556526D2D14C00AB0CBA /* cart.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -728,6 +740,7 @@
 			files = (
 				268811AC26D2501E00D19BD7 /* categories.json in Resources */,
 				268811D126D261EE00D19BD7 /* product_3.json in Resources */,
+				26B7556626D2D14C00AB0CBA /* cart.json in Resources */,
 				268811CC26D261E300D19BD7 /* product_2.json in Resources */,
 				268811C726D261CB00D19BD7 /* product_1.json in Resources */,
 			);
@@ -813,9 +826,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				268811C226D2570600D19BD7 /* MockProductService.swift in Sources */,
+				26B7555E26D2D0AF00AB0CBA /* MockCartService.swift in Sources */,
 				268811BD26D255EA00D19BD7 /* MockCategoryService.swift in Sources */,
+				26B7556B26D2D1EF00AB0CBA /* MockFavoriteService.swift in Sources */,
 				268811A126D24CE200D19BD7 /* HomeSceneTests.swift in Sources */,
 				268811B526D2533000D19BD7 /* ResourceLoader.swift in Sources */,
+				26B7555926D2D03400AB0CBA /* ProductDetailSceneTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

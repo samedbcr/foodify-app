@@ -15,6 +15,7 @@ class ResourceLoader {
         case product_1
         case product_2
         case product_3
+        case cart
     }
 
     static func loadCategories(resource: Resources) throws -> [FoodifyAPI.Category] {
@@ -35,6 +36,16 @@ class ResourceLoader {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         let product = try decoder.decode(Product.self, from: data)
         return product
+    }
+
+    static func loadCart(resource: Resources) throws -> [Cart] {
+        let bundle = Bundle.test
+        let url = bundle.url(forResource: resource.rawValue, withExtension: "json")!
+        let data = try Data(contentsOf: url)
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        let cart = try decoder.decode([Cart].self, from: data)
+        return cart
     }
 }
 
