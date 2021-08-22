@@ -31,10 +31,8 @@ final class PropertiesStackView: UIStackView {
 
     private func generateView(with model: PropertyViewUIModel) {
         let container = UIView()
-//        container.backgroundColor = UIColor(red: CGFloat(Double.random(in: 0...1)), green: CGFloat(Double.random(in: 0...1)), blue: CGFloat(Double.random(in: 0...1)), alpha: 1)
 
         let propertyView = PropertyView()
-//        propertyView.backgroundColor = UIColor(red: CGFloat(Double.random(in: 0...1)), green: CGFloat(Double.random(in: 0...1)), blue: CGFloat(Double.random(in: 0...1)), alpha: 1)
         propertyView.setup(with: model)
         container.addSubview(propertyView)
 
