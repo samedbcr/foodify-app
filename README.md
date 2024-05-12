@@ -15,7 +15,7 @@
 - <a href="#license">License</a>
 
 ## About
-**Foodify** is a an application that aims users to find and order their favorite food. Users can filter products by categories and navigate product detail. In product detail page, users can see price, ingredients and short description of selected food. Also, in detail page, users can add the product to their favorite list and add any number of products to the cart.
+**Foodify** is an application that aims users to find and order their favorite food. Users can filter products by categories and navigate product detail. In product detail page, users can see price, ingredients and short description of selected food. Also, in detail page, users can add the product to their favorite list and add any number of products to the cart.
 
 In cart screen, users can check the price that equal to the number of products they want or they can empty the cart. If they want to continue, they will navigate to *demo* payment screen. In the payment screen, users will enter their order and payment information and finally successfully complete the order.
 
